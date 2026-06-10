@@ -7,7 +7,7 @@ Current local status:
 ```text
 Git repo initialized.
 Branch: main
-Commit: f6cf4b8 Launch Backtest Auditor static site
+Latest commit: 647baf7 Add safe GitHub Pages helper scripts
 GitHub Pages workflow exists: .github/workflows/pages.yml
 Publish directory: deploy/
 Remote: not set yet
@@ -27,6 +27,8 @@ git push -u origin main
 ```
 
 If Git asks you to log in, use GitHub browser login or a personal access token.
+
+If you already logged in through the browser, the only missing input is the new empty repository URL.
 
 Or use the helper script:
 
