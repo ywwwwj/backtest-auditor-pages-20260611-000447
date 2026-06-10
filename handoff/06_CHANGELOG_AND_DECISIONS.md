@@ -365,6 +365,36 @@ Deployment blocker:
 - `npx --cache .\.npm-cache-netlify netlify-cli status` succeeded but reported `Not logged in`.
 - Need either Netlify browser login or `NETLIFY_AUTH_TOKEN` before generating a real public URL.
 
+## Phase 18: Isolated GitHub Pages Permanent Site
+
+Problem:
+
+- Netlify preview links were temporary or quota-limited.
+- The user had multiple GitHub projects in progress, so Backtest Auditor needed an isolated Pages repository that would not overwrite or conflict with another project.
+- The internal project repo contains handoff notes, prospect trackers, and validation strategy that should not be public.
+
+Decision:
+
+- Create a separate public GitHub repository containing only the static site files from `deploy/`.
+- Use a dedicated repo name:
+  - `backtest-auditor-pages-20260610`
+- Publish from that repo's `gh-pages` branch root.
+- Do not publish internal `handoff/` files, prospect trackers, or project memory.
+
+Implemented:
+
+- Created public repo:
+  - `https://github.com/ywwwwj/backtest-auditor-pages-20260610`
+- Pushed static site files to:
+  - `gh-pages`
+- GitHub Pages status:
+  - `built`
+- Permanent outreach landing page:
+  - `https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html`
+- Verified `audit.html` returns HTTP 200.
+- Generated final send file:
+  - `handoff/20_READY_TO_SEND_MARKET_MESSAGES_FINAL.md`
+
 ## Major Non-Negotiable Decisions
 
 - Do not promise profit.

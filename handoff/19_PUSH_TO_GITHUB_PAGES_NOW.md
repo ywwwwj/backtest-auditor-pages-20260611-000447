@@ -15,13 +15,31 @@ Remote: public deploy repo created separately at https://github.com/ywwwwj/backt
 
 ## Current Public Deploy Repo
 
-Public repository:
+Previous public repository, kept separate and not used for this isolated launch:
 
 ```text
 https://github.com/ywwwwj/backtest-auditor-site
 ```
 
-Public branch prepared for GitHub Pages:
+Current isolated public repository for Backtest Auditor market validation:
+
+```text
+https://github.com/ywwwwj/backtest-auditor-pages-20260610
+```
+
+Current isolated GitHub Pages URL:
+
+```text
+https://ywwwwj.github.io/backtest-auditor-pages-20260610/
+```
+
+Current outreach landing page:
+
+```text
+https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html
+```
+
+Public branch prepared for GitHub Pages in the isolated repo:
 
 ```text
 gh-pages
@@ -74,7 +92,9 @@ Do not paste your GitHub password into scripts or terminal commands. If Git asks
 
 The code has already been pushed to `https://github.com/ywwwwj/backtest-auditor-site`.
 
-Because GitHub API returned `401 Requires authentication` for Pages settings, enable Pages once from the GitHub web UI:
+For the isolated repo `backtest-auditor-pages-20260610`, GitHub Pages is already enabled and built.
+
+If Pages ever needs to be re-enabled manually:
 
 1. Open the GitHub repository.
 2. Go to `Settings` -> `Pages`.
@@ -86,13 +106,13 @@ Because GitHub API returned `401 Requires authentication` for Pages settings, en
 Permanent site:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-site/
+https://ywwwwj.github.io/backtest-auditor-pages-20260610/
 ```
 
 Outreach landing page:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-site/audit.html
+https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html
 ```
 
 ## After The Site Is Live
@@ -126,7 +146,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -S
 For the current public deploy repo, run:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -SiteUrl "https://ywwwwj.github.io/backtest-auditor-site"
+powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -SiteUrl "https://ywwwwj.github.io/backtest-auditor-pages-20260610"
 ```
 
 This creates:
