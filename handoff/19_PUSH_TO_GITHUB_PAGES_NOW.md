@@ -28,6 +28,14 @@ git push -u origin main
 
 If Git asks you to log in, use GitHub browser login or a personal access token.
 
+Or use the helper script:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\push-github-pages.ps1 -RepoUrl "https://github.com/<github-username>/<repo-name>.git"
+```
+
+Do not paste your GitHub password into scripts or terminal commands. If Git asks for credentials, use GitHub's browser login flow or a personal access token.
+
 ## Enable Permanent Site
 
 After push:
@@ -71,6 +79,18 @@ https://<github-username>.github.io/<repo-name>
 ```
 
 Then send the first 5 market survey messages.
+
+Or generate the final send file automatically:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -SiteUrl "https://<github-username>.github.io/<repo-name>"
+```
+
+This creates:
+
+```text
+handoff/20_READY_TO_SEND_MARKET_MESSAGES_FINAL.md
+```
 
 ## Important
 
