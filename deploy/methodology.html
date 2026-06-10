@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Methodology | Backtest Auditor</title>
+    <meta name="description" content="How Backtest Auditor evaluates fake-strong strategy risk, supported exports, example reports, and trust boundaries." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Backtest Auditor">
+        <span class="brand-mark">BA</span>
+        <span>Backtest Auditor</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./demo.html">Demo</a>
+        <a href="./audit.html">$9 Audit</a>
+        <a href="./app.html">Workspace</a>
+      </nav>
+      <div class="toolbar">
+        <a class="secondary" href="./demo.html">Watch demo</a>
+        <a class="primary" href="./app.html">Open app</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="method-hero">
+        <p class="kicker">Methodology and trust</p>
+        <h1>We do not predict returns. We audit whether a backtest deserves more research time.</h1>
+        <p>Backtest Auditor is a credibility layer for research results exported from other tools. It looks for fragile patterns that often make a profitable-looking curve less trustworthy.</p>
+      </section>
+
+      <section class="market">
+        <div class="section-head compact">
+          <p class="kicker">Fake Backtest Filters</p>
+          <h2>What we check and why it matters</h2>
+        </div>
+        <div class="method-grid">
+          <article><span>01</span><h3>Top-5 winner concentration</h3><p>If a small number of positive samples explain most of the profit, the strategy may be luck-driven or too dependent on rare events.</p><strong>Retest: remove the top winners and rerun the result.</strong></article>
+          <article><span>02</span><h3>Cost and slippage stress</h3><p>Many strategies look good only under optimistic execution assumptions. Fees, spread, market impact, and slippage can erase the edge.</p><strong>Retest: run 2x and 3x cost assumptions.</strong></article>
+          <article><span>03</span><h3>OOS and second-half decay</h3><p>A curve that performs well early and then fades may be overfit to the tuned period instead of expressing a robust signal.</p><strong>Retest: freeze parameters and run walk-forward splits.</strong></article>
+          <article><span>04</span><h3>Sample confidence</h3><p>High Sharpe or high return on too few samples can be a statistical mirage. Thin samples do not justify heavy optimization.</p><strong>Retest: extend history or test another market regime.</strong></article>
+          <article><span>05</span><h3>Drawdown mismatch</h3><p>Return alone is not enough. If drawdown is large relative to reward, the strategy may be psychologically or operationally unusable.</p><strong>Retest: audit lower leverage and risk caps.</strong></article>
+          <article><span>06</span><h3>Timestamp audit gap</h3><p>Without date or time data, regime analysis, decay checks, and calendar-based retests become weaker.</p><strong>Retest: export date, equity, pnl, return, and trades.</strong></article>
+        </div>
+      </section>
+
+      <section class="market">
+        <div class="section-head compact">
+          <p class="kicker">Supported exports</p>
+          <h2>Use your existing research stack. Bring the result here for review.</h2>
+        </div>
+        <div class="export-grid">
+          <article><h3>TradingView</h3><p>Export Strategy Tester performance, equity curve, closed trades, or copy a table with time, net profit, return, and trade count.</p><code>time,equity,pnl,return,trades</code></article>
+          <article><h3>Python / pandas</h3><p>Export a DataFrame from your notebook. The cleanest input is daily equity or daily returns with a date column.</p><code>df.to_csv("backtest.csv", index=False)</code></article>
+          <article><h3>Excel / Google Sheets</h3><p>Copy the table directly into the paste box. Keep headers in the first row and avoid merged cells.</p><code>date,equity,pnl,return</code></article>
+          <article><h3>QuantConnect</h3><p>Export backtest equity, daily returns, order statistics, or result tables and use this as a pre-review before deeper research.</p><code>date,equity,return,trades</code></article>
+          <article><h3>Generic CSV</h3><p>Any exported table can work if it includes equity, return, pnl, drawdown, or trade-count evidence.</p><code>date,equity,pnl,return,trades</code></article>
+        </div>
+      </section>
+
+      <section class="market">
+        <div class="section-head compact">
+          <p class="kicker">Example reports</p>
+          <h2>Not every strategy gets killed. The verdict depends on evidence.</h2>
+        </div>
+        <div class="report-example-grid">
+          <article class="example-card kill"><span>KILL</span><h3>Breakout V7</h3><p>Score 41. One extreme winner explains the curve, second-half performance decays, and 3x costs remove the edge.</p><strong>Decision: stop tuning until it survives outlier removal.</strong></article>
+          <article class="example-card retest"><span>RETEST</span><h3>Mean Reversion Basket</h3><p>Score 66. Return is positive, but sample size is thin and drawdown is high relative to reward.</p><strong>Decision: run more history, OOS split, and cost stress.</strong></article>
+          <article class="example-card continue"><span>CONTINUE</span><h3>Volatility Filter Momentum</h3><p>Score 82. No major first-pass red flags, but still needs parameter perturbation and walk-forward validation.</p><strong>Decision: continue research, do not assume live readiness.</strong></article>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div>
+          <p class="kicker">Trust boundary</p>
+          <h2>This is research credibility software, not investment advice.</h2>
+        </div>
+        <ul>
+          <li>We do not predict future returns.</li>
+          <li>We do not tell users what to buy, sell, or trade.</li>
+          <li>We do not make a strategy safe or live-ready.</li>
+          <li>We help researchers find fragile backtests faster and decide what evidence is missing.</li>
+        </ul>
+      </section>
+
+      <section class="pricing">
+        <div class="section-head compact">
+          <p class="kicker">Validation Capture</p>
+          <h2>Use the methodology page to collect the highest-intent visitors.</h2>
+        </div>
+        <div class="lead-grid">
+          <article class="lead-card">
+            <p class="kicker">Import Template</p>
+            <h3>Tell us which export path blocks you today</h3>
+            <p>This helps prioritize the next onboarding guide without guessing.</p>
+            <form class="lead-form" name="import-template-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="import-template-request" />
+              <input type="hidden" name="entry_point" value="methodology-page" />
+              <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Requested template</span><select name="requested_template" required><option value="">Select one</option><option>TradingView</option><option>Python / pandas</option><option>Excel / Google Sheets</option><option>QuantConnect</option><option>Other CSV</option></select></label>
+              <label><span>Biggest import pain</span><select name="biggest_pain" required><option value="">Select one</option><option>Overfit diagnosis</option><option>CSV import</option><option>AI memo</option><option>Strategy tracking</option><option>Other</option></select></label>
+              <button class="secondary" type="submit">Request import path</button>
+            </form>
+          </article>
+
+          <article class="lead-card accent">
+            <p class="kicker">Early Access</p>
+            <h3>Join if this trust layer matches your workflow</h3>
+            <p>The best users here already understand the problem, so this list is strategically valuable.</p>
+            <form class="lead-form" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="early-access" />
+              <input type="hidden" name="entry_point" value="methodology-page" />
+              <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Main tool</span><select name="main_tool" required><option value="">Select one</option><option>TradingView</option><option>Python</option><option>Excel</option><option>QuantConnect</option><option>Other CSV</option></select></label>
+              <label><span>Optional note</span><textarea name="note" rows="4" placeholder="What kind of strategy research do you run most often?"></textarea></label>
+              <button class="primary" type="submit">Join early access</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./lead-capture.js"></script>
+  </body>
+</html>

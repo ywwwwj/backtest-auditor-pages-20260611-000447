@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Payment Validation | Backtest Auditor</title>
+    <meta name="description" content="Complete or document payment for a manual Backtest Auditor review." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Backtest Auditor">
+        <span class="brand-mark">BA</span>
+        <span>Backtest Auditor</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./demo.html">Demo</a>
+        <a href="./methodology.html">Methodology</a>
+        <a href="./audit.html">$9 Audit</a>
+        <a href="./app.html">Workspace</a>
+      </nav>
+      <div class="toolbar">
+        <a class="secondary" href="./app.html?example=kill">Open sample audit</a>
+        <a class="primary" href="#payment-proof">Send payment proof</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="payment-hero">
+        <div>
+          <p class="kicker">Payment Validation</p>
+          <h1>Manual Backtest Audit</h1>
+          <p>Use this page to complete or document a $9 manual review order. The review covers research credibility only: Continue / Retest / Kill, fake-strong risk, bottleneck, next test, and learning-log note.</p>
+        </div>
+        <aside class="payment-summary">
+          <p class="kicker">Order test</p>
+          <strong>$9</strong>
+          <p>One exported backtest or strategy note. Manual review returned as a paid audit pack.</p>
+          <ul>
+            <li>No investment advice.</li>
+            <li>No buy/sell signals.</li>
+            <li>No profit prediction.</li>
+            <li>No live-trading readiness claim.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="pricing">
+        <div class="manual-audit-offer">
+          <div>
+            <p class="kicker">What You Receive</p>
+            <h2>A concise research credibility review.</h2>
+            <div class="deliverable-list">
+              <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill with score and top reason.</p></article>
+              <article><span>02</span><strong>Evidence</strong><p>Risk cards, cost stress, OOS decay, and sample checks.</p></article>
+              <article><span>03</span><strong>Next test</strong><p>The next research action before more tuning.</p></article>
+              <article><span>04</span><strong>Learning note</strong><p>What to save for the next weekly loop.</p></article>
+            </div>
+          </div>
+          <form class="lead-form payment-form" id="payment-proof" name="manual-payment-proof" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="manual-payment-proof" />
+            <input type="hidden" name="offer" value="manual-backtest-audit" />
+            <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+            <div class="manual-form-grid">
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Payment method</span><select name="payment_method" required><option>Stripe / card link</option><option>Gumroad</option><option>Lemon Squeezy</option><option>Manual transfer</option><option>Payment not sent yet</option></select></label>
+              <label><span>Amount</span><select name="amount" required><option>$9</option><option>$29 weekly review waitlist</option><option>Other</option></select></label>
+              <label><span>Payment reference or order note</span><textarea name="payment_reference" rows="4" placeholder="Paste transaction id, screenshot link, or say which payment method you need." required></textarea></label>
+              <label><span>Strategy export link or note</span><textarea name="strategy_note" rows="4" placeholder="Paste CSV link, TradingView export note, or describe the strategy result to review." required></textarea></label>
+            </div>
+            <button class="primary" type="submit">Submit payment proof</button>
+            <p class="mini-note">After payment proof is received, fulfill by running the audit in the workspace and exporting the paid audit pack.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="./lead-capture.js"></script>
+  </body>
+</html>

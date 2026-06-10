@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Backtest Auditor Demo | 90-second Product Walkthrough</title>
+    <meta name="description" content="Watch how Backtest Auditor turns a profitable-looking backtest into a Continue, Retest, or Kill research decision." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Backtest Auditor">
+        <span class="brand-mark">BA</span>
+        <span>Backtest Auditor</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./methodology.html">Methodology</a>
+        <a href="./app.html">Workspace</a>
+      </nav>
+      <div class="toolbar">
+        <a class="secondary" href="./index.html">Overview</a>
+        <a class="primary" href="./app.html">Open app</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="demo-page">
+        <div class="demo-copy">
+          <p class="kicker">Video-style demo</p>
+          <h1>Watch a fake-strong TradingView backtest get audited in 90 seconds.</h1>
+          <p>This is a simulated product video built into the site: paste data, map columns, expose risk, produce a verdict, then turn the result into a weekly retest task.</p>
+          <div class="hero-cta-row">
+            <button class="primary hero-link" id="playDemo" type="button">Play demo</button>
+            <button class="secondary hero-link" id="resetDemo" type="button">Reset</button>
+            <a class="secondary hero-link" href="./app.html">Try it yourself</a>
+          </div>
+        </div>
+
+        <div class="demo-player" aria-live="polite">
+          <div class="demo-frame">
+            <div class="console-top"><span></span><span></span><span></span></div>
+            <div class="demo-screen" id="demoScreen">
+              <p class="kicker">Step 1</p>
+              <h2>Import a profitable-looking backtest</h2>
+              <p>Press Play to watch the workflow.</p>
+            </div>
+            <div class="demo-progress"><span id="demoProgress"></span></div>
+          </div>
+          <div class="demo-timeline" id="demoTimeline"></div>
+        </div>
+      </section>
+
+      <section class="pricing">
+        <div class="section-head compact">
+          <p class="kicker">After The Demo</p>
+          <h2>If the walkthrough made sense, turn that into a concrete next step.</h2>
+        </div>
+        <div class="lead-grid">
+          <article class="lead-card">
+            <p class="kicker">Early Access</p>
+            <h3>Join the beta list</h3>
+            <p>Useful if you want access to the weekly workspace once cloud memory and production AI are ready.</p>
+            <form class="lead-form" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="early-access" />
+              <input type="hidden" name="entry_point" value="demo-page" />
+              <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>User type</span><select name="user_type" required><option value="">Select one</option><option>Student</option><option>Individual trader</option><option>Quant learner</option><option>Creator</option><option>Small desk</option></select></label>
+              <button class="primary" type="submit">Join early access</button>
+            </form>
+          </article>
+
+          <article class="lead-card accent">
+            <p class="kicker">Paid Intent</p>
+            <h3>Would you pay for weekly strategy review?</h3>
+            <p>The answer matters more than another feature request at this stage.</p>
+            <form class="lead-form" name="paid-intent" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="paid-intent" />
+              <input type="hidden" name="entry_point" value="demo-page" />
+              <input type="hidden" name="offer_interest" value="weekly-strategy-review" />
+              <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Best fit plan</span><select name="plan_interest" required><option value="">Select one</option><option>Single audit</option><option>Research Pro</option><option>Desk</option></select></label>
+              <label><span>Optional note</span><textarea name="note" rows="4" placeholder="What outcome would make this worth paying for?"></textarea></label>
+              <button class="primary" type="submit">Record paid intent</button>
+            </form>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./demo.js"></script>
+    <script src="./lead-capture.js"></script>
+  </body>
+</html>

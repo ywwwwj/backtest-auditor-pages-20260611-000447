@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>$9 Manual Backtest Audit | Backtest Auditor</title>
+    <meta name="description" content="Get one anonymized backtest reviewed for research credibility: Continue, Retest, or Kill. No investment advice." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Backtest Auditor">
+        <span class="brand-mark">BA</span>
+        <span>Backtest Auditor</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./app.html">Workspace</a>
+        <a href="./methodology.html">Methodology</a>
+        <a href="./payment.html">Pay</a>
+      </nav>
+      <div class="toolbar">
+        <a class="secondary" href="./app.html?example=kill">See sample audit</a>
+        <a class="primary" href="#manual-audit-request">Request $9 audit</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="payment-hero audit-hero">
+        <div>
+          <p class="kicker">Manual Backtest Audit</p>
+          <h1>Your backtest looks profitable. I will tell you why it may be fake.</h1>
+          <p>Send one anonymized TradingView, QuantConnect, Python, Excel, or CSV backtest. You get a concise research credibility review with a Continue / Retest / Kill verdict and the one retest to run next.</p>
+          <div class="hero-cta-row">
+            <a class="primary hero-link" href="#manual-audit-request">Request the $9 review</a>
+            <a class="secondary hero-link" href="./methodology.html">Read the audit filters</a>
+          </div>
+        </div>
+        <aside class="payment-summary">
+          <p class="kicker">First validation offer</p>
+          <strong>$9</strong>
+          <p>One backtest in. One skeptical review out. No trading advice, no buy/sell signals, no profit prediction.</p>
+          <ul>
+            <li>Top fake-strong risk</li>
+            <li>Continue / Retest / Kill verdict</li>
+            <li>One next test before more tuning</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="pricing">
+        <div class="manual-audit-offer">
+          <div>
+            <p class="kicker">What You Receive</p>
+            <h2>A short audit pack built for one decision.</h2>
+            <p>The goal is not to prove a strategy will make money. The goal is to decide whether the current evidence deserves more research time.</p>
+            <div class="deliverable-list">
+              <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill with score and top reason.</p></article>
+              <article><span>02</span><strong>Evidence check</strong><p>Costs, OOS decay, samples, concentration, and drawdown mismatch.</p></article>
+              <article><span>03</span><strong>Next retest</strong><p>The single most useful test before changing parameters again.</p></article>
+              <article><span>04</span><strong>Research note</strong><p>What to save in your weekly learning log.</p></article>
+            </div>
+          </div>
+          <form class="lead-form payment-form" id="manual-audit-request" name="manual-audit-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-payment-offer="manual-audit" data-payment-url="./payment.html">
+            <input type="hidden" name="form-name" value="manual-audit-request" />
+            <input type="hidden" name="entry_point" value="audit-page" />
+            <input type="hidden" name="offer" value="manual-backtest-audit" />
+            <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+            <div class="manual-form-grid">
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Price option</span><select name="price_option" required><option>$9 single audit</option><option>$29 weekly review waitlist</option></select></label>
+              <label><span>Main tool</span><select name="main_tool" required><option>TradingView</option><option>QuantConnect</option><option>Python / pandas</option><option>Excel / Google Sheets</option><option>Other CSV</option></select></label>
+              <label><span>Review focus</span><select name="review_focus" required><option>Why this may be fake</option><option>What to retest next</option><option>Whether to Kill or continue</option><option>CSV/import cleanup</option></select></label>
+              <label><span>Backtest export link or note</span><textarea name="strategy_note" rows="5" placeholder="Paste a shared CSV link, TradingView Strategy Tester note, QuantConnect result, or describe what you want reviewed." required></textarea></label>
+            </div>
+            <button class="primary" type="submit">Request $9 manual audit</button>
+            <p class="mini-note" data-payment-note>After request submission, continue to the payment/proof page. The review is research credibility feedback only.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <article><h3>Not investment advice</h3><p>The audit does not tell you what to buy, sell, or trade live.</p></article>
+        <article><h3>Not a profit prediction</h3><p>The review checks whether the research evidence is fragile, incomplete, or worth retesting.</p></article>
+        <article><h3>Best input</h3><p>An anonymized equity curve, Strategy Tester screenshot/export, QuantConnect result, CSV, or summary table.</p></article>
+      </section>
+    </main>
+
+    <footer>
+      <span>Backtest Auditor</span>
+      <span>Research credibility only. No investment advice.</span>
+    </footer>
+
+    <script src="./lead-capture.js"></script>
+  </body>
+</html>

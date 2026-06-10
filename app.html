@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Backtest Auditor | Fake Backtest Filter</title>
+    <meta name="description" content="Paste a TradingView, Python, Excel, QuantConnect, or CSV backtest and decide Continue, Retest, or Kill in 10 minutes." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html" aria-label="Backtest Auditor">
+        <span class="brand-mark">BA</span>
+        <span>Backtest Auditor</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./demo.html">Demo</a>
+        <a href="./methodology.html">Methodology</a>
+        <a href="./audit.html">$9 Audit</a>
+        <a href="./payment.html">Pay</a>
+        <a href="#auditor">Auditor</a>
+        <a href="#workspace">Workspace</a>
+      </nav>
+      <div class="toolbar">
+        <button class="chip active" type="button" data-market="global">Global</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="workspace" id="auditor" aria-labelledby="auditor-title">
+        <aside class="input-panel">
+          <div class="panel-heading">
+            <p class="kicker">Independent fake-backtest filter</p>
+            <h1 id="auditor-title">Your platform runs the backtest. We judge whether it is worth trusting.</h1>
+            <p>Paste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.</p>
+            <div class="hero-cta-row">
+              <a class="primary hero-link" href="#pasteCsv">Paste backtest data</a>
+              <a class="secondary hero-link" href="./demo.html">Watch demo first</a>
+            </div>
+          </div>
+
+          <div class="mode-card">
+            <span>Launch version</span>
+            <strong id="marketName">Global validation version</strong>
+            <p id="marketCopy">Start with Reddit algo trading threads, QuantConnect users, and TradingView strategy authors.</p>
+          </div>
+
+          <section class="wizard-panel">
+            <p class="kicker">Import Wizard</p>
+            <h2>Get from export to verdict in 3 steps</h2>
+            <div class="wizard-steps" id="wizardSteps">
+              <article class="active"><span>1</span><strong>Choose source</strong><p>Pick where the backtest came from.</p></article>
+              <article><span>2</span><strong>Paste or upload</strong><p>Add CSV, equity, pnl, or returns.</p></article>
+              <article><span>3</span><strong>Confirm fields</strong><p>Check mapping, then run the audit.</p></article>
+            </div>
+            <div class="wizard-status" id="wizardStatus">Start by choosing the source platform below.</div>
+          </section>
+
+          <section class="example-gallery">
+            <p class="kicker">Example Report Gallery</p>
+            <h2>Try a verdict without preparing a CSV</h2>
+            <div class="example-buttons">
+              <button class="example-button kill" type="button" data-example="kill"><span>KILL</span><strong>Outlier Breakout</strong><small>Looks profitable, but one winner carries it.</small></button>
+              <button class="example-button retest" type="button" data-example="retest"><span>RETEST</span><strong>Thin Mean Reversion</strong><small>Potential signal, weak evidence.</small></button>
+              <button class="example-button continue" type="button" data-example="continue"><span>CONTINUE</span><strong>Stable Momentum</strong><small>Passes first credibility layer.</small></button>
+            </div>
+          </section>
+
+          <form class="audit-form" id="auditForm">
+            <label>
+              <span>Strategy name</span>
+              <input id="strategyName" type="text" value="BTC Momentum V3" />
+            </label>
+            <label>
+              <span>Strategy description</span>
+              <textarea id="strategyDesc" rows="4">Cross-sectional momentum with volatility filter. No explicit slippage model. Parameters were tuned on 2021-2024 data.</textarea>
+            </label>
+
+            <div class="grid-two">
+              <label>
+                <span>Source platform</span>
+                <select id="sourcePlatform">
+                  <option>TradingView</option>
+                  <option>Python / pandas</option>
+                  <option>Excel / Google Sheets</option>
+                  <option>QuantConnect</option>
+                  <option>Other CSV</option>
+                </select>
+              </label>
+              <label>
+                <span>Market</span>
+                <select id="assetClass">
+                  <option>Crypto</option>
+                  <option>A-share</option>
+                  <option>US Equity</option>
+                  <option>Futures</option>
+                  <option>FX</option>
+                </select>
+              </label>
+              <label>
+                <span>Frequency</span>
+                <select id="frequency">
+                  <option>Daily</option>
+                  <option>Hourly</option>
+                  <option>Minute</option>
+                  <option>Weekly</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="grid-two">
+              <label>
+                <span>Fee bps</span>
+                <input id="feeBps" type="number" min="0" step="0.1" value="4" />
+              </label>
+              <label>
+                <span>Slippage bps</span>
+                <input id="slippageBps" type="number" min="0" step="0.1" value="8" />
+              </label>
+            </div>
+
+            <label class="file-drop" for="csvFile">
+              <span>Import backtest CSV</span>
+              <small>Supports common columns such as date/equity/pnl/return/trades</small>
+              <input id="csvFile" type="file" accept=".csv,text/csv" />
+            </label>
+
+            <section class="paste-panel">
+              <p class="kicker">Low-friction input</p>
+              <h2>Paste CSV or table data</h2>
+              <p id="platformGuide">Export equity, PnL, or returns from your research tool, then paste the table here. We map common columns automatically.</p>
+              <textarea id="pasteCsv" rows="6" placeholder="date,equity,pnl,return,trades&#10;2024-01-01,100000,0,0,0&#10;2024-01-02,101200,1200,0.012,4"></textarea>
+              <div class="actions">
+                <button class="secondary" id="usePastedCsv" type="button">Use pasted data</button>
+                <button class="secondary" id="downloadTemplate" type="button">Download CSV template</button>
+              </div>
+            </section>
+
+            <section class="mapper-panel">
+              <p class="kicker">Auto CSV Mapper</p>
+              <h2>Detected schema</h2>
+              <p>Automatically identifies date, equity, pnl, return, and trades.</p>
+              <div class="schema-grid" id="schemaMapper"></div>
+            </section>
+
+            <div class="actions">
+              <button class="primary" type="submit">Run audit</button>
+              <button class="secondary" id="loadSample" type="button">Load sample</button>
+            </div>
+          </form>
+
+          <section class="rulebook-panel">
+            <p class="kicker">Pro Rulebook</p>
+            <h2>Personal audit rules</h2>
+            <p>Tune the audit to your own risk tolerance and research style.</p>
+            <div class="rule-grid">
+              <label><span>Minimum samples</span><input id="minSamples" type="number" min="10" step="5" value="60" /></label>
+              <label><span>Max drawdown %</span><input id="maxDrawdownRule" type="number" min="1" step="1" value="20" /></label>
+              <label><span>Minimum Sharpe</span><input id="minSharpeRule" type="number" min="0" step="0.1" value="1.2" /></label>
+              <label><span>Max top-5 concentration %</span><input id="maxConcentrationRule" type="number" min="5" max="100" step="5" value="40" /></label>
+            </div>
+            <div class="actions">
+              <button class="secondary" id="saveRulebook" type="button">Save rulebook</button>
+              <button class="secondary" id="resetRulebook" type="button">Reset</button>
+            </div>
+          </section>
+        </aside>
+
+        <section class="report-panel" aria-live="polite">
+          <div class="report-top">
+            <div>
+              <p class="kicker">Audit Report</p>
+              <h2 id="reportTitle">BTC Momentum V3</h2>
+            </div>
+            <div class="score-ring" id="scoreRing" style="--score: 0deg">
+              <strong id="scoreValue">--</strong>
+              <span>Trust</span>
+            </div>
+          </div>
+
+          <div class="metric-grid" id="metricGrid">
+            <article><span>Total return</span><strong>--</strong></article>
+            <article><span>Max drawdown</span><strong>--</strong></article>
+            <article><span>Sharpe</span><strong>--</strong></article>
+            <article><span>Samples</span><strong>--</strong></article>
+          </div>
+
+          <div class="verdict-panel">
+            <div>
+              <p class="kicker">Executive Summary</p>
+              <h3 id="verdictTitle">Run an audit to get a decision-ready summary</h3>
+              <p id="verdictCopy">The paid version should sell this page as a clean report users can send to a teammate, mentor, or future self.</p>
+            </div>
+            <div class="verdict-stats">
+              <article><span>Issues found</span><strong id="issueCount">--</strong></article>
+              <article><span>Next step</span><strong id="nextStep">--</strong></article>
+            </div>
+          </div>
+
+          <div class="pro-insight-grid">
+            <article class="pro-card">
+              <p class="kicker">Personal Rulebook</p>
+              <h3>Custom rule hits</h3>
+              <div class="rule-hit-list" id="ruleHitList"><p>Run an audit to see which personal rules were triggered.</p></div>
+            </article>
+            <article class="pro-card">
+              <p class="kicker">Strategy Memory</p>
+              <h3>Compared with last saved version</h3>
+              <div class="version-delta" id="versionDelta"><p>Save one report, then run another version with the same strategy name.</p></div>
+            </article>
+          </div>
+
+          <section class="professional-pack">
+            <p class="kicker">Professional Audit Pack</p>
+            <h3>One-click robustness checks</h3>
+            <div class="pack-grid" id="professionalPack"></div>
+          </section>
+
+          <section class="copilot-panel">
+            <div>
+              <p class="kicker">AI Research Judge</p>
+              <h3>Turn workspace memory into the next research move</h3>
+              <p>Memo context now includes the latest audit, client profile, learning log, bottleneck analysis, version history, and kill reasons. Not investment advice.</p>
+            </div>
+            <div class="copilot-controls">
+              <input id="apiKeyInput" type="password" placeholder="Optional DeepSeek API key for local demo" autocomplete="off" />
+              <button class="secondary" id="generateMemo" type="button">Generate AI memo</button>
+            </div>
+            <div class="copilot-output" id="copilotOutput">
+              <p>Run an audit, then generate a memo. Without an API key, the app shows a rule-based preview.</p>
+            </div>
+          </section>
+
+          <div class="visual-board">
+            <article class="chart-card wide"><header><div><span>Equity curve</span><strong id="equityInsight">--</strong></div></header><div class="chart-frame" id="equityChart"></div></article>
+            <article class="chart-card"><header><div><span>Drawdown</span><strong id="drawdownInsight">--</strong></div></header><div class="chart-frame" id="drawdownChart"></div></article>
+            <article class="chart-card"><header><div><span>Return distribution</span><strong id="distributionInsight">--</strong></div></header><div class="chart-frame" id="distributionChart"></div></article>
+            <article class="chart-card"><header><div><span>Period split</span><strong id="periodInsight">--</strong></div></header><div class="chart-frame" id="periodChart"></div></article>
+            <article class="chart-card"><header><div><span>Cost stress</span><strong id="stressInsight">--</strong></div></header><div class="chart-frame" id="stressChart"></div></article>
+          </div>
+
+          <div class="audit-cards" id="auditCards">
+            <article class="empty-state"><h3>Import a backtest first</h3><p>The MVP generates visual diagnostics, structured risk cards, next validation steps, and a strategy workspace.</p></article>
+          </div>
+
+          <div class="report-actions">
+            <button class="secondary" id="saveReport" type="button">Save strategy version</button>
+            <button class="secondary" id="exportReport" type="button">Export Markdown</button>
+            <button class="secondary" id="copySummary" type="button">Copy summary</button>
+          </div>
+        </section>
+      </section>
+
+      <section class="sales-board" id="bundle">
+        <div class="section-head compact">
+          <p class="kicker">5-in-1 research bundle</p>
+          <h2>Use it after TradingView, QuantConnect, Python, or Excel as an independent strategy quality gate</h2>
+          <p>We do not need to beat every platform. We need to own the narrow moment after a backtest looks profitable and before the trader wastes more time optimizing it.</p>
+        </div>
+        <div class="sales-grid">
+          <article><span>01</span><h3>Auto CSV Mapper</h3><p>Paste messy exports from common research tools without rebuilding a spreadsheet template first.</p></article>
+          <article><span>02</span><h3>Fake Backtest Filters</h3><p>Check outlier winners, cost fantasy, OOS decay, sample confidence, regime stability, and drawdown mismatch.</p></article>
+          <article><span>03</span><h3>AI Research Judge</h3><p>Generate a skeptical memo from evidence instead of a generic trading chatbot answer.</p></article>
+          <article><span>04</span><h3>Strategy Workspace</h3><p>Save versions, change notes, verdicts, score trends, and next-test queues by strategy.</p></article>
+          <article><span>05</span><h3>Retest Calendar</h3><p>Turn every weak signal into a dated research task and export weekly retests to your calendar.</p></article>
+          <article><span>Moat</span><h3>Failure Pattern Library</h3><p>Each Kill reason becomes private user data that improves future decisions and gives people a reason to return.</p></article>
+        </div>
+        <div class="unlock-strip">
+          <div><p class="kicker">Pro Angle</p><h3>The upgrade is not more charts. It is a weekly research operating system.</h3></div>
+          <ul>
+            <li>One place for audit reports, version history, notes, retest tasks, and kill reasons</li>
+            <li>Designed to work beside big platforms instead of replacing them</li>
+            <li>Optimized for faster rejection of weak strategies, not profit promises</li>
+            <li>Retention comes from weekly retests and private failure-pattern data</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="market case-library" id="cases">
+        <div class="section-head compact">
+          <p class="kicker">Fake-Strong Strategy Library</p>
+          <h2>Five backtests that look good until you audit them</h2>
+          <p>Use these cases to explain the pain before asking users to upload their own CSV.</p>
+        </div>
+        <div class="market-grid">
+          <article><h3>Outlier winner trap</h3><p>Equity curve looks strong, but top 5 winners explain most positive return.</p></article>
+          <article><h3>Cost fantasy trap</h3><p>Strategy survives at 1x cost, then fails when slippage and fees are stressed.</p></article>
+          <article><h3>Second-half decay</h3><p>Performance is concentrated in the tuned period and weakens after the split.</p></article>
+          <article><h3>Small sample confidence</h3><p>High Sharpe appears on too few trades or return samples to trust.</p></article>
+          <article><h3>Drawdown mismatch</h3><p>Total return exists, but drawdown is too large relative to reward.</p></article>
+          <article><h3>No timestamp audit gap</h3><p>Without dates, regime and decay analysis cannot be trusted.</p></article>
+        </div>
+      </section>
+
+      <section class="review-board" id="workspace">
+        <div class="section-head">
+          <p class="kicker">Strategy Workspace</p>
+          <h2>Manage strategy research instead of loose CSV reports</h2>
+          <p>Each saved audit becomes a version with score, main risk, change note, next-test queue, and Continue / Retest / Kill decision.</p>
+        </div>
+
+        <section class="context-lab">
+          <article class="client-profile-card">
+            <div class="workspace-subhead">
+              <div>
+                <p class="kicker">Client Profile</p>
+                <h3>Reusable research context</h3>
+              </div>
+              <button class="secondary compact-action" id="saveClientProfile" type="button">Save profile</button>
+            </div>
+            <div class="client-profile-form">
+              <label><span>Profile name</span><input id="clientName" type="text" placeholder="Momentum student / Small crypto desk" /></label>
+              <label><span>Main tool</span><select id="clientTool"><option>TradingView</option><option>Python / pandas</option><option>Excel / Google Sheets</option><option>QuantConnect</option><option>Other CSV</option></select></label>
+              <label><span>Research goal</span><input id="clientGoal" type="text" placeholder="Kill weak strategies faster" /></label>
+              <label><span>Risk boundary</span><input id="clientRisk" type="text" placeholder="Max 20% drawdown, no thin samples" /></label>
+              <label><span>Review cadence</span><select id="clientCadence"><option>Weekly</option><option>Twice per week</option><option>Monthly</option><option>Before every strategy change</option></select></label>
+              <label><span>Decision style</span><select id="clientDecisionStyle"><option>Skeptical and fast to kill</option><option>Balanced retest-first</option><option>Patient long-cycle research</option></select></label>
+            </div>
+            <p class="mini-note" id="clientProfileMessage">Saved locally for this workspace. Cloud profiles come after demand validation.</p>
+          </article>
+
+          <article class="learning-panel">
+            <div class="workspace-subhead">
+              <div>
+                <p class="kicker">Learning Log</p>
+                <h3>What the workspace learned over time</h3>
+              </div>
+              <span id="learningCount">0 entries</span>
+            </div>
+            <div class="learning-log" id="learningLog"></div>
+          </article>
+
+          <article class="bottleneck-panel">
+            <p class="kicker">Bottleneck Analysis</p>
+            <h3>Why research gets stuck and how to move faster next time</h3>
+            <div class="bottleneck-grid" id="bottleneckGrid"></div>
+          </article>
+        </section>
+
+        <div class="weekly-review">
+          <div>
+            <p class="kicker">Weekly Research Review</p>
+            <h3>What changed in your strategy research this week?</h3>
+            <p id="weeklySummary">Save a few audits to generate a weekly research review.</p>
+          </div>
+          <div class="weekly-metrics">
+            <article><span>Audits</span><strong id="weeklyAudits">--</strong></article>
+            <article><span>Avg score</span><strong id="weeklyScore">--</strong></article>
+            <article><span>Improved</span><strong id="weeklyImproved">--</strong></article>
+          </div>
+          <div class="weekly-actions" id="weeklyActions"></div>
+        </div>
+
+        <section class="loop-panel">
+          <div>
+            <p class="kicker">North Star</p>
+            <h3>Research Loop completion</h3>
+            <p>A loop counts only when a strategy has a saved audit, a decision, a scheduled retest, and a task update or note.</p>
+          </div>
+          <div class="loop-metrics" id="researchLoopMetrics"></div>
+          <div class="loop-progress" id="researchLoopProgress"></div>
+        </section>
+
+        <div class="retention-grid">
+          <article class="pro-card"><p class="kicker">Weekly Queue</p><h3>This week, retest these first</h3><button class="secondary compact-action" id="exportWeeklyIcs" type="button">Export this week .ics</button><div class="weekly-queue" id="weeklyQueue"></div></article>
+          <article class="pro-card"><p class="kicker">Kill Reason Library</p><h3>Your private weak-strategy dataset</h3><div class="kill-library" id="killReasonList"></div></article>
+        </div>
+
+        <section class="analytics-panel">
+          <div>
+            <p class="kicker">MVP Funnel</p>
+            <h3>Local validation metrics</h3>
+            <p>Local event counts still help us see drop-off, but lead capture now submits to Netlify Forms for real validation.</p>
+          </div>
+          <div class="analytics-grid" id="analyticsGrid"></div>
+        </section>
+
+        <div class="retention-grid">
+          <article class="pro-card">
+            <p class="kicker">4-week Research Review</p>
+            <h3>Are your strategies getting healthier?</h3>
+            <div class="four-week-review" id="fourWeekReview"></div>
+          </article>
+          <article class="pro-card">
+            <p class="kicker">Kill Reason Statistics</p>
+            <h3>Your repeated failure patterns</h3>
+            <div class="kill-stats" id="killStats"></div>
+          </article>
+        </div>
+
+        <div class="saved-layout">
+          <div class="workspace-list" id="workspaceList"></div>
+          <div class="playbook">
+            <h3>Strategy Workspace loop</h3>
+            <div class="step-list">
+              <article><span>01</span><strong>Save each strategy version</strong><p>Record what changed, score, risk cards, and personal rule hits.</p></article>
+              <article><span>02</span><strong>Work the next-test queue</strong><p>Run OOS, cost stress, parameter perturbation, or kill weak ideas.</p></article>
+              <article><span>03</span><strong>Decide Continue / Retest / Kill</strong><p>Turn every audit into a research decision instead of another loose file.</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing" id="pricing">
+        <div class="section-head compact"><p class="kicker">Monetization</p><h2>Start monetization from single paid audits, then sell Pro workflow</h2></div>
+        <div class="price-grid" id="priceGrid"></div>
+        <div class="conversion-panel">
+          <div>
+            <p class="kicker">Validation Gate</p>
+            <h3>Would you pay to avoid wasting a week on a fake-strong strategy?</h3>
+            <p>Use real submission forms before building checkout. This is the cleanest way to validate whether users want early access, import help, or a weekly review workflow.</p>
+          </div>
+          <div class="lead-grid app-lead-grid">
+            <article class="lead-card">
+              <p class="kicker">Early Access</p>
+              <h3>Join the first cohort</h3>
+              <form class="lead-form" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="early-access" />
+                <input type="hidden" name="entry_point" value="app-pricing-panel" />
+                <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+                <label><span>Email</span><input id="waitlistEmail" type="email" name="email" placeholder="email@example.com" required /></label>
+                <label><span>Main tool</span><select name="main_tool" required><option value="">Select one</option><option>TradingView</option><option>Python</option><option>Excel</option><option>QuantConnect</option><option>Other CSV</option></select></label>
+                <button class="primary" id="joinWaitlist" type="submit">Join early access</button>
+              </form>
+            </article>
+            <article class="lead-card">
+              <p class="kicker">Import Template</p>
+              <h3>Request the next guide</h3>
+              <form class="lead-form" name="import-template-request" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="import-template-request" />
+                <input type="hidden" name="entry_point" value="app-pricing-panel" />
+                <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+                <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+                <label><span>Requested template</span><select name="requested_template" required><option value="">Select one</option><option>TradingView</option><option>Python / pandas</option><option>Excel / Google Sheets</option><option>QuantConnect</option><option>Other CSV</option></select></label>
+                <button class="secondary" type="submit">Request template</button>
+              </form>
+            </article>
+            <article class="lead-card accent">
+              <p class="kicker">Paid Intent</p>
+              <h3>Would you pay for Pro?</h3>
+              <form class="lead-form" id="paidIntentForm" name="paid-intent" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="paid-intent" />
+                <input type="hidden" name="entry_point" value="app-pricing-panel" />
+                <input type="hidden" name="offer_interest" value="weekly-strategy-review" />
+                <input type="hidden" name="example_trigger" id="exampleTrigger" value="" />
+                <input type="hidden" name="latest_strategy" id="latestStrategyName" value="" />
+                <input type="hidden" name="latest_verdict" id="latestVerdict" value="" />
+                <input type="hidden" name="latest_score" id="latestScore" value="" />
+                <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+                <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+                <label><span>Best fit plan</span><select name="plan_interest" required><option value="">Select one</option><option>Single audit</option><option>Research Pro</option><option>Desk</option></select></label>
+                <label><span>Optional note</span><textarea name="note" rows="4" placeholder="What would make this worth paying for every week?"></textarea></label>
+                <button class="primary" id="paidIntent" type="submit">I would pay for Pro</button>
+              </form>
+            </article>
+          </div>
+          <p class="mini-note" id="waitlistMessage">No payment is collected in this MVP.</p>
+        </div>
+
+        <div class="manual-audit-offer app-payment-offer">
+          <div>
+            <p class="kicker">Paid Manual Audit</p>
+            <h3>Turn this audit into a paid human review</h3>
+            <p>Best next validation step: ask users to pay for one skeptical review before building checkout, accounts, or a larger backend.</p>
+            <div class="deliverable-list compact">
+              <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill.</p></article>
+              <article><span>02</span><strong>Bottleneck</strong><p>Why this got stuck.</p></article>
+              <article><span>03</span><strong>Next test</strong><p>One concrete retest.</p></article>
+              <article><span>04</span><strong>Learning log</strong><p>What to save for next week.</p></article>
+            </div>
+            <button class="secondary compact-action" id="exportPaidAuditPack" type="button">Export sample paid audit pack</button>
+          </div>
+          <form class="lead-form payment-form" id="manualAuditForm" name="manual-audit-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-payment-offer="manual-audit" data-payment-url="./payment.html">
+            <input type="hidden" name="form-name" value="manual-audit-request" />
+            <input type="hidden" name="entry_point" value="app-manual-audit" />
+            <input type="hidden" name="offer" value="manual-backtest-audit" />
+            <input type="hidden" name="latest_strategy" id="manualAuditStrategy" value="" />
+            <input type="hidden" name="latest_verdict" id="manualAuditVerdict" value="" />
+            <input type="hidden" name="latest_score" id="manualAuditScore" value="" />
+            <input type="hidden" name="research_loop_completion" id="manualAuditLoopCompletion" value="" />
+            <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+            <div class="manual-form-grid">
+              <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
+              <label><span>Price option</span><select name="price_option" required><option>$9 single audit</option><option>$29 weekly review waitlist</option></select></label>
+              <label><span>Review focus</span><select name="review_focus" required><option>Why this may be fake</option><option>What to retest next</option><option>Whether to Kill or continue</option><option>CSV/import cleanup</option></select></label>
+              <label><span>Strategy export link or note</span><textarea name="strategy_note" rows="4" placeholder="Paste a shared CSV link, or describe what you want reviewed." required></textarea></label>
+            </div>
+            <button class="primary" id="manualAuditRequest" type="submit">Request $9 audit</button>
+            <p class="mini-note" data-payment-note>After request submission, continue to the payment/proof page to close the first-order loop.</p>
+          </form>
+        </div>
+      </section>
+
+      <section class="pricing">
+        <div class="example-conversion" id="exampleConversionPanel" hidden>
+          <div>
+            <p class="kicker">Example Conversion</p>
+            <h3 id="exampleConversionTitle">This sample verdict made the value clear.</h3>
+            <p id="exampleConversionCopy">If this helped you understand the workflow, record paid intent while the use case is still fresh.</p>
+          </div>
+          <a class="primary" href="#paidIntent">Record paid intent</a>
+        </div>
+      </section>
+
+      <section class="market" id="market">
+        <div class="section-head compact"><p class="kicker">Market Notes</p><h2>Why this deserves to exist even when big platforms are integrated</h2></div>
+        <div class="market-grid">
+          <article><h3>We are not another backtester</h3><p>TradingView and QuantConnect help users produce results. Backtest Auditor challenges those results as a second-opinion layer.</p></article>
+          <article><h3>The pain is hidden</h3><p>Most tools avoid telling users their impressive curve may be fragile. Owning that uncomfortable truth creates trust.</p></article>
+          <article><h3>Retention comes from research memory</h3><p>The product becomes a manager for versions, retests, decisions, and recurring failure patterns.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+    <script src="./lead-capture.js"></script>
+  </body>
+</html>
