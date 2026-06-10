@@ -10,8 +10,40 @@ Branch: main
 Latest commit: 647baf7 Add safe GitHub Pages helper scripts
 GitHub Pages workflow exists: .github/workflows/pages.yml
 Publish directory: deploy/
-Remote: not set yet
+Remote: public deploy repo created separately at https://github.com/ywwwwj/backtest-auditor-site
 ```
+
+## Current Public Deploy Repo
+
+Public repository:
+
+```text
+https://github.com/ywwwwj/backtest-auditor-site
+```
+
+Public branch prepared for GitHub Pages:
+
+```text
+gh-pages
+```
+
+The `gh-pages` branch contains the static site at the branch root:
+
+```text
+index.html
+audit.html
+app.html
+methodology.html
+payment.html
+styles.css
+script.js
+lead-capture.js
+```
+
+Why this separate repo exists:
+
+- It publishes only public site files.
+- It does not expose internal `handoff/` notes, prospect trackers, or strategy documents.
 
 ## Fastest Path
 
@@ -40,24 +72,27 @@ Do not paste your GitHub password into scripts or terminal commands. If Git asks
 
 ## Enable Permanent Site
 
-After push:
+The code has already been pushed to `https://github.com/ywwwwj/backtest-auditor-site`.
+
+Because GitHub API returned `401 Requires authentication` for Pages settings, enable Pages once from the GitHub web UI:
 
 1. Open the GitHub repository.
 2. Go to `Settings` -> `Pages`.
-3. Under `Build and deployment`, choose `GitHub Actions`.
-4. Open the `Actions` tab.
-5. Wait for `Deploy static site to GitHub Pages` to finish.
+3. Under `Build and deployment`, choose `Deploy from a branch`.
+4. Branch: `gh-pages`.
+5. Folder: `/ (root)`.
+6. Save.
 
 Permanent site:
 
 ```text
-https://<github-username>.github.io/<repo-name>/
+https://ywwwwj.github.io/backtest-auditor-site/
 ```
 
 Outreach landing page:
 
 ```text
-https://<github-username>.github.io/<repo-name>/audit.html
+https://ywwwwj.github.io/backtest-auditor-site/audit.html
 ```
 
 ## After The Site Is Live
@@ -86,6 +121,12 @@ Or generate the final send file automatically:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -SiteUrl "https://<github-username>.github.io/<repo-name>"
+```
+
+For the current public deploy repo, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\render-market-messages.ps1 -SiteUrl "https://ywwwwj.github.io/backtest-auditor-site"
 ```
 
 This creates:
