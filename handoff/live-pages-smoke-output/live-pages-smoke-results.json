@@ -1,0 +1,1268 @@
+{
+  "baseUrl": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/",
+  "checkedAt": "2026-06-11T12:17:51.072Z",
+  "pages": [
+    {
+      "viewport": "desktop",
+      "page": "payment",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-payment.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Payment Validation | Backtest Auditor",
+      "textLength": 1233,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\nMethodology\n$9 Audit\nWorkspace\nOpen sample audit\nSend payment proof\n\nPAYMENT VALIDATION\n\nManual Backtest Audit\n\nUse this page to complete or document a $9 manual review order. The review covers research credibility only: Continue / Retest / Kill, fake-strong risk, bottleneck, next test, and learning-log note.\n\nORDER TEST\n\n$9\n\nOne exported backtest or strategy note. Manual review returned as a paid audit pack.\n\nNo investment advice.\nNo buy/sell signals.\nNo profit",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Open sample audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill"
+        },
+        {
+          "text": "Send payment proof",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html#payment-proof"
+        }
+      ],
+      "forms": [
+        {
+          "id": "payment-proof",
+          "name": "manual-payment-proof",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "methodology",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-methodology.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Methodology | Backtest Auditor",
+      "textLength": 4238,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\n$9 Audit\nWorkspace\nWatch demo\nOpen app\n\nMETHODOLOGY AND TRUST\n\nWe do not predict returns. We audit whether a backtest deserves more research time.\n\nBacktest Auditor is a credibility layer for research results exported from other tools. It looks for fragile patterns that often make a profitable-looking curve less trustworthy.\n\nFAKE BACKTEST FILTERS\n\nWhat we check and why it matters\n01\nTop-5 winner concentration\n\nIf a small number of positive samples explain most ",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Watch demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Open app",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        }
+      ],
+      "forms": [
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "demo",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-demo.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor Demo | 90-second Product Walkthrough",
+      "textLength": 1395,
+      "textStart": "BA\nBacktest Auditor\nOverview\nMethodology\nWorkspace\nOverview\nOpen app\n\nVIDEO-STYLE DEMO\n\nWatch a fake-strong TradingView backtest get audited in 90 seconds.\n\nThis is a simulated product video built into the site: paste data, map columns, expose risk, produce a verdict, then turn the result into a weekly retest task.\n\nPlay demo\nReset\nTry it yourself\n\nSTEP 1\n\nImport a TradingView-style CSV\n\nThe user pastes an equity curve that looks profitable at first glance.\n\ndate,equity,pnl,return,trades\n2024-01",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Open app",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Try it yourself",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        }
+      ],
+      "forms": [
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "workspace",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-workspace.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 10747,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\nMethodology\n$9 Audit\nPay\nAuditor\nWorkspace\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo tradin",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "kill",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-kill.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11796,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\nMethodology\n$9 Audit\nPay\nAuditor\nWorkspace\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo tradin",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "retest",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-retest.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11669,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\nMethodology\n$9 Audit\nPay\nAuditor\nWorkspace\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo tradin",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "page": "continue",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\desktop-continue.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11587,
+      "textStart": "BA\nBacktest Auditor\nOverview\nDemo\nMethodology\n$9 Audit\nPay\nAuditor\nWorkspace\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo tradin",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "audit",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-audit.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "$9 Manual Backtest Audit | Backtest Auditor",
+      "textLength": 1940,
+      "textStart": "BA\nBacktest Auditor\nSee sample audit\nRequest $9 audit\n\nMANUAL BACKTEST AUDIT\n\nYour backtest looks profitable. I will tell you why it may be fake.\n\nSend one anonymized TradingView, QuantConnect, Python, Excel, or CSV backtest. You get a concise research credibility review with a Continue / Retest / Kill verdict and the one retest to run next.\n\nRequest the $9 review\nRead the audit filters\n\nFIRST VALIDATION OFFER\n\n$9\n\nOne backtest in. One skeptical review out. No trading advice, no buy/sell signals",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "See sample audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill"
+        },
+        {
+          "text": "Request $9 audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html#manual-audit-request"
+        },
+        {
+          "text": "Request the $9 review",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html#manual-audit-request"
+        },
+        {
+          "text": "Read the audit filters",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        }
+      ],
+      "forms": [
+        {
+          "id": "manual-audit-request",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "payment",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-payment.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Payment Validation | Backtest Auditor",
+      "textLength": 1188,
+      "textStart": "BA\nBacktest Auditor\nOpen sample audit\nSend payment proof\n\nPAYMENT VALIDATION\n\nManual Backtest Audit\n\nUse this page to complete or document a $9 manual review order. The review covers research credibility only: Continue / Retest / Kill, fake-strong risk, bottleneck, next test, and learning-log note.\n\nORDER TEST\n\n$9\n\nOne exported backtest or strategy note. Manual review returned as a paid audit pack.\n\nNo investment advice.\nNo buy/sell signals.\nNo profit prediction.\nNo live-trading readiness claim.",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Open sample audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill"
+        },
+        {
+          "text": "Send payment proof",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html#payment-proof"
+        }
+      ],
+      "forms": [
+        {
+          "id": "payment-proof",
+          "name": "manual-payment-proof",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "methodology",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-methodology.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Methodology | Backtest Auditor",
+      "textLength": 4205,
+      "textStart": "BA\nBacktest Auditor\nWatch demo\nOpen app\n\nMETHODOLOGY AND TRUST\n\nWe do not predict returns. We audit whether a backtest deserves more research time.\n\nBacktest Auditor is a credibility layer for research results exported from other tools. It looks for fragile patterns that often make a profitable-looking curve less trustworthy.\n\nFAKE BACKTEST FILTERS\n\nWhat we check and why it matters\n01\nTop-5 winner concentration\n\nIf a small number of positive samples explain most of the profit, the strategy may b",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Watch demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Open app",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        }
+      ],
+      "forms": [
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "demo",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-demo.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor Demo | 90-second Product Walkthrough",
+      "textLength": 1364,
+      "textStart": "BA\nBacktest Auditor\nOverview\nOpen app\n\nVIDEO-STYLE DEMO\n\nWatch a fake-strong TradingView backtest get audited in 90 seconds.\n\nThis is a simulated product video built into the site: paste data, map columns, expose risk, produce a verdict, then turn the result into a weekly retest task.\n\nPlay demo\nReset\nTry it yourself\n\nSTEP 1\n\nImport a TradingView-style CSV\n\nThe user pastes an equity curve that looks profitable at first glance.\n\ndate,equity,pnl,return,trades\n2024-01-10,104000,-1100,-0.0105,5\n2024",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Open app",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        },
+        {
+          "text": "Try it yourself",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html"
+        }
+      ],
+      "forms": [
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "workspace",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-workspace.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 10690,
+      "textStart": "BA\nBacktest Auditor\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo trading threads, QuantConnect users, and TradingView strategy a",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "kill",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-kill.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11739,
+      "textStart": "BA\nBacktest Auditor\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo trading threads, QuantConnect users, and TradingView strategy a",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=kill",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "retest",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-retest.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11612,
+      "textStart": "BA\nBacktest Auditor\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo trading threads, QuantConnect users, and TradingView strategy a",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=retest",
+          "netlify": true
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "page": "continue",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+      "status": 200,
+      "screenshot": "C:\\Users\\34054\\Desktop\\回测工具\\handoff\\live-pages-smoke-output\\mobile-continue.png",
+      "overflow": false,
+      "consoleIssues": [],
+      "requestIssues": [],
+      "responseIssues": [],
+      "title": "Backtest Auditor | Fake Backtest Filter",
+      "textLength": 11530,
+      "textStart": "BA\nBacktest Auditor\nGlobal\n\nINDEPENDENT FAKE-BACKTEST FILTER\n\nYour platform runs the backtest. We judge whether it is worth trusting.\n\nPaste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.\n\nPaste backtest data\nWatch demo first\nLaunch version Global validation version\n\nStart with Reddit algo trading threads, QuantConnect users, and TradingView strategy a",
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "navLinks": [
+        {
+          "text": "BA\nBacktest Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Overview",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/index.html"
+        },
+        {
+          "text": "Demo",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Methodology",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/methodology.html"
+        },
+        {
+          "text": "$9 Audit",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html"
+        },
+        {
+          "text": "Pay",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html"
+        },
+        {
+          "text": "Auditor",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#auditor"
+        },
+        {
+          "text": "Workspace",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#workspace"
+        },
+        {
+          "text": "Paste backtest data",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#pasteCsv"
+        },
+        {
+          "text": "Watch demo first",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/demo.html"
+        },
+        {
+          "text": "Record paid intent",
+          "href": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue#paidIntent"
+        }
+      ],
+      "forms": [
+        {
+          "id": "auditForm",
+          "name": null,
+          "method": "get",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": false
+        },
+        {
+          "id": "",
+          "name": "early-access",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "",
+          "name": "import-template-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "paidIntentForm",
+          "name": "paid-intent",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        },
+        {
+          "id": "manualAuditForm",
+          "name": "manual-audit-request",
+          "method": "post",
+          "action": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/app.html?example=continue",
+          "netlify": true
+        }
+      ]
+    }
+  ],
+  "interactions": [
+    {
+      "name": "audit form submit",
+      "urlAfter": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/payment.html?src=qa_source&campaign=qa_campaign&prospect_id=qa_1&channel=qa&request_status=static-site-redirect",
+      "tracking": {
+        "src": "qa_source",
+        "campaign": "qa_campaign",
+        "prospect_id": "qa_1",
+        "channel": "qa",
+        "request_status": "static-site-redirect"
+      }
+    },
+    {
+      "name": "kill example verdict",
+      "found": true
+    },
+    {
+      "name": "retest example verdict",
+      "found": true
+    },
+    {
+      "name": "continue example verdict",
+      "found": true
+    }
+  ],
+  "failures": [
+    {
+      "viewport": "desktop",
+      "page": "home",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/",
+      "message": "page.goto: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/\", waiting until \"commit\"\u001b[22m\n"
+    },
+    {
+      "viewport": "desktop",
+      "page": "audit",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html",
+      "message": "page.goto: net::ERR_CONNECTION_RESET at https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html\nCall log:\n\u001b[2m  - navigating to \"https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html\", waiting until \"commit\"\u001b[22m\n"
+    },
+    {
+      "viewport": "mobile",
+      "page": "home",
+      "url": "https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/",
+      "message": "page.goto: net::ERR_CONNECTION_RESET at https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/\nCall log:\n\u001b[2m  - navigating to \"https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/\", waiting until \"commit\"\u001b[22m\n"
+    }
+  ]
+}

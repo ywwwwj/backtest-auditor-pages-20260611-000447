@@ -1,0 +1,25 @@
+{
+  "case_count": 100,
+  "train_count": 84,
+  "validation_count": 16,
+  "structured_train_count": 84,
+  "structured_validation_count": 16,
+  "verdict_counts_all": {
+    "CONTINUE": 17,
+    "RETEST": 57,
+    "KILL": 26
+  },
+  "family_counts_all": {
+    "momentum": 21,
+    "value_proxy": 13,
+    "mean_reversion": 12,
+    "pairs_stat_arb": 6,
+    "trend_following": 12,
+    "breakout": 12,
+    "carry_proxy": 12,
+    "crypto_grid": 12
+  },
+  "format": "chat messages JSONL + structured JSONL",
+  "ready_for_upload": true,
+  "caveat": "Upload/evaluation requires a model provider account and selected fine-tuning model."
+}

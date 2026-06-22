@@ -115,6 +115,36 @@ Outreach landing page:
 https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html
 ```
 
+Second isolated Pages site created to avoid conflicts with another concurrent GitHub project:
+
+```text
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/
+```
+
+Second isolated outreach landing page:
+
+```text
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html
+```
+
+Repository:
+
+```text
+https://github.com/ywwwwj/backtest-auditor-pages-20260611-000447
+```
+
+Notes:
+
+- This second repo contains only public static files from `deploy/`.
+- It does not contain `handoff/`, prospect trackers, or internal project memory.
+- `.nojekyll` is included so GitHub Pages serves it as a plain static site.
+- Verified on 2026-06-11 local time: `/` and `/audit.html` both returned HTTP 200.
+- Live customer-view QA fixes were pushed after testing:
+  - added `favicon.svg`
+  - fixed GitHub Pages payment redirect fallback
+  - fixed mobile demo horizontal overflow
+  - verified core assets and pages with `curl -L -I`
+
 ## After The Site Is Live
 
 Open:

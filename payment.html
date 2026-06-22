@@ -3,11 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Payment Validation | Backtest Auditor</title>
-    <meta name="description" content="Complete or document payment for a manual Backtest Auditor review." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>Payment & Proof | Backtest Auditor</title>
+    <meta name="description" content="Request the payment link or document payment for a manual Backtest Auditor review." />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -32,14 +30,14 @@
     <main>
       <section class="payment-hero">
         <div>
-          <p class="kicker">Payment Validation</p>
+          <p class="kicker">Order Page</p>
           <h1>Manual Backtest Audit</h1>
-          <p>Use this page to complete or document a $9 manual review order. The review covers research credibility only: Continue / Retest / Kill, fake-strong risk, bottleneck, next test, and learning-log note.</p>
+          <p>Send your contact details and the strategy material here. If you have not paid yet, request the $9 link. If you already paid, paste the receipt or transaction reference. Then we return a research credibility review with Continue / Retest / Kill, fake-strong risk, next test, and the included AI-assisted memo.</p>
         </div>
         <aside class="payment-summary">
-          <p class="kicker">Order test</p>
+          <p class="kicker">First audit</p>
           <strong>$9</strong>
-          <p>One exported backtest or strategy note. Manual review returned as a paid audit pack.</p>
+          <p>One exported backtest or strategy note. Hosted AI-assisted review is included in the order.</p>
           <ul>
             <li>No investment advice.</li>
             <li>No buy/sell signals.</li>
@@ -54,11 +52,12 @@
           <div>
             <p class="kicker">What You Receive</p>
             <h2>A concise research credibility review.</h2>
+            <p>Use this page for either payment proof or the payment request itself. The form is built to capture the strategy export alongside the order reference so the first audit loop is easy to complete.</p>
             <div class="deliverable-list">
               <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill with score and top reason.</p></article>
               <article><span>02</span><strong>Evidence</strong><p>Risk cards, cost stress, OOS decay, and sample checks.</p></article>
               <article><span>03</span><strong>Next test</strong><p>The next research action before more tuning.</p></article>
-              <article><span>04</span><strong>Learning note</strong><p>What to save for the next weekly loop.</p></article>
+              <article><span>04</span><strong>Included AI memo</strong><p>A skeptical research note generated from the evidence and reviewed before delivery.</p></article>
             </div>
           </div>
           <form class="lead-form payment-form" id="payment-proof" name="manual-payment-proof" method="POST" data-netlify="true" netlify-honeypot="bot-field">
@@ -67,13 +66,13 @@
             <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
             <div class="manual-form-grid">
               <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
-              <label><span>Payment method</span><select name="payment_method" required><option>Stripe / card link</option><option>Gumroad</option><option>Lemon Squeezy</option><option>Manual transfer</option><option>Payment not sent yet</option></select></label>
+              <label><span>Payment path</span><select name="payment_method" required><option>Please send me the $9 payment link</option><option>I already paid via Stripe / card link</option><option>I already paid via Gumroad</option><option>I already paid via Lemon Squeezy</option><option>Manual transfer / bank</option></select></label>
               <label><span>Amount</span><select name="amount" required><option>$9</option><option>$29 weekly review waitlist</option><option>Other</option></select></label>
-              <label><span>Payment reference or order note</span><textarea name="payment_reference" rows="4" placeholder="Paste transaction id, screenshot link, or say which payment method you need." required></textarea></label>
+              <label><span>Order note or payment reference</span><textarea name="payment_reference" rows="4" placeholder="If you have paid, paste the transaction id or screenshot link. If not, say which payment method you want and we will send the link." required></textarea></label>
               <label><span>Strategy export link or note</span><textarea name="strategy_note" rows="4" placeholder="Paste CSV link, TradingView export note, or describe the strategy result to review." required></textarea></label>
             </div>
-            <button class="primary" type="submit">Submit payment proof</button>
-            <p class="mini-note">After payment proof is received, fulfill by running the audit in the workspace and exporting the paid audit pack.</p>
+            <button class="primary" type="submit">Submit order request</button>
+            <p class="mini-note">You only need to send the strategy material. The review workflow and AI assistance are included on our side. Payment proof can be a transaction id, screenshot, or platform receipt link.</p>
           </form>
         </div>
       </section>

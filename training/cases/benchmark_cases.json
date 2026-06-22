@@ -1,0 +1,4508 @@
+{
+  "created_at": "2026-06-22T05:59:56.443451+00:00",
+  "cases": [
+    {
+      "id": "BA-BENCH-001",
+      "title": "60/20 trend momentum on S&P 500 Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.9666272940056804,
+        "max_drawdown": 0.19842045800432107,
+        "sharpe": 0.7880359291872842,
+        "samples": 2122,
+        "trades": 83,
+        "top5_concentration": 0.02497792888447433,
+        "first_half_return": 0.4051500406341799,
+        "second_half_return": 0.39958526643751346,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on S&P 500 Index. Return 96.66%, drawdown 19.84%, Sharpe 0.79, top-5 concentration 2.5%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-002",
+      "title": "120/40 trend momentum on S&P 500 Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.4409486663753883,
+        "max_drawdown": 0.24384908155405605,
+        "sharpe": 0.44435395706896175,
+        "samples": 2122,
+        "trades": 83,
+        "top5_concentration": 0.02521142280109492,
+        "first_half_return": 0.040178941816158664,
+        "second_half_return": 0.3852892117383979,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on S&P 500 Index. Return 44.09%, drawdown 24.38%, Sharpe 0.44, top-5 concentration 2.5%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-003",
+      "title": "90-day breakout momentum on S&P 500 Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.9377297474829789,
+        "max_drawdown": 0.18075431256351415,
+        "sharpe": 0.7707342738375952,
+        "samples": 2122,
+        "trades": 71,
+        "top5_concentration": 0.03109798391539553,
+        "first_half_return": 0.3196537085561042,
+        "second_half_return": 0.4683622945319028,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on S&P 500 Index. Return 93.77%, drawdown 18.08%, Sharpe 0.77, top-5 concentration 3.1%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-004",
+      "title": "drawdown value proxy on S&P 500 Index",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.47250600465822346,
+        "max_drawdown": 0.22372607321414306,
+        "sharpe": 0.43401870787549396,
+        "samples": 2122,
+        "trades": 30,
+        "top5_concentration": 0.2209145675722741,
+        "first_half_return": 0.2162368355936093,
+        "second_half_return": 0.2107066334161274,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on S&P 500 Index. Return 47.25%, drawdown 22.37%, Sharpe 0.43, top-5 concentration 22.1%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-005",
+      "title": "deep mean-reversion value proxy on S&P 500 Index",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.30980388420645855,
+        "max_drawdown": 0.1747017727644945,
+        "sharpe": 0.35884839448141337,
+        "samples": 2122,
+        "trades": 34,
+        "top5_concentration": 0.34810186803068877,
+        "first_half_return": 0.1978493196784643,
+        "second_half_return": 0.09346297792951619,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on S&P 500 Index. Return 30.98%, drawdown 17.47%, Sharpe 0.36, top-5 concentration 34.8%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-006",
+      "title": "z-score mean reversion on S&P 500 Index",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.09561935655022324,
+        "max_drawdown": 0.29763208414616193,
+        "sharpe": 0.14900153370775981,
+        "samples": 2122,
+        "trades": 172,
+        "top5_concentration": 0.16375333903622674,
+        "first_half_return": -0.015239067701140696,
+        "second_half_return": 0.11257394623949035,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on S&P 500 Index. Return 9.56%, drawdown 29.76%, Sharpe 0.15, top-5 concentration 16.4%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-007",
+      "title": "aggressive z-score mean reversion on S&P 500 Index",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.06260225775173756,
+        "max_drawdown": 0.296486424991973,
+        "sharpe": 0.1206420692306714,
+        "samples": 2122,
+        "trades": 276,
+        "top5_concentration": 0.14748001421466436,
+        "first_half_return": 0.009775015415654176,
+        "second_half_return": 0.05231585405619987,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on S&P 500 Index. Return 6.26%, drawdown 29.65%, Sharpe 0.12, top-5 concentration 14.7%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-008",
+      "title": "pair spread mean reversion on S&P 500 Index",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.1735605996902163,
+        "max_drawdown": 0.2837969160173761,
+        "sharpe": 0.20858579329365684,
+        "samples": 2122,
+        "trades": 207,
+        "top5_concentration": 0.14212507772676625,
+        "first_half_return": 0.036268267258978026,
+        "second_half_return": 0.13248724945943424,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on S&P 500 Index. Return 17.36%, drawdown 28.38%, Sharpe 0.21, top-5 concentration 14.2%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-009",
+      "title": "moving-average crossover on S&P 500 Index",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.5706553072401279,
+        "max_drawdown": 0.31665696841456925,
+        "sharpe": 0.45003548155314405,
+        "samples": 2122,
+        "trades": 17,
+        "top5_concentration": 0.052490671950842574,
+        "first_half_return": 0.22285660448203792,
+        "second_half_return": 0.28441495223833635,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on S&P 500 Index. Return 57.07%, drawdown 31.67%, Sharpe 0.45, top-5 concentration 5.2%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-010",
+      "title": "dual breakout trend on S&P 500 Index",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.7065349074149903,
+        "max_drawdown": 0.3392495902426059,
+        "sharpe": 0.4801873221894342,
+        "samples": 2122,
+        "trades": 9,
+        "top5_concentration": 0.0667707565713293,
+        "first_half_return": 0.12535136827806936,
+        "second_half_return": 0.5164462900384681,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 58,
+        "verdict": "RETEST",
+        "risks": [
+          "low trade count",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: low trade count, drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on S&P 500 Index. Return 70.65%, drawdown 33.92%, Sharpe 0.48, top-5 concentration 6.7%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-011",
+      "title": "channel breakout on S&P 500 Index",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.1895623549279527,
+        "max_drawdown": 0.23221043864586388,
+        "sharpe": -0.5726036575677121,
+        "samples": 2122,
+        "trades": 354,
+        "top5_concentration": 0.10662075439602692,
+        "first_half_return": -0.052368529344721915,
+        "second_half_return": -0.144775505913035,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on S&P 500 Index. Return -18.96%, drawdown 23.22%, Sharpe -0.57, top-5 concentration 10.7%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-012",
+      "title": "55-day expansion breakout on S&P 500 Index",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.1895623549279527,
+        "max_drawdown": 0.23221043864586388,
+        "sharpe": -0.5726036575677121,
+        "samples": 2122,
+        "trades": 354,
+        "top5_concentration": 0.10662075439602692,
+        "first_half_return": -0.052368529344721915,
+        "second_half_return": -0.144775505913035,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on S&P 500 Index. Return -18.96%, drawdown 23.22%, Sharpe -0.57, top-5 concentration 10.7%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-013",
+      "title": "positive drift carry proxy on S&P 500 Index",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.5973027122399852,
+        "max_drawdown": 0.2467938521109947,
+        "sharpe": 0.5215505472887226,
+        "samples": 2122,
+        "trades": 81,
+        "top5_concentration": 0.028020713964881337,
+        "first_half_return": 0.2080630590633159,
+        "second_half_return": 0.32220143663566425,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on S&P 500 Index. Return 59.73%, drawdown 24.68%, Sharpe 0.52, top-5 concentration 2.8%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-014",
+      "title": "low-vol carry proxy on S&P 500 Index",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.483108437316776,
+        "max_drawdown": 0.24379566201393277,
+        "sharpe": 0.4459696540602329,
+        "samples": 2122,
+        "trades": 63,
+        "top5_concentration": 0.03212704088559901,
+        "first_half_return": 0.047869506888994495,
+        "second_half_return": 0.41535604153608263,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on S&P 500 Index. Return 48.31%, drawdown 24.38%, Sharpe 0.45, top-5 concentration 3.2%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-015",
+      "title": "range grid proxy on S&P 500 Index",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 1.3987475860703982,
+        "max_drawdown": 0.3196949200323058,
+        "sharpe": 0.8236755888495647,
+        "samples": 2122,
+        "trades": 171,
+        "top5_concentration": 0.03491008837909871,
+        "first_half_return": 0.6931477872192573,
+        "second_half_return": 0.4167384584956859,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on S&P 500 Index. Return 139.87%, drawdown 31.97%, Sharpe 0.82, top-5 concentration 3.5%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-016",
+      "title": "tight crypto grid proxy on S&P 500 Index",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "S&P 500 Index",
+      "symbol": "SP500",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-12"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.5664534940651347,
+        "max_drawdown": 0.24359614787764472,
+        "sharpe": 0.4851438386449023,
+        "samples": 2122,
+        "trades": 335,
+        "top5_concentration": 0.03440486393979873,
+        "first_half_return": 0.16737282805710052,
+        "second_half_return": 0.3418622195209391,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 76,
+        "verdict": "CONTINUE",
+        "risks": [
+          "turnover/cost fragility"
+        ],
+        "why": "CONTINUE: turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on S&P 500 Index. Return 56.65%, drawdown 24.36%, Sharpe 0.49, top-5 concentration 3.4%. Verdict CONTINUE. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-017",
+      "title": "60/20 trend momentum on Dow Jones Industrial Average",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.25692877613968657,
+        "max_drawdown": 0.19618792057350276,
+        "sharpe": 0.31474760268809515,
+        "samples": 2123,
+        "trades": 109,
+        "top5_concentration": 0.035296605098740434,
+        "first_half_return": 0.20336404923818496,
+        "second_half_return": 0.044512487252223565,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 54,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: second-half decay, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Dow Jones Industrial Average. Return 25.69%, drawdown 19.62%, Sharpe 0.31, top-5 concentration 3.5%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-018",
+      "title": "120/40 trend momentum on Dow Jones Industrial Average",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.2630388347457706,
+        "max_drawdown": 0.19701114546099618,
+        "sharpe": 0.32094560618950185,
+        "samples": 2123,
+        "trades": 101,
+        "top5_concentration": 0.03459383067833224,
+        "first_half_return": 0.04757341051432107,
+        "second_half_return": 0.20568050130793436,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Dow Jones Industrial Average. Return 26.30%, drawdown 19.70%, Sharpe 0.32, top-5 concentration 3.5%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-019",
+      "title": "90-day breakout momentum on Dow Jones Industrial Average",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.1543188686581709,
+        "max_drawdown": 0.2454460569590209,
+        "sharpe": 0.21694937196625227,
+        "samples": 2123,
+        "trades": 87,
+        "top5_concentration": 0.03560213458028007,
+        "first_half_return": -0.009457875942128546,
+        "second_half_return": 0.16534051467631738,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Dow Jones Industrial Average. Return 15.43%, drawdown 24.54%, Sharpe 0.22, top-5 concentration 3.6%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-020",
+      "title": "drawdown value proxy on Dow Jones Industrial Average",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.45957386377400256,
+        "max_drawdown": 0.2719988556421641,
+        "sharpe": 0.4351399154855083,
+        "samples": 2123,
+        "trades": 38,
+        "top5_concentration": 0.273116204262908,
+        "first_half_return": 0.1337199480634037,
+        "second_half_return": 0.28742011311278004,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on Dow Jones Industrial Average. Return 45.96%, drawdown 27.20%, Sharpe 0.44, top-5 concentration 27.3%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-021",
+      "title": "deep mean-reversion value proxy on Dow Jones Industrial Average",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.29412514287390046,
+        "max_drawdown": 0.1981266836944623,
+        "sharpe": 0.3512117934849978,
+        "samples": 2123,
+        "trades": 16,
+        "top5_concentration": 0.3853916509061125,
+        "first_half_return": 0.200987304262084,
+        "second_half_return": 0.07755106009970891,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on Dow Jones Industrial Average. Return 29.41%, drawdown 19.81%, Sharpe 0.35, top-5 concentration 38.5%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-022",
+      "title": "z-score mean reversion on Dow Jones Industrial Average",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.06889288316876963,
+        "max_drawdown": 0.30772284216045165,
+        "sharpe": 0.12627040371774084,
+        "samples": 2123,
+        "trades": 190,
+        "top5_concentration": 0.17363491460458344,
+        "first_half_return": -0.08470671355519632,
+        "second_half_return": 0.16781462182529538,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on Dow Jones Industrial Average. Return 6.89%, drawdown 30.77%, Sharpe 0.13, top-5 concentration 17.4%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-023",
+      "title": "aggressive z-score mean reversion on Dow Jones Industrial Average",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.07210346780140298,
+        "max_drawdown": 0.3573162572716547,
+        "sharpe": 0.12899283141461226,
+        "samples": 2123,
+        "trades": 304,
+        "top5_concentration": 0.1537882735703809,
+        "first_half_return": -0.0636229546848287,
+        "second_half_return": 0.14494847258942123,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on Dow Jones Industrial Average. Return 7.21%, drawdown 35.73%, Sharpe 0.13, top-5 concentration 15.4%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-024",
+      "title": "pair spread mean reversion on Dow Jones Industrial Average",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.14368183488001107,
+        "max_drawdown": 0.30772284216045165,
+        "sharpe": 0.18689874845108526,
+        "samples": 2123,
+        "trades": 206,
+        "top5_concentration": 0.15065461112410022,
+        "first_half_return": -0.04822550668401038,
+        "second_half_return": 0.20163110370337067,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on Dow Jones Industrial Average. Return 14.37%, drawdown 30.77%, Sharpe 0.19, top-5 concentration 15.1%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-025",
+      "title": "moving-average crossover on Dow Jones Industrial Average",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.3828028965876571,
+        "max_drawdown": 0.2825854053713829,
+        "sharpe": 0.36413128859803684,
+        "samples": 2123,
+        "trades": 21,
+        "top5_concentration": 0.054156570039487234,
+        "first_half_return": 0.15671125931660446,
+        "second_half_return": 0.19546073875396508,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on Dow Jones Industrial Average. Return 38.28%, drawdown 28.26%, Sharpe 0.36, top-5 concentration 5.4%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-026",
+      "title": "dual breakout trend on Dow Jones Industrial Average",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.18938740058166026,
+        "max_drawdown": 0.40148981666840333,
+        "sharpe": 0.21140512438977915,
+        "samples": 2123,
+        "trades": 11,
+        "top5_concentration": 0.06970323396696984,
+        "first_half_return": -0.1387232850448551,
+        "second_half_return": 0.3809585002464668,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 44,
+        "verdict": "KILL",
+        "risks": [
+          "low trade count",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: low trade count, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on Dow Jones Industrial Average. Return 18.94%, drawdown 40.15%, Sharpe 0.21, top-5 concentration 7.0%. Verdict KILL. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-027",
+      "title": "channel breakout on Dow Jones Industrial Average",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.15263309806045688,
+        "max_drawdown": 0.16691800575983662,
+        "sharpe": -0.5393783869727791,
+        "samples": 2123,
+        "trades": 264,
+        "top5_concentration": 0.16100809044795797,
+        "first_half_return": -0.13657726881653165,
+        "second_half_return": -0.01859556004729923,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on Dow Jones Industrial Average. Return -15.26%, drawdown 16.69%, Sharpe -0.54, top-5 concentration 16.1%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-028",
+      "title": "55-day expansion breakout on Dow Jones Industrial Average",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.15263309806045688,
+        "max_drawdown": 0.16691800575983662,
+        "sharpe": -0.5393783869727791,
+        "samples": 2123,
+        "trades": 264,
+        "top5_concentration": 0.16100809044795797,
+        "first_half_return": -0.13657726881653165,
+        "second_half_return": -0.01859556004729923,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 72,
+        "verdict": "CONTINUE",
+        "risks": [
+          "weak risk-adjusted return"
+        ],
+        "why": "CONTINUE: weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on Dow Jones Industrial Average. Return -15.26%, drawdown 16.69%, Sharpe -0.54, top-5 concentration 16.1%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-029",
+      "title": "positive drift carry proxy on Dow Jones Industrial Average",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.4269177043932564,
+        "max_drawdown": 0.1811422118734013,
+        "sharpe": 0.44870445936770764,
+        "samples": 2123,
+        "trades": 85,
+        "top5_concentration": 0.03320829493900861,
+        "first_half_return": 0.16965142921530196,
+        "second_half_return": 0.21995123397621952,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 86,
+        "verdict": "CONTINUE",
+        "risks": [
+          "no major first-pass red flag"
+        ],
+        "why": "CONTINUE: first-pass evidence is acceptable but not live-ready.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on Dow Jones Industrial Average. Return 42.69%, drawdown 18.11%, Sharpe 0.45, top-5 concentration 3.3%. Verdict CONTINUE. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-030",
+      "title": "low-vol carry proxy on Dow Jones Industrial Average",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.07222501214425181,
+        "max_drawdown": 0.3163778827706686,
+        "sharpe": 0.1296401046005213,
+        "samples": 2123,
+        "trades": 81,
+        "top5_concentration": 0.03836993518504656,
+        "first_half_return": -0.10777162582048094,
+        "second_half_return": 0.2017383028535189,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on Dow Jones Industrial Average. Return 7.22%, drawdown 31.64%, Sharpe 0.13, top-5 concentration 3.8%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-031",
+      "title": "range grid proxy on Dow Jones Industrial Average",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.5749869695392649,
+        "max_drawdown": 0.33869291526524836,
+        "sharpe": 0.47124199780565035,
+        "samples": 2123,
+        "trades": 179,
+        "top5_concentration": 0.035562006760865524,
+        "first_half_return": 0.4586878016908107,
+        "second_half_return": 0.07972862165135552,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 42,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on Dow Jones Industrial Average. Return 57.50%, drawdown 33.87%, Sharpe 0.47, top-5 concentration 3.6%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-032",
+      "title": "tight crypto grid proxy on Dow Jones Industrial Average",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "Dow Jones Industrial Average",
+      "symbol": "DJIA",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.38701440270031306,
+        "max_drawdown": 0.22083694952600608,
+        "sharpe": 0.38602369749861887,
+        "samples": 2123,
+        "trades": 321,
+        "top5_concentration": 0.03193424094436417,
+        "first_half_return": 0.16531704818444304,
+        "second_half_return": 0.1902463839015145,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 62,
+        "verdict": "RETEST",
+        "risks": [
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on Dow Jones Industrial Average. Return 38.70%, drawdown 22.08%, Sharpe 0.39, top-5 concentration 3.2%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-033",
+      "title": "60/20 trend momentum on NASDAQ Composite",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 10.516026231007652,
+        "max_drawdown": 0.5758472632806373,
+        "sharpe": 0.7257930872276508,
+        "samples": 3087,
+        "trades": 192,
+        "top5_concentration": 0.04464649825983636,
+        "first_half_return": 1.3383325319791348,
+        "second_half_return": 3.9248881728813263,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on NASDAQ Composite. Return 1051.60%, drawdown 57.58%, Sharpe 0.73, top-5 concentration 4.5%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-034",
+      "title": "120/40 trend momentum on NASDAQ Composite",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 19.207052975874767,
+        "max_drawdown": 0.6213109401685,
+        "sharpe": 0.8428660671964481,
+        "samples": 3087,
+        "trades": 146,
+        "top5_concentration": 0.03922568712000075,
+        "first_half_return": 3.1013628176807497,
+        "second_half_return": 3.9269118276401427,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on NASDAQ Composite. Return 1920.71%, drawdown 62.13%, Sharpe 0.84, top-5 concentration 3.9%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-035",
+      "title": "90-day breakout momentum on NASDAQ Composite",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 6.913041301043977,
+        "max_drawdown": 0.6312673696103341,
+        "sharpe": 0.6351615463023996,
+        "samples": 3087,
+        "trades": 174,
+        "top5_concentration": 0.04340915309379559,
+        "first_half_return": 0.26865713989851603,
+        "second_half_return": 5.237336355255893,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on NASDAQ Composite. Return 691.30%, drawdown 63.13%, Sharpe 0.64, top-5 concentration 4.3%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-036",
+      "title": "drawdown value proxy on NASDAQ Composite",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.07181184386613393,
+        "max_drawdown": 0.859294108484816,
+        "sharpe": 0.2090743844026972,
+        "samples": 3087,
+        "trades": 165,
+        "top5_concentration": 0.04456636977749466,
+        "first_half_return": 0.7141714923437736,
+        "second_half_return": -0.3747347633225103,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on NASDAQ Composite. Return 7.18%, drawdown 85.93%, Sharpe 0.21, top-5 concentration 4.5%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-037",
+      "title": "deep mean-reversion value proxy on NASDAQ Composite",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.08227442872855117,
+        "max_drawdown": 0.8525402265183886,
+        "sharpe": 0.1671059047118371,
+        "samples": 3087,
+        "trades": 119,
+        "top5_concentration": 0.046871794409178144,
+        "first_half_return": 1.2086898217118631,
+        "second_half_return": -0.5844932311228033,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on NASDAQ Composite. Return -8.23%, drawdown 85.25%, Sharpe 0.17, top-5 concentration 4.7%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-038",
+      "title": "z-score mean reversion on NASDAQ Composite",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.5767128533019668,
+        "max_drawdown": 0.6635771272407538,
+        "sharpe": 0.27161630286646415,
+        "samples": 3087,
+        "trades": 338,
+        "top5_concentration": 0.08974664238506264,
+        "first_half_return": 0.7772833771495946,
+        "second_half_return": -0.11285230392988932,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on NASDAQ Composite. Return 57.67%, drawdown 66.36%, Sharpe 0.27, top-5 concentration 9.0%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-039",
+      "title": "aggressive z-score mean reversion on NASDAQ Composite",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 1.5434067482872087,
+        "max_drawdown": 0.6729196791861751,
+        "sharpe": 0.4060441651917521,
+        "samples": 3087,
+        "trades": 466,
+        "top5_concentration": 0.07365158124652373,
+        "first_half_return": 0.8297371477862605,
+        "second_half_return": 0.3900394115976631,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on NASDAQ Composite. Return 154.34%, drawdown 67.29%, Sharpe 0.41, top-5 concentration 7.4%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-040",
+      "title": "pair spread mean reversion on NASDAQ Composite",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.40244444255504463,
+        "max_drawdown": 0.709995999446618,
+        "sharpe": 0.23913350997856334,
+        "samples": 3087,
+        "trades": 338,
+        "top5_concentration": 0.06991590653101173,
+        "first_half_return": 0.858040045849263,
+        "second_half_return": -0.24520225186318922,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on NASDAQ Composite. Return 40.24%, drawdown 71.00%, Sharpe 0.24, top-5 concentration 7.0%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-041",
+      "title": "moving-average crossover on NASDAQ Composite",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 22.762168687472524,
+        "max_drawdown": 0.5867691289079456,
+        "sharpe": 0.8320199310035932,
+        "samples": 3087,
+        "trades": 20,
+        "top5_concentration": 0.03694819737106641,
+        "first_half_return": 3.153602942172016,
+        "second_half_return": 4.7208570530929945,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on NASDAQ Composite. Return 2276.22%, drawdown 58.68%, Sharpe 0.83, top-5 concentration 3.7%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-042",
+      "title": "dual breakout trend on NASDAQ Composite",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 15.214102849385199,
+        "max_drawdown": 0.7044204252771686,
+        "sharpe": 0.7519886312307295,
+        "samples": 3087,
+        "trades": 14,
+        "top5_concentration": 0.03558635109030585,
+        "first_half_return": 2.415815523663584,
+        "second_half_return": 3.746773570486888,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 58,
+        "verdict": "RETEST",
+        "risks": [
+          "low trade count",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: low trade count, drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on NASDAQ Composite. Return 1521.41%, drawdown 70.44%, Sharpe 0.75, top-5 concentration 3.6%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-043",
+      "title": "channel breakout on NASDAQ Composite",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.3817233397838091,
+        "max_drawdown": 0.3727432956849944,
+        "sharpe": 0.2431456783212871,
+        "samples": 3087,
+        "trades": 300,
+        "top5_concentration": 0.13505788947705635,
+        "first_half_return": -0.033892793960421774,
+        "second_half_return": 0.43019670192502857,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on NASDAQ Composite. Return 38.17%, drawdown 37.27%, Sharpe 0.24, top-5 concentration 13.5%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-044",
+      "title": "55-day expansion breakout on NASDAQ Composite",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.3817233397838091,
+        "max_drawdown": 0.3727432956849944,
+        "sharpe": 0.2431456783212871,
+        "samples": 3087,
+        "trades": 300,
+        "top5_concentration": 0.13505788947705635,
+        "first_half_return": -0.033892793960421774,
+        "second_half_return": 0.43019670192502857,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on NASDAQ Composite. Return 38.17%, drawdown 37.27%, Sharpe 0.24, top-5 concentration 13.5%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-045",
+      "title": "positive drift carry proxy on NASDAQ Composite",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 1.8785690040267018,
+        "max_drawdown": 0.6855998893350305,
+        "sharpe": 0.44257080037610574,
+        "samples": 3087,
+        "trades": 104,
+        "top5_concentration": 0.05356905340266854,
+        "first_half_return": 2.0931944880361613,
+        "second_half_return": -0.06938635279468641,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on NASDAQ Composite. Return 187.86%, drawdown 68.56%, Sharpe 0.44, top-5 concentration 5.4%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-046",
+      "title": "low-vol carry proxy on NASDAQ Composite",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.9332117770581383,
+        "max_drawdown": 0.32298247262435853,
+        "sharpe": 0.3943277808394638,
+        "samples": 3087,
+        "trades": 24,
+        "top5_concentration": 0.09790887654468618,
+        "first_half_return": 1.195557500584819,
+        "second_half_return": -0.11948934311982073,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on NASDAQ Composite. Return 93.32%, drawdown 32.30%, Sharpe 0.39, top-5 concentration 9.8%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-047",
+      "title": "range grid proxy on NASDAQ Composite",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.2612971415929499,
+        "max_drawdown": 0.6643512518721173,
+        "sharpe": 0.20504883454215306,
+        "samples": 3087,
+        "trades": 512,
+        "top5_concentration": 0.06234782048627774,
+        "first_half_return": 0.30397002153877684,
+        "second_half_return": -0.03272535352881123,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on NASDAQ Composite. Return 26.13%, drawdown 66.44%, Sharpe 0.21, top-5 concentration 6.2%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-048",
+      "title": "tight crypto grid proxy on NASDAQ Composite",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "NASDAQ Composite",
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.7338795504176192,
+        "max_drawdown": 0.8071033814667417,
+        "sharpe": -0.30227040556815943,
+        "samples": 3087,
+        "trades": 592,
+        "top5_concentration": 0.08265938876992983,
+        "first_half_return": -0.5644865403521275,
+        "second_half_return": -0.388950114658802,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on NASDAQ Composite. Return -73.39%, drawdown 80.71%, Sharpe -0.30, top-5 concentration 8.3%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-049",
+      "title": "60/20 trend momentum on CBOE Volatility Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.9922323141733588,
+        "max_drawdown": 0.9974476328043304,
+        "sharpe": -0.22240868205748565,
+        "samples": 2153,
+        "trades": 218,
+        "top5_concentration": 0.11666713466486821,
+        "first_half_return": -0.7486013300536805,
+        "second_half_return": -0.9691021204356417,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on CBOE Volatility Index. Return -99.22%, drawdown 99.74%, Sharpe -0.22, top-5 concentration 11.7%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-050",
+      "title": "120/40 trend momentum on CBOE Volatility Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.9960912719299758,
+        "max_drawdown": 0.9978758748484818,
+        "sharpe": -0.35512068305227484,
+        "samples": 2153,
+        "trades": 191,
+        "top5_concentration": 0.11756348391558134,
+        "first_half_return": -0.921751722934801,
+        "second_half_return": -0.9500471036983045,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on CBOE Volatility Index. Return -99.61%, drawdown 99.79%, Sharpe -0.36, top-5 concentration 11.8%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-051",
+      "title": "90-day breakout momentum on CBOE Volatility Index",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.9938560919293552,
+        "max_drawdown": 0.9964870360059354,
+        "sharpe": -0.28787571332961814,
+        "samples": 2153,
+        "trades": 190,
+        "top5_concentration": 0.11566304714455175,
+        "first_half_return": -0.9492948229313203,
+        "second_half_return": -0.8788307540604207,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on CBOE Volatility Index. Return -99.39%, drawdown 99.65%, Sharpe -0.29, top-5 concentration 11.6%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-052",
+      "title": "drawdown value proxy on CBOE Volatility Index",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 13.662534525486489,
+        "max_drawdown": 0.7695783085960605,
+        "sharpe": 0.802249670655356,
+        "samples": 2153,
+        "trades": 121,
+        "top5_concentration": 0.054524426215860275,
+        "first_half_return": 2.176650319279251,
+        "second_half_return": 3.6157219246005345,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on CBOE Volatility Index. Return 1366.25%, drawdown 76.96%, Sharpe 0.80, top-5 concentration 5.5%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-053",
+      "title": "deep mean-reversion value proxy on CBOE Volatility Index",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 2.3755597360026637,
+        "max_drawdown": 0.7485486440198302,
+        "sharpe": 0.6454252194450668,
+        "samples": 2153,
+        "trades": 103,
+        "top5_concentration": 0.05672183474717208,
+        "first_half_return": 1.6089772715997723,
+        "second_half_return": 0.29382489174880444,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on CBOE Volatility Index. Return 237.56%, drawdown 74.85%, Sharpe 0.65, top-5 concentration 5.7%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-054",
+      "title": "z-score mean reversion on CBOE Volatility Index",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 16.74175288457578,
+        "max_drawdown": 0.43309870461066147,
+        "sharpe": 1.0123803612419389,
+        "samples": 2153,
+        "trades": 278,
+        "top5_concentration": 0.10748341497979534,
+        "first_half_return": 2.857293823761999,
+        "second_half_return": 3.5995336873954606,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on CBOE Volatility Index. Return 1674.18%, drawdown 43.31%, Sharpe 1.01, top-5 concentration 10.7%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-055",
+      "title": "aggressive z-score mean reversion on CBOE Volatility Index",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 11.645579476746315,
+        "max_drawdown": 0.5219430658212862,
+        "sharpe": 0.8235637664281829,
+        "samples": 2153,
+        "trades": 410,
+        "top5_concentration": 0.08080240355752295,
+        "first_half_return": 1.8139577892893382,
+        "second_half_return": 3.493876747149052,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on CBOE Volatility Index. Return 1164.56%, drawdown 52.19%, Sharpe 0.82, top-5 concentration 8.1%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-056",
+      "title": "pair spread mean reversion on CBOE Volatility Index",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 34.57615333894834,
+        "max_drawdown": 0.3823365702285223,
+        "sharpe": 1.0583636044439244,
+        "samples": 2153,
+        "trades": 306,
+        "top5_concentration": 0.08714412056463174,
+        "first_half_return": 4.75507962165673,
+        "second_half_return": 5.181696115041237,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on CBOE Volatility Index. Return 3457.62%, drawdown 38.23%, Sharpe 1.06, top-5 concentration 8.7%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-057",
+      "title": "moving-average crossover on CBOE Volatility Index",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.9858352768667211,
+        "max_drawdown": 0.9920639327163576,
+        "sharpe": -0.22660045845065688,
+        "samples": 2153,
+        "trades": 32,
+        "top5_concentration": 0.09164671584406282,
+        "first_half_return": -0.8409236199787553,
+        "second_half_return": -0.9109564654954612,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on CBOE Volatility Index. Return -98.58%, drawdown 99.21%, Sharpe -0.23, top-5 concentration 9.2%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-058",
+      "title": "dual breakout trend on CBOE Volatility Index",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.9191781007469891,
+        "max_drawdown": 0.9613021617459939,
+        "sharpe": 0.03597570139756522,
+        "samples": 2153,
+        "trades": 18,
+        "top5_concentration": 0.11122943977453018,
+        "first_half_return": -0.7406884769597216,
+        "second_half_return": -0.6883212195685696,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on CBOE Volatility Index. Return -91.92%, drawdown 96.13%, Sharpe 0.04, top-5 concentration 11.1%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-059",
+      "title": "channel breakout on CBOE Volatility Index",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.5053690547960661,
+        "max_drawdown": 0.7825206574793079,
+        "sharpe": 0.030752008583075575,
+        "samples": 2153,
+        "trades": 90,
+        "top5_concentration": 0.5522230468268204,
+        "first_half_return": 0.7972607639178235,
+        "second_half_return": -0.7247862106967191,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 8,
+        "verdict": "KILL",
+        "risks": [
+          "top-winner concentration",
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "rare-event dependency"
+        ],
+        "why": "KILL: top-winner concentration, second-half decay, drawdown mismatch, weak risk-adjusted return, rare-event dependency.",
+        "next_test": "Remove top winners and rerun the equity curve.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on CBOE Volatility Index. Return -50.54%, drawdown 78.25%, Sharpe 0.03, top-5 concentration 55.2%. Verdict KILL. Next test: Remove top winners and rerun the equity curve."
+    },
+    {
+      "id": "BA-BENCH-060",
+      "title": "55-day expansion breakout on CBOE Volatility Index",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.5053690547960661,
+        "max_drawdown": 0.7825206574793079,
+        "sharpe": 0.030752008583075575,
+        "samples": 2153,
+        "trades": 90,
+        "top5_concentration": 0.5522230468268204,
+        "first_half_return": 0.7972607639178235,
+        "second_half_return": -0.7247862106967191,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 8,
+        "verdict": "KILL",
+        "risks": [
+          "top-winner concentration",
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "rare-event dependency"
+        ],
+        "why": "KILL: top-winner concentration, second-half decay, drawdown mismatch, weak risk-adjusted return, rare-event dependency.",
+        "next_test": "Remove top winners and rerun the equity curve.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on CBOE Volatility Index. Return -50.54%, drawdown 78.25%, Sharpe 0.03, top-5 concentration 55.2%. Verdict KILL. Next test: Remove top winners and rerun the equity curve."
+    },
+    {
+      "id": "BA-BENCH-061",
+      "title": "positive drift carry proxy on CBOE Volatility Index",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "samples": 2153,
+        "trades": 0,
+        "top5_concentration": 0.0,
+        "first_half_return": 0.0,
+        "second_half_return": 0.0,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "low trade count",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: low trade count, weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on CBOE Volatility Index. Return 0.00%, drawdown 0.00%, Sharpe 0.00, top-5 concentration 0.0%. Verdict RETEST. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-062",
+      "title": "low-vol carry proxy on CBOE Volatility Index",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.0,
+        "max_drawdown": 0.0,
+        "sharpe": 0.0,
+        "samples": 2153,
+        "trades": 0,
+        "top5_concentration": 0.0,
+        "first_half_return": 0.0,
+        "second_half_return": 0.0,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "low trade count",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: low trade count, weak risk-adjusted return.",
+        "next_test": "Compare against a simple benchmark and run parameter perturbation.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on CBOE Volatility Index. Return 0.00%, drawdown 0.00%, Sharpe 0.00, top-5 concentration 0.0%. Verdict RETEST. Next test: Compare against a simple benchmark and run parameter perturbation."
+    },
+    {
+      "id": "BA-BENCH-063",
+      "title": "range grid proxy on CBOE Volatility Index",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 74.21974285523909,
+        "max_drawdown": 0.4324645610465926,
+        "sharpe": 1.0877983509126192,
+        "samples": 2153,
+        "trades": 441,
+        "top5_concentration": 0.2016079884993007,
+        "first_half_return": 10.012605674979861,
+        "second_half_return": 5.830331083781102,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on CBOE Volatility Index. Return 7421.97%, drawdown 43.25%, Sharpe 1.09, top-5 concentration 20.2%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-064",
+      "title": "tight crypto grid proxy on CBOE Volatility Index",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "CBOE Volatility Index",
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-02",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 4.884655725057028,
+        "max_drawdown": 0.46919106086753215,
+        "sharpe": 0.6672533062905118,
+        "samples": 2153,
+        "trades": 385,
+        "top5_concentration": 0.19833352636366594,
+        "first_half_return": 2.466096290017865,
+        "second_half_return": 0.6977761818113535,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on CBOE Volatility Index. Return 488.47%, drawdown 46.92%, Sharpe 0.67, top-5 concentration 19.8%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-065",
+      "title": "60/20 trend momentum on WTI Crude Oil",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.06160228098370246,
+        "max_drawdown": 0.6829487457289185,
+        "sharpe": 0.1613102226309323,
+        "samples": 3087,
+        "trades": 205,
+        "top5_concentration": 0.05594563695507996,
+        "first_half_return": -0.4001109556316548,
+        "second_half_return": 0.5642854754988667,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on WTI Crude Oil. Return -6.16%, drawdown 68.29%, Sharpe 0.16, top-5 concentration 5.6%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-066",
+      "title": "120/40 trend momentum on WTI Crude Oil",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.27330379536015115,
+        "max_drawdown": 0.7264631586851431,
+        "sharpe": 0.10818144941407692,
+        "samples": 3087,
+        "trades": 176,
+        "top5_concentration": 0.058025389496429616,
+        "first_half_return": -0.554995429797006,
+        "second_half_return": 0.6330084077751363,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on WTI Crude Oil. Return -27.33%, drawdown 72.65%, Sharpe 0.11, top-5 concentration 5.8%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-067",
+      "title": "90-day breakout momentum on WTI Crude Oil",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.8930977638720057,
+        "max_drawdown": 0.5186312232290977,
+        "sharpe": 0.3234427781874138,
+        "samples": 3087,
+        "trades": 188,
+        "top5_concentration": 0.05030039873035125,
+        "first_half_return": 0.30724245725718125,
+        "second_half_return": 0.4481611680851081,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on WTI Crude Oil. Return 89.31%, drawdown 51.86%, Sharpe 0.32, top-5 concentration 5.0%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-068",
+      "title": "drawdown value proxy on WTI Crude Oil",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.3132272625417165,
+        "max_drawdown": 0.7661444235789665,
+        "sharpe": 0.25888515736821066,
+        "samples": 3087,
+        "trades": 143,
+        "top5_concentration": 0.039427430194219015,
+        "first_half_return": 0.725434082348144,
+        "second_half_return": -0.23890035790034725,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on WTI Crude Oil. Return 31.32%, drawdown 76.61%, Sharpe 0.26, top-5 concentration 3.9%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-069",
+      "title": "deep mean-reversion value proxy on WTI Crude Oil",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 3.8989350773280744,
+        "max_drawdown": 0.5677627513437287,
+        "sharpe": 0.5206177767975831,
+        "samples": 3087,
+        "trades": 127,
+        "top5_concentration": 0.04142890899028932,
+        "first_half_return": 2.638100311143621,
+        "second_half_return": 0.34656404671484164,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on WTI Crude Oil. Return 389.89%, drawdown 56.78%, Sharpe 0.52, top-5 concentration 4.1%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-070",
+      "title": "z-score mean reversion on WTI Crude Oil",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.1605653834221792,
+        "max_drawdown": 0.4173881943035267,
+        "sharpe": 0.18024710031895314,
+        "samples": 3087,
+        "trades": 337,
+        "top5_concentration": 0.08432453968950958,
+        "first_half_return": 0.2409243315070515,
+        "second_half_return": -0.06475733132517181,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on WTI Crude Oil. Return 16.06%, drawdown 41.74%, Sharpe 0.18, top-5 concentration 8.4%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-071",
+      "title": "aggressive z-score mean reversion on WTI Crude Oil",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.6715665568822813,
+        "max_drawdown": 0.41064625514670494,
+        "sharpe": 0.2877569484789636,
+        "samples": 3087,
+        "trades": 473,
+        "top5_concentration": 0.07096617916298366,
+        "first_half_return": -0.09981136679988534,
+        "second_half_return": 0.856906980640229,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on WTI Crude Oil. Return 67.16%, drawdown 41.06%, Sharpe 0.29, top-5 concentration 7.1%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-072",
+      "title": "pair spread mean reversion on WTI Crude Oil",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.1686822833510988,
+        "max_drawdown": 0.5882384290468646,
+        "sharpe": 0.19427592761599474,
+        "samples": 3087,
+        "trades": 377,
+        "top5_concentration": 0.068570144077128,
+        "first_half_return": 0.2437222677540971,
+        "second_half_return": -0.060335001108006714,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on WTI Crude Oil. Return 16.87%, drawdown 58.82%, Sharpe 0.19, top-5 concentration 6.9%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-073",
+      "title": "moving-average crossover on WTI Crude Oil",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.05245190614455075,
+        "max_drawdown": 0.766018098794931,
+        "sharpe": 0.21073676914825137,
+        "samples": 3087,
+        "trades": 37,
+        "top5_concentration": 0.04467022617352302,
+        "first_half_return": 1.0410642337163276,
+        "second_half_return": -0.48436120296505003,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on WTI Crude Oil. Return 5.25%, drawdown 76.60%, Sharpe 0.21, top-5 concentration 4.5%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-074",
+      "title": "dual breakout trend on WTI Crude Oil",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.7257169259424772,
+        "max_drawdown": 0.8152424483305356,
+        "sharpe": -0.06252506576458577,
+        "samples": 3087,
+        "trades": 23,
+        "top5_concentration": 0.0420351859280753,
+        "first_half_return": 0.1722685401250299,
+        "second_half_return": -0.7660236842760714,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on WTI Crude Oil. Return -72.57%, drawdown 81.52%, Sharpe -0.06, top-5 concentration 4.2%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-075",
+      "title": "channel breakout on WTI Crude Oil",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.5457865485165871,
+        "max_drawdown": 0.7215436077136496,
+        "sharpe": -0.3447630529868312,
+        "samples": 3087,
+        "trades": 268,
+        "top5_concentration": 0.1761882910011797,
+        "first_half_return": -0.35247018710813505,
+        "second_half_return": -0.298544341217436,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on WTI Crude Oil. Return -54.58%, drawdown 72.15%, Sharpe -0.34, top-5 concentration 17.6%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-076",
+      "title": "55-day expansion breakout on WTI Crude Oil",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.5457865485165871,
+        "max_drawdown": 0.7215436077136496,
+        "sharpe": -0.3447630529868312,
+        "samples": 3087,
+        "trades": 268,
+        "top5_concentration": 0.1761882910011797,
+        "first_half_return": -0.35247018710813505,
+        "second_half_return": -0.298544341217436,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on WTI Crude Oil. Return -54.58%, drawdown 72.15%, Sharpe -0.34, top-5 concentration 17.6%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-077",
+      "title": "positive drift carry proxy on WTI Crude Oil",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.21241524648755805,
+        "max_drawdown": 0.7024243106659468,
+        "sharpe": 0.061916094467457064,
+        "samples": 3087,
+        "trades": 79,
+        "top5_concentration": 0.07307103120113184,
+        "first_half_return": 0.17012383405000553,
+        "second_half_return": -0.3269218773311614,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on WTI Crude Oil. Return -21.24%, drawdown 70.24%, Sharpe 0.06, top-5 concentration 7.3%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-078",
+      "title": "low-vol carry proxy on WTI Crude Oil",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.352576410877376,
+        "max_drawdown": 0.5617974758161239,
+        "sharpe": -0.09109592217532833,
+        "samples": 3087,
+        "trades": 17,
+        "top5_concentration": 0.10198817848412553,
+        "first_half_return": 0.004228485952135985,
+        "second_half_return": -0.35530250517761,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on WTI Crude Oil. Return -35.26%, drawdown 56.18%, Sharpe -0.09, top-5 concentration 10.2%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-079",
+      "title": "range grid proxy on WTI Crude Oil",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.010602056052320341,
+        "max_drawdown": 0.6711685926157965,
+        "sharpe": 0.14493682741056016,
+        "samples": 3087,
+        "trades": 512,
+        "top5_concentration": 0.08593260211246251,
+        "first_half_return": 0.21789047998321465,
+        "second_half_return": -0.17020284445753253,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on WTI Crude Oil. Return 1.06%, drawdown 67.12%, Sharpe 0.14, top-5 concentration 8.6%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-080",
+      "title": "tight crypto grid proxy on WTI Crude Oil",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "WTI Crude Oil",
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.1911166848880761,
+        "max_drawdown": 0.47786575457920755,
+        "sharpe": 0.1815104264873972,
+        "samples": 3087,
+        "trades": 582,
+        "top5_concentration": 0.10075874327315282,
+        "first_half_return": 0.2187651526178298,
+        "second_half_return": -0.0226856401911123,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on WTI Crude Oil. Return 19.11%, drawdown 47.79%, Sharpe 0.18, top-5 concentration 10.1%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-081",
+      "title": "60/20 trend momentum on Gold Fixing Price",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.6310212524973478,
+        "max_drawdown": 0.6193212258379287,
+        "sharpe": 0.2844963230355862,
+        "samples": 3087,
+        "trades": 220,
+        "top5_concentration": 0.0488504029589154,
+        "first_half_return": 0.33448350089221357,
+        "second_half_return": 0.2222116282493356,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Gold Fixing Price. Return 63.10%, drawdown 61.93%, Sharpe 0.28, top-5 concentration 4.9%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-082",
+      "title": "120/40 trend momentum on Gold Fixing Price",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.48876265333080027,
+        "max_drawdown": 0.6290374783880406,
+        "sharpe": 0.2632347961361205,
+        "samples": 3087,
+        "trades": 134,
+        "top5_concentration": 0.05627986180749975,
+        "first_half_return": 0.8405952590585011,
+        "second_half_return": -0.19115153317719025,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Gold Fixing Price. Return 48.88%, drawdown 62.90%, Sharpe 0.26, top-5 concentration 5.6%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-083",
+      "title": "90-day breakout momentum on Gold Fixing Price",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 2.2431381084481417,
+        "max_drawdown": 0.6021494365148251,
+        "sharpe": 0.45570337037078434,
+        "samples": 3087,
+        "trades": 178,
+        "top5_concentration": 0.05576187096197389,
+        "first_half_return": 1.4665019933549552,
+        "second_half_return": 0.3148734998737235,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on Gold Fixing Price. Return 224.31%, drawdown 60.21%, Sharpe 0.46, top-5 concentration 5.6%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-084",
+      "title": "drawdown value proxy on Gold Fixing Price",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.36007707464182226,
+        "max_drawdown": 0.8820808279989626,
+        "sharpe": 0.12826441302920313,
+        "samples": 3087,
+        "trades": 141,
+        "top5_concentration": 0.039213205618049016,
+        "first_half_return": 1.5972820260740783,
+        "second_half_return": -0.7536182367051405,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on Gold Fixing Price. Return -36.01%, drawdown 88.21%, Sharpe 0.13, top-5 concentration 3.9%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-085",
+      "title": "deep mean-reversion value proxy on Gold Fixing Price",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "deep mean-reversion value proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "threshold": -0.16
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.5660062218813647,
+        "max_drawdown": 0.8808293071086548,
+        "sharpe": 0.04121313289401172,
+        "samples": 3087,
+        "trades": 93,
+        "top5_concentration": 0.041102383696373694,
+        "first_half_return": 0.9645800727074514,
+        "second_half_return": -0.7790908173467654,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on Gold Fixing Price. Return -56.60%, drawdown 88.08%, Sharpe 0.04, top-5 concentration 4.1%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-086",
+      "title": "z-score mean reversion on Gold Fixing Price",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "z-score mean reversion",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 20,
+        "entry_z": -1.1
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.13670100391213535,
+        "max_drawdown": 0.6766545202197085,
+        "sharpe": 0.10498337126825343,
+        "samples": 3087,
+        "trades": 314,
+        "top5_concentration": 0.08948519850752942,
+        "first_half_return": 0.04914567132130099,
+        "second_half_return": -0.17714096365605714,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on Gold Fixing Price. Return -13.67%, drawdown 67.67%, Sharpe 0.10, top-5 concentration 8.9%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-087",
+      "title": "aggressive z-score mean reversion on Gold Fixing Price",
+      "strategy_family": "mean_reversion",
+      "strategy_variant": "aggressive z-score mean reversion",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 10,
+        "entry_z": -0.9
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.16052349345333783,
+        "max_drawdown": 0.6816298870493127,
+        "sharpe": 0.11014431633828049,
+        "samples": 3087,
+        "trades": 448,
+        "top5_concentration": 0.07610527688544849,
+        "first_half_return": -0.12191834640887189,
+        "second_half_return": -0.0439653270132464,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 46,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Prioritize cost, spread, turnover, and tail-loss checks because small edges vanish quickly."
+      },
+      "memo_seed": "Audit mean_reversion case on Gold Fixing Price. Return -16.05%, drawdown 68.16%, Sharpe 0.11, top-5 concentration 7.6%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-088",
+      "title": "pair spread mean reversion on Gold Fixing Price",
+      "strategy_family": "pairs_stat_arb",
+      "strategy_variant": "pair spread mean reversion",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "entry_z": -0.8
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.15596709424239186,
+        "max_drawdown": 0.7029299854871254,
+        "sharpe": 0.19777362265585302,
+        "samples": 3087,
+        "trades": 314,
+        "top5_concentration": 0.07037371714706663,
+        "first_half_return": 0.18410400245683012,
+        "second_half_return": -0.023762193317525826,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Audit spread stability, formation/test separation, and whether the apparent edge is just noisy mean reversion."
+      },
+      "memo_seed": "Audit pairs_stat_arb case on Gold Fixing Price. Return 15.60%, drawdown 70.29%, Sharpe 0.20, top-5 concentration 7.0%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-089",
+      "title": "moving-average crossover on Gold Fixing Price",
+      "strategy_family": "trend_following",
+      "strategy_variant": "moving-average crossover",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 30,
+        "slow": 120
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 3.2345524171885423,
+        "max_drawdown": 0.4907784582204311,
+        "sharpe": 0.5082191991195514,
+        "samples": 3087,
+        "trades": 26,
+        "top5_concentration": 0.04839614174284167,
+        "first_half_return": 1.9393611060966767,
+        "second_half_return": 0.44063701748160145,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on Gold Fixing Price. Return 323.46%, drawdown 49.08%, Sharpe 0.51, top-5 concentration 4.8%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-090",
+      "title": "dual breakout trend on Gold Fixing Price",
+      "strategy_family": "trend_following",
+      "strategy_variant": "dual breakout trend",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 3.6583469030021547,
+        "max_drawdown": 0.6069852516091145,
+        "sharpe": 0.522419364741847,
+        "samples": 3087,
+        "trades": 18,
+        "top5_concentration": 0.04645993400615672,
+        "first_half_return": 3.323424008241968,
+        "second_half_return": 0.07746704790501835,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 52,
+        "verdict": "RETEST",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: second-half decay, drawdown mismatch.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Inspect sideways-market whipsaws and whether performance comes from one extended trend."
+      },
+      "memo_seed": "Audit trend_following case on Gold Fixing Price. Return 365.83%, drawdown 60.70%, Sharpe 0.52, top-5 concentration 4.6%. Verdict RETEST. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-091",
+      "title": "channel breakout on Gold Fixing Price",
+      "strategy_family": "breakout",
+      "strategy_variant": "channel breakout",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.4441105097162802,
+        "max_drawdown": 0.6245752586704627,
+        "sharpe": -0.262411444325307,
+        "samples": 3087,
+        "trades": 296,
+        "top5_concentration": 0.1388108356248699,
+        "first_half_return": -0.3331142927223626,
+        "second_half_return": -0.16643963993024546,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on Gold Fixing Price. Return -44.41%, drawdown 62.46%, Sharpe -0.26, top-5 concentration 13.9%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-092",
+      "title": "55-day expansion breakout on Gold Fixing Price",
+      "strategy_family": "breakout",
+      "strategy_variant": "55-day expansion breakout",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 55
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": -0.4441105097162802,
+        "max_drawdown": 0.6245752586704627,
+        "sharpe": -0.262411444325307,
+        "samples": 3087,
+        "trades": 296,
+        "top5_concentration": 0.1388108356248699,
+        "first_half_return": -0.3331142927223626,
+        "second_half_return": -0.16643963993024546,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 56,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "RETEST: drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Remove top winners and test whether the curve survives without rare breakout events."
+      },
+      "memo_seed": "Audit breakout case on Gold Fixing Price. Return -44.41%, drawdown 62.46%, Sharpe -0.26, top-5 concentration 13.9%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-093",
+      "title": "positive drift carry proxy on Gold Fixing Price",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "positive drift carry proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 80,
+        "vol_cap": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 5.254095229702385,
+        "max_drawdown": 0.4919076262049954,
+        "sharpe": 0.6198507510052305,
+        "samples": 3087,
+        "trades": 121,
+        "top5_concentration": 0.049564071287585866,
+        "first_half_return": 2.1109898414521906,
+        "second_half_return": 1.0103232567236624,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on Gold Fixing Price. Return 525.41%, drawdown 49.19%, Sharpe 0.62, top-5 concentration 5.0%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-094",
+      "title": "low-vol carry proxy on Gold Fixing Price",
+      "strategy_family": "carry_proxy",
+      "strategy_variant": "low-vol carry proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "vol_cap": 0.028
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 1.5752540604376701,
+        "max_drawdown": 0.36850669389899193,
+        "sharpe": 0.44509434122479924,
+        "samples": 3087,
+        "trades": 60,
+        "top5_concentration": 0.0916272186770263,
+        "first_half_return": 0.7173092690858014,
+        "second_half_return": 0.49958665384051093,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Stress funding, gap risk, liquidity, and correlation spikes across regimes."
+      },
+      "memo_seed": "Audit carry_proxy case on Gold Fixing Price. Return 157.53%, drawdown 36.85%, Sharpe 0.45, top-5 concentration 9.2%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-095",
+      "title": "range grid proxy on Gold Fixing Price",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "range grid proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 18,
+        "band": 0.035
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.4611521552672979,
+        "max_drawdown": 0.5868701653869759,
+        "sharpe": 0.24860947585822943,
+        "samples": 3087,
+        "trades": 532,
+        "top5_concentration": 0.06518161325715197,
+        "first_half_return": 0.6083636868037565,
+        "second_half_return": -0.09152875854155262,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 28,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return",
+          "turnover/cost fragility"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return, turnover/cost fragility.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on Gold Fixing Price. Return 46.12%, drawdown 58.69%, Sharpe 0.25, top-5 concentration 6.5%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    },
+    {
+      "id": "BA-BENCH-096",
+      "title": "tight crypto grid proxy on Gold Fixing Price",
+      "strategy_family": "crypto_grid",
+      "strategy_variant": "tight crypto grid proxy",
+      "asset": "Gold Fixing Price",
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 12,
+        "band": 0.022
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 1.9842428053204717,
+        "max_drawdown": 0.4483633201320627,
+        "sharpe": 0.505384265274873,
+        "samples": 3087,
+        "trades": 610,
+        "top5_concentration": 0.07214823870738163,
+        "first_half_return": 0.8324636679068023,
+        "second_half_return": 0.6285413225842189,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 60,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch",
+          "turnover/cost fragility"
+        ],
+        "why": "RETEST: drawdown mismatch, turnover/cost fragility.",
+        "next_test": "Run 2x and 3x fee/slippage stress with realistic fills.",
+        "benchmark_prior": "Check whether small range profits are erased by trend breaks, fees, and liquidation-like drawdowns."
+      },
+      "memo_seed": "Audit crypto_grid case on Gold Fixing Price. Return 198.42%, drawdown 44.84%, Sharpe 0.51, top-5 concentration 7.2%. Verdict RETEST. Next test: Run 2x and 3x fee/slippage stress with realistic fills."
+    },
+    {
+      "id": "BA-BENCH-097",
+      "title": "60/20 trend momentum on USD/EUR Exchange Rate",
+      "strategy_family": "momentum",
+      "strategy_variant": "60/20 trend momentum",
+      "asset": "USD/EUR Exchange Rate",
+      "symbol": "DEXUSEU",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 60,
+        "exit": 20
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 6.991461319706889,
+        "max_drawdown": 0.5931875814920144,
+        "sharpe": 0.6714314433029438,
+        "samples": 3087,
+        "trades": 218,
+        "top5_concentration": 0.04398706410548755,
+        "first_half_return": 2.5414444364831774,
+        "second_half_return": 1.2565542007042785,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on USD/EUR Exchange Rate. Return 699.15%, drawdown 59.32%, Sharpe 0.67, top-5 concentration 4.4%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-098",
+      "title": "120/40 trend momentum on USD/EUR Exchange Rate",
+      "strategy_family": "momentum",
+      "strategy_variant": "120/40 trend momentum",
+      "asset": "USD/EUR Exchange Rate",
+      "symbol": "DEXUSEU",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 120,
+        "exit": 40
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 4.9871663032655125,
+        "max_drawdown": 0.6670024263938309,
+        "sharpe": 0.6093362183628872,
+        "samples": 3087,
+        "trades": 154,
+        "top5_concentration": 0.041985813808803125,
+        "first_half_return": 1.1371823399051921,
+        "second_half_return": 1.8014298038468288,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on USD/EUR Exchange Rate. Return 498.72%, drawdown 66.70%, Sharpe 0.61, top-5 concentration 4.2%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-099",
+      "title": "90-day breakout momentum on USD/EUR Exchange Rate",
+      "strategy_family": "momentum",
+      "strategy_variant": "90-day breakout momentum",
+      "asset": "USD/EUR Exchange Rate",
+      "symbol": "DEXUSEU",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "exit": 30
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 13.274840720589454,
+        "max_drawdown": 0.4993840163586224,
+        "sharpe": 0.8128902126931211,
+        "samples": 3087,
+        "trades": 176,
+        "top5_concentration": 0.04259344943434572,
+        "first_half_return": 2.5983265924037826,
+        "second_half_return": 2.9670775717591167,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 70,
+        "verdict": "RETEST",
+        "risks": [
+          "drawdown mismatch"
+        ],
+        "why": "RETEST: drawdown mismatch.",
+        "next_test": "Retest lower leverage and hard risk caps.",
+        "benchmark_prior": "Compare against plain momentum exposure, then test crash sensitivity and post-signal decay."
+      },
+      "memo_seed": "Audit momentum case on USD/EUR Exchange Rate. Return 1327.48%, drawdown 49.94%, Sharpe 0.81, top-5 concentration 4.3%. Verdict RETEST. Next test: Retest lower leverage and hard risk caps."
+    },
+    {
+      "id": "BA-BENCH-100",
+      "title": "drawdown value proxy on USD/EUR Exchange Rate",
+      "strategy_family": "value_proxy",
+      "strategy_variant": "drawdown value proxy",
+      "asset": "USD/EUR Exchange Rate",
+      "symbol": "DEXUSEU",
+      "source": "FRED",
+      "period": {
+        "start": "2018-01-01",
+        "end": "2026-06-15"
+      },
+      "params": {
+        "lookback": 90,
+        "threshold": -0.12
+      },
+      "costs": {
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "metrics": {
+        "total_return": 0.7321309438679509,
+        "max_drawdown": 0.6946004995452408,
+        "sharpe": 0.30779094719504957,
+        "samples": 3087,
+        "trades": 165,
+        "top5_concentration": 0.034296923475254246,
+        "first_half_return": 0.7449288664734142,
+        "second_half_return": -0.0073343520480184665,
+        "fee_bps": 2,
+        "slippage_bps": 3
+      },
+      "audit": {
+        "score": 38,
+        "verdict": "KILL",
+        "risks": [
+          "second-half decay",
+          "drawdown mismatch",
+          "weak risk-adjusted return"
+        ],
+        "why": "KILL: second-half decay, drawdown mismatch, weak risk-adjusted return.",
+        "next_test": "Freeze parameters and run walk-forward / later-period split.",
+        "benchmark_prior": "Separate true mean reversion from one-period bounce and require long underperformance tolerance."
+      },
+      "memo_seed": "Audit value_proxy case on USD/EUR Exchange Rate. Return 73.21%, drawdown 69.46%, Sharpe 0.31, top-5 concentration 3.4%. Verdict KILL. Next test: Freeze parameters and run walk-forward / later-period split."
+    }
+  ]
+}

@@ -39,12 +39,55 @@ function appendAttributionToUrl(url) {
   attributionParams.forEach((key) => {
     if (attribution[key]) target.searchParams.set(key, attribution[key]);
   });
+  if (attribution.referrer) target.searchParams.set("referrer", attribution.referrer);
   return target.toString();
 }
 
 function serializeForm(form) {
   applyAttribution(form);
   return new URLSearchParams(new FormData(form)).toString();
+}
+
+function rememberOrderDraft(form) {
+  const data = Object.fromEntries(new FormData(form).entries());
+  const draft = {
+    email: data.email || "",
+    strategy_note: data.strategy_note || "",
+    price_option: data.price_option || "",
+    main_tool: data.main_tool || "",
+    review_focus: data.review_focus || "",
+    offer: data.offer || "",
+    saved_at: new Date().toISOString(),
+  };
+  try {
+    sessionStorage.setItem("backtest-auditor-order-draft", JSON.stringify(draft));
+  } catch {
+    // Best-effort convenience only; the order flow still works without storage.
+  }
+}
+
+function applyOrderDraft() {
+  const form = document.querySelector('#payment-proof, form[name="manual-payment-proof"]');
+  if (!form) return;
+  try {
+    const draft = JSON.parse(sessionStorage.getItem("backtest-auditor-order-draft") || "{}");
+    if (!draft || typeof draft !== "object") return;
+    const email = form.querySelector('[name="email"]');
+    const strategyNote = form.querySelector('[name="strategy_note"]');
+    const orderNote = form.querySelector('[name="payment_reference"]');
+    if (email && draft.email && !email.value) email.value = draft.email;
+    if (strategyNote && draft.strategy_note && !strategyNote.value) strategyNote.value = draft.strategy_note;
+    if (orderNote && !orderNote.value) {
+      const details = [
+        draft.price_option ? `Selected offer: ${draft.price_option}` : "",
+        draft.main_tool ? `Main tool: ${draft.main_tool}` : "",
+        draft.review_focus ? `Review focus: ${draft.review_focus}` : "",
+      ].filter(Boolean).join("\n");
+      if (details) orderNote.value = details;
+    }
+  } catch {
+    // Ignore invalid drafts.
+  }
 }
 
 function buildManualFallback(form) {
@@ -70,6 +113,13 @@ async function submitLeadForm(form) {
   note.className = "form-feedback";
   if (!note.parentElement) form.parentElement.append(note);
   if (button) button.disabled = true;
+  if (isPaymentRequest) rememberOrderDraft(form);
+  if (isPaymentRequest && paymentUrl) {
+    const target = new URL(appendAttributionToUrl(paymentUrl));
+    target.searchParams.set("request_status", "order-started");
+    window.location.href = target.toString();
+    return;
+  }
   try {
     const response = await fetch("/", {
       method: "POST",
@@ -78,18 +128,25 @@ async function submitLeadForm(form) {
     });
     if (!response.ok) throw new Error(`Unexpected status ${response.status}`);
     note.textContent = isPaymentProof
-      ? "Payment proof submitted. This is the evidence trail to fulfill the first manual audit order."
+      ? "Order request submitted. We will confirm payment and review the strategy material."
       : isPaymentRequest
-        ? "Paid audit request submitted. Continue to the payment/proof page to close the order."
-        : "Submitted. We can now validate real demand instead of saving intent only in this browser.";
+        ? "Paid audit request submitted. Continue to the order page to send strategy material and payment preference."
+        : "Submitted. We will follow up with the next step.";
     form.reset();
     if (isPaymentRequest && paymentUrl) window.location.href = appendAttributionToUrl(paymentUrl);
   } catch (error) {
+    if (isPaymentRequest && paymentUrl) {
+      note.textContent = "Continue to the order page to send strategy material and payment preference.";
+      const target = new URL(appendAttributionToUrl(paymentUrl));
+      target.searchParams.set("request_status", "static-site-redirect");
+      window.location.href = target.toString();
+      return;
+    }
     const fallback = buildManualFallback(form);
     note.textContent = isPaymentProof
-      ? "Payment proof could not submit automatically. Copy the request details below and send them in the same thread or DM."
+      ? "Order request could not submit automatically. Copy the request details below and send them in the same thread or DM."
       : isPaymentRequest
-        ? "Payment request could not submit automatically. Copy the request details below and send them in the same thread or DM."
+        ? "Audit request could not submit automatically. Copy the request details below and send them in the same thread or DM."
         : "Submit failed on this static host. Copy the request details below and send them in the same thread or DM.";
     const pre = document.createElement("pre");
     pre.className = "form-fallback";
@@ -107,3 +164,5 @@ captureForms.forEach((form) => {
     await submitLeadForm(form);
   });
 });
+
+applyOrderDraft();

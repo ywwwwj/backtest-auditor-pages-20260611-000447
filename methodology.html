@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Methodology | Backtest Auditor</title>
     <meta name="description" content="How Backtest Auditor evaluates fake-strong strategy risk, supported exports, example reports, and trust boundaries." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -19,6 +17,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="./index.html">Overview</a>
         <a href="./demo.html">Demo</a>
+        <a href="./cases.html">Cases</a>
         <a href="./audit.html">$9 Audit</a>
         <a href="./app.html">Workspace</a>
       </nav>
@@ -33,6 +32,11 @@
         <p class="kicker">Methodology and trust</p>
         <h1>We do not predict returns. We audit whether a backtest deserves more research time.</h1>
         <p>Backtest Auditor is a credibility layer for research results exported from other tools. It looks for fragile patterns that often make a profitable-looking curve less trustworthy.</p>
+        <div class="hero-stats" aria-label="Methodology stats">
+          <article><span>Filters</span><strong>6 core checks</strong></article>
+          <article><span>Exports</span><strong>TradingView + CSV</strong></article>
+          <article><span>Boundary</span><strong>Audit only</strong></article>
+        </div>
       </section>
 
       <section class="market">
@@ -61,6 +65,34 @@
           <article><h3>Excel / Google Sheets</h3><p>Copy the table directly into the paste box. Keep headers in the first row and avoid merged cells.</p><code>date,equity,pnl,return</code></article>
           <article><h3>QuantConnect</h3><p>Export backtest equity, daily returns, order statistics, or result tables and use this as a pre-review before deeper research.</p><code>date,equity,return,trades</code></article>
           <article><h3>Generic CSV</h3><p>Any exported table can work if it includes equity, return, pnl, drawdown, or trade-count evidence.</p><code>date,equity,pnl,return,trades</code></article>
+        </div>
+      </section>
+
+      <section class="market evidence-engine">
+        <div class="section-head compact">
+          <p class="kicker">Professional data strategy</p>
+          <h2>How the included review becomes more professional over time</h2>
+          <p>The product should not learn from random conversations. It should learn from repeatable audit artifacts that can be checked, compared, and reused.</p>
+        </div>
+        <div class="evidence-grid">
+          <article><span>Input</span><h3>Minimum evidence standard</h3><p>Date or period, equity or returns, pnl when available, trade count, fee/slippage assumptions, and strategy notes.</p></article>
+          <article><span>Cases</span><h3>Benchmark failure corpus</h3><p>Outlier winner, cost fantasy, OOS decay, thin sample, drawdown mismatch, and missing timestamp cases become reusable comparison examples.</p></article>
+          <article><span>Memory</span><h3>Private client context</h3><p>Rulebook, risk boundary, review cadence, decisions, retest outcomes, and kill reasons are saved as customer-specific evidence.</p></article>
+          <article><span>Loop</span><h3>Learning log analysis</h3><p>Every blocked retest, unclear note, skipped task, and changed verdict is converted into a bottleneck the next review can address.</p></article>
+        </div>
+      </section>
+
+      <section class="market benchmark-corpus">
+        <div class="section-head compact">
+          <p class="kicker">Benchmark corpus</p>
+          <h2>We calibrate reviews against mainstream quant evidence, not isolated screenshots.</h2>
+          <p>These sources do not tell us what will be profitable. They give the review workflow professional reference points for factor behavior, regime stress, reporting standards, and common overfit traps.</p>
+        </div>
+        <div class="corpus-grid">
+          <article><span>Factors</span><h3>Fama-French factor data</h3><p>Market, size, value, profitability, investment, and momentum factor histories provide a baseline for asking whether a strategy is just repackaged factor exposure.</p><a class="text-link" href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">Source: Data Library</a></article>
+          <article><span>Styles</span><h3>AQR style premia</h3><p>Value, momentum, carry, defensive, and trend premia across asset classes help us stress-test whether an edge survives outside one narrow market story.</p><a class="text-link" href="https://www.aqr.com/Insights/Datasets">Source: AQR datasets</a></article>
+          <article><span>Reports</span><h3>QuantConnect backtest outputs</h3><p>Equity curves, trades, performance statistics, logs, and benchmark comparisons define the kind of evidence a serious audit should ask for.</p><a class="text-link" href="https://www.quantconnect.com/docs/v2/cloud-platform/backtesting/results">Source: Backtest results</a></article>
+          <article><span>OOS</span><h3>Community strategy monitoring</h3><p>Daily re-backtested community strategies are a useful reminder that out-of-sample behavior, decay, and maintenance matter after a beautiful first report.</p><a class="text-link" href="https://www.quantconnect.com/docs/v2/cloud-platform/community/strategies">Source: Strategies page</a></article>
         </div>
       </section>
 

@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>$9 Manual Backtest Audit | Backtest Auditor</title>
     <meta name="description" content="Get one anonymized backtest reviewed for research credibility: Continue, Retest, or Kill. No investment advice." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -55,12 +53,12 @@
           <div>
             <p class="kicker">What You Receive</p>
             <h2>A short audit pack built for one decision.</h2>
-            <p>The goal is not to prove a strategy will make money. The goal is to decide whether the current evidence deserves more research time.</p>
+            <p>The goal is not to prove a strategy will make money. The goal is to decide whether the current evidence deserves more research time. AI-assisted review is included inside the audit workflow.</p>
             <div class="deliverable-list">
               <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill with score and top reason.</p></article>
               <article><span>02</span><strong>Evidence check</strong><p>Costs, OOS decay, samples, concentration, and drawdown mismatch.</p></article>
               <article><span>03</span><strong>Next retest</strong><p>The single most useful test before changing parameters again.</p></article>
-              <article><span>04</span><strong>Research note</strong><p>What to save in your weekly learning log.</p></article>
+              <article><span>04</span><strong>Included AI note</strong><p>A skeptical research memo generated from the audit evidence and reviewed before delivery.</p></article>
             </div>
           </div>
           <form class="lead-form payment-form" id="manual-audit-request" name="manual-audit-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-payment-offer="manual-audit" data-payment-url="./payment.html">
@@ -76,7 +74,7 @@
               <label><span>Backtest export link or note</span><textarea name="strategy_note" rows="5" placeholder="Paste a shared CSV link, TradingView Strategy Tester note, QuantConnect result, or describe what you want reviewed." required></textarea></label>
             </div>
             <button class="primary" type="submit">Request $9 manual audit</button>
-            <p class="mini-note" data-payment-note>After request submission, continue to the payment/proof page. The review is research credibility feedback only.</p>
+            <p class="mini-note" data-payment-note>After request submission, continue to the order page. We provide the AI-assisted review workflow; customers only send strategy evidence.</p>
           </form>
         </div>
       </section>

@@ -1,0 +1,121 @@
+{
+  "created_at": "2026-06-22T05:59:19.082484+00:00",
+  "date_range": {
+    "start": "2018-01-01",
+    "end": "2026-06-15"
+  },
+  "purpose": "Audit calibration for fake-backtest detection, not alpha generation.",
+  "data_sources": [
+    {
+      "symbol": "SP500",
+      "source": "FRED",
+      "status": "cache",
+      "rows": 2123,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500"
+    },
+    {
+      "symbol": "DJIA",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2124,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DJIA"
+    },
+    {
+      "symbol": "NASDAQCOM",
+      "source": "FRED",
+      "status": "cache",
+      "rows": 3088,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM"
+    },
+    {
+      "symbol": "VIXCLS",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2154,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS"
+    },
+    {
+      "symbol": "DCOILWTICO",
+      "source": "FRED",
+      "status": "cache",
+      "rows": 3088,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO"
+    },
+    {
+      "symbol": "GOLDAMGBD228NLBM",
+      "source": "FRED",
+      "status": "cache",
+      "rows": 3088,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GOLDAMGBD228NLBM"
+    },
+    {
+      "symbol": "DEXUSEU",
+      "source": "FRED",
+      "status": "cache",
+      "rows": 3088,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXUSEU"
+    },
+    {
+      "symbol": "DEXJPUS",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2110,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXJPUS"
+    },
+    {
+      "symbol": "DEXCHUS",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2110,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS"
+    },
+    {
+      "symbol": "DTWEXBGS",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2108,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS"
+    },
+    {
+      "symbol": "DGS10",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2113,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10"
+    },
+    {
+      "symbol": "DGS2",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 2113,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2"
+    },
+    {
+      "symbol": "FEDFUNDS",
+      "source": "FRED",
+      "status": "downloaded",
+      "rows": 101,
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS"
+    },
+    {
+      "symbol": "BTC_BOOTSTRAP",
+      "source": "local_bootstrap",
+      "status": "cache",
+      "rows": 3088,
+      "url": ""
+    },
+    {
+      "symbol": "ETH_BOOTSTRAP",
+      "source": "local_bootstrap",
+      "status": "cache",
+      "rows": 3088,
+      "url": ""
+    }
+  ],
+  "case_count": 100,
+  "verdict_counts": {
+    "KILL": 26,
+    "RETEST": 57,
+    "CONTINUE": 17
+  }
+}

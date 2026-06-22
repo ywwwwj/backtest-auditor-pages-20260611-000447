@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "required": [
+    "verdict",
+    "trust_score",
+    "main_risks",
+    "evidence_interpretation",
+    "next_test",
+    "boundary"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "CONTINUE",
+        "RETEST",
+        "KILL"
+      ]
+    },
+    "trust_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "main_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_interpretation": {
+      "type": "string"
+    },
+    "next_test": {
+      "type": "string"
+    },
+    "boundary": {
+      "type": "string"
+    }
+  }
+}
