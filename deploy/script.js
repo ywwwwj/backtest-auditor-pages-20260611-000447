@@ -195,18 +195,76 @@ const market = {
     name: "Global validation version",
     text: "Start with Reddit algo trading threads, QuantConnect users, and TradingView strategy authors.",
     prices: [
-      ["Single audit", "$9", ["1 visual report", "Fake-backtest filters", "Markdown export"]],
-      ["Research Pro", "$29/mo", ["Strategy Workspace", "AI Research Judge", "Weekly Queue + Retest Calendar", "Kill Reason Library"]],
+      ["Single audit", "$9", ["1 visual report", "Fake-backtest filters", "Included AI-assisted review"]],
+      ["Research Pro", "$29/mo", ["Strategy Workspace", "Hosted AI Research Judge", "Weekly Queue + Retest Calendar", "Kill Reason Library"]],
       ["Desk", "$149/mo", ["5 seats", "Private strategy library", "Custom rulebook", "Custom import templates"]],
     ],
   },
 };
 
 market.global.prices = [
-  ["Single audit", "$9", ["1 visual report", "Fake-backtest filters", "Markdown export"]],
-  ["Research Pro", "$29/mo", ["Strategy Workspace", "AI Research Judge", "Weekly Queue + Retest Calendar", "Kill Reason Library"]],
+  ["Single audit", "$9", ["1 visual report", "Fake-backtest filters", "Included AI-assisted review"]],
+  ["Research Pro", "$29/mo", ["Strategy Workspace", "Hosted AI Research Judge", "Weekly Queue + Retest Calendar", "Kill Reason Library"]],
   ["Desk", "$149/mo", ["5 seats", "Private strategy library", "Custom rulebook", "Custom import templates"]],
 ];
+
+const benchmarkPriors = {
+  "Outlier winner trap": "Audit prior: remove the top winners and check whether most of the return disappears.",
+  "Cost fantasy trap": "Audit prior: run 2x and 3x fee/slippage stress before trusting headline profit.",
+  "OOS decay trap": "Audit prior: freeze parameters and compare first-half, second-half, and walk-forward behavior.",
+  "Thin sample trap": "Audit prior: require more trades or more periods before interpreting Sharpe or CAGR.",
+  "Drawdown mismatch trap": "Audit prior: compare reward to max drawdown and test lower leverage or risk caps.",
+  "No timestamp audit gap": "Audit prior: request dates before making regime, decay, or calendar retest claims.",
+  "Academic momentum factor": "Audit prior: compare the result against plain momentum exposure and test crash/regime sensitivity.",
+  "Value factor decay": "Audit prior: separate true value exposure from one-period re-rating and check long underperformance windows.",
+  "Cross-asset carry stress": "Audit prior: stress funding, gap risk, liquidity, and correlation spikes across regimes.",
+  "Trend-following whipsaw": "Audit prior: inspect sideways-market losses, turnover, and whether the strategy survives whipsaw periods.",
+  "Mean-reversion cost trap": "Audit prior: prioritize spread, slippage, fill assumptions, and trade count because small edges vanish quickly.",
+  "Pairs/stat-arb data-mining trap": "Audit prior: require formation/test split, parameter perturbation, and delisted or stale-symbol checks.",
+  "Regime one-hit wonder": "Audit prior: split by volatility, liquidity, and trend regime before calling the edge robust.",
+};
+
+const benchmarkFamilyMap = {
+  "Academic momentum factor": "momentum",
+  "Value factor decay": "value_proxy",
+  "Cross-asset carry stress": "carry_proxy",
+  "Trend-following whipsaw": "trend_following",
+  "Mean-reversion cost trap": "mean_reversion",
+  "Pairs/stat-arb data-mining trap": "mean_reversion",
+  "Regime one-hit wonder": "trend_following",
+  "Outlier winner trap": "breakout",
+  "Cost fantasy trap": "mean_reversion",
+  "OOS decay trap": "momentum",
+  "Thin sample trap": "mean_reversion",
+  "Drawdown mismatch trap": "breakout",
+  "No timestamp audit gap": "trend_following",
+};
+
+function getBenchmarkCases() {
+  return window.BACKTEST_AUDITOR_BENCHMARK_CASES?.cases || [];
+}
+
+function scoreBenchmarkCase(caseItem, context) {
+  const text = `${context.strategy.strategyName} ${context.strategy.strategyDesc} ${context.professionalDataLayer?.benchmark || ""}`.toLowerCase();
+  let score = 0;
+  const family = benchmarkFamilyMap[context.professionalDataLayer?.benchmark] || "";
+  if (family && caseItem.family === family) score += 8;
+  if (text.includes(caseItem.family.replace("_", " "))) score += 4;
+  if (text.includes("crypto") && /BTC|ETH|Crypto/i.test(caseItem.asset)) score += 3;
+  if (text.includes("oil") && /Oil/i.test(caseItem.asset)) score += 2;
+  if (text.includes("gold") && /Gold/i.test(caseItem.asset)) score += 2;
+  if (context.score < 45 && caseItem.verdict === "KILL") score += 3;
+  if (context.score >= 45 && context.score < 72 && caseItem.verdict === "RETEST") score += 3;
+  if (context.score >= 72 && caseItem.verdict === "CONTINUE") score += 2;
+  return score;
+}
+
+function retrieveBenchmarkCases(context, limit = 3) {
+  return getBenchmarkCases()
+    .map((caseItem) => ({ ...caseItem, matchScore: scoreBenchmarkCase(caseItem, context) }))
+    .sort((a, b) => b.matchScore - a.matchScore || Math.abs(a.score - context.score) - Math.abs(b.score - context.score))
+    .slice(0, limit);
+}
 
 const platformGuides = {
   "TradingView": "Export strategy tester performance or closed-trade rows, then keep date/time plus equity, net profit, or return columns. This app is the second-opinion layer after TradingView, not a TradingView replacement.",
@@ -492,8 +550,9 @@ function collectCopilotContext(report) {
     body: entry.body,
     createdAt: entry.createdAt,
   }));
-  return {
+  const context = {
     clientProfile: getClientProfile(),
+    professionalDataLayer: getProfessionalDataLayer(),
     strategy: report.form,
     score: report.audit.score,
     metrics: {
@@ -520,6 +579,8 @@ function collectCopilotContext(report) {
     })),
     killReasons: Object.values(killReasons).slice(0, 8),
   };
+  context.benchmarkMatches = retrieveBenchmarkCases(context);
+  return context;
 }
 
 function buildRuleBasedMemo(report) {
@@ -531,6 +592,8 @@ function buildRuleBasedMemo(report) {
   const latestLearning = context.learningLog[0];
   const task = context.taskRecord || {};
   const loop = context.researchLoop || {};
+  const dataLayer = context.professionalDataLayer || {};
+  const benchmarkPrior = benchmarkPriors[dataLayer.benchmark] || "Audit prior: compare the strategy against a simple baseline, then require OOS, cost, and regime evidence before trusting it.";
   return [
     `Research memo for ${context.strategy.strategyName}`,
     "",
@@ -542,11 +605,16 @@ function buildRuleBasedMemo(report) {
     "Client / research context:",
     `Profile: ${profile.name || "No profile saved"} | Tool: ${profile.tool || context.strategy.sourcePlatform || "Unknown"} | Cadence: ${profile.cadence || "Not set"}.`,
     `Goal: ${profile.goal || "No goal recorded"}. Risk boundary: ${profile.risk || "No boundary recorded"}.`,
+    `Professional data layer: ${dataLayer.evidence || "Default evidence standard"} | ${dataLayer.benchmark || "No benchmark case saved"} | ${dataLayer.costPreset || "No cost preset saved"} | ${dataLayer.regime || "Regime not recorded"}.`,
+    benchmarkPrior,
     "",
     "Why this matters:",
     failedPack.length
       ? `The professional pack failed: ${failedPack.map((item) => `${item.title} (${item.value})`).join(", ")}. These are stronger signals than a plain equity curve.`
       : "The professional pack did not show a major failure, but that is not enough for live confidence.",
+    context.benchmarkMatches?.length
+      ? `Nearest benchmark cases: ${context.benchmarkMatches.map((item) => `${item.id} ${item.family}/${item.verdict} (${item.risks.join(", ")})`).join("; ")}.`
+      : "No benchmark case index loaded yet; use the Professional Data Layer to retrieve comparable audit cases.",
     "",
     "What the workspace already learned:",
     latestLearning ? `${latestLearning.title}: ${latestLearning.body}` : "No learning log yet. Save the next decision and retest note to build memory.",
@@ -568,37 +636,14 @@ async function generateCopilotMemo() {
   if (!state.latestReport) runAudit();
   const report = state.latestReport;
   const output = $("#copilotOutput");
-  const apiKey = $("#apiKeyInput")?.value.trim();
-  output.innerHTML = `<p>Generating research memo...</p>`;
-  if (!apiKey) {
-    output.innerHTML = `<pre>${escapeHtml(buildRuleBasedMemo(report))}</pre>`;
-    return;
-  }
-  const context = collectCopilotContext(report);
-  const prompt = `You are Backtest Auditor's AI Research Judge. Use only the provided workspace context: latest audit, client profile, learning log, bottleneck analysis, version history, task record, and kill reasons. Do not give investment advice, trading recommendations, buy/sell signals, or future profitability claims. Produce a concise memo with exactly these sections: Verdict (CONTINUE/RETEST/KILL), Why This May Be Fake, What The Workspace Already Learned, Current Bottleneck, Next Test Plan, What To Save In The Learning Log. Be direct, skeptical, and focused on helping the user complete the next Research Loop faster.\n\nContext:\n${JSON.stringify(context, null, 2)}`;
-  try {
-    const response = await fetch("https://api.deepseek.com/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: "deepseek-v4-flash",
-        messages: [
-          { role: "system", content: "You are a cautious quant research assistant. You audit research process risk and help users complete research loops. You do not provide investment advice." },
-          { role: "user", content: prompt },
-        ],
-        temperature: 0.3,
-      }),
-    });
-    if (!response.ok) throw new Error(`API request failed: ${response.status}`);
-    const data = await response.json();
-    const memo = data.choices?.[0]?.message?.content || buildRuleBasedMemo(report);
-    output.innerHTML = `<pre>${escapeHtml(memo)}</pre>`;
-  } catch (error) {
-    output.innerHTML = `<pre>${escapeHtml(`${buildRuleBasedMemo(report)}\n\nAPI fallback: ${error.message}`)}</pre>`;
-  }
+  output.innerHTML = `<p>Generating included review preview...</p>`;
+  const memo = [
+    "Included AI Review Preview",
+    "Paid audits and Pro use our hosted review workflow. Customers only send strategy evidence.",
+    "",
+    buildRuleBasedMemo(report),
+  ].join("\n");
+  output.innerHTML = `<pre>${escapeHtml(memo)}</pre>`;
 }
 
 function getSavedReports() { try { return JSON.parse(localStorage.getItem("backtest-auditor-reports") || "[]"); } catch { return []; } }
@@ -612,6 +657,8 @@ function getTaskRecords() { try { return JSON.parse(localStorage.getItem("backte
 function saveTaskRecords(records) { localStorage.setItem("backtest-auditor-task-records", JSON.stringify(records)); }
 function getClientProfile() { try { return JSON.parse(localStorage.getItem("backtest-auditor-client-profile") || "{}"); } catch { return {}; } }
 function saveClientProfile(profile) { localStorage.setItem("backtest-auditor-client-profile", JSON.stringify(profile)); }
+function getProfessionalDataLayer() { try { return JSON.parse(localStorage.getItem("backtest-auditor-professional-data-layer") || "{}"); } catch { return {}; } }
+function saveProfessionalDataLayer(layer) { localStorage.setItem("backtest-auditor-professional-data-layer", JSON.stringify(layer)); }
 function getLearningEntries() { try { return JSON.parse(localStorage.getItem("backtest-auditor-learning-log") || "[]"); } catch { return []; } }
 function saveLearningEntries(entries) { localStorage.setItem("backtest-auditor-learning-log", JSON.stringify(entries.slice(0, 80))); }
 function keyName(name) { return String(name || "Untitled").trim().toLowerCase(); }
@@ -919,6 +966,44 @@ function loadClientProfile() {
   $("#clientDecisionStyle").value = profile.decisionStyle || "Skeptical and fast to kill";
 }
 
+function renderProfessionalDataLayer() {
+  const container = $("#dataQualitySummary");
+  if (!container) return;
+  const layer = getProfessionalDataLayer();
+  const fields = [
+    ["Evidence", layer.evidence || "Equity curve + trade list"],
+    ["Benchmark", layer.benchmark || "Outlier winner trap"],
+    ["Cost", layer.costPreset || "Conservative 3x stress"],
+    ["Regime", layer.regime || "Regime unknown"],
+  ];
+  container.innerHTML = fields.map(([label, value]) => `<article><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></article>`).join("");
+}
+
+function loadProfessionalDataLayer() {
+  const layer = getProfessionalDataLayer();
+  if (!$("#dataEvidence")) return;
+  $("#dataEvidence").value = layer.evidence || "Equity curve + trade list";
+  $("#dataBenchmark").value = layer.benchmark || "Outlier winner trap";
+  $("#dataCostPreset").value = layer.costPreset || "Conservative 3x stress";
+  $("#dataRegime").value = layer.regime || "Regime unknown";
+  renderProfessionalDataLayer();
+}
+
+function persistProfessionalDataLayer() {
+  const layer = {
+    evidence: $("#dataEvidence")?.value || "Equity curve + trade list",
+    benchmark: $("#dataBenchmark")?.value || "Outlier winner trap",
+    costPreset: $("#dataCostPreset")?.value || "Conservative 3x stress",
+    regime: $("#dataRegime")?.value || "Regime unknown",
+    updatedAt: new Date().toISOString(),
+  };
+  saveProfessionalDataLayer(layer);
+  addLearningEntry("Data", "Professional data layer updated", `${layer.evidence}; benchmark: ${layer.benchmark}; cost preset: ${layer.costPreset}; regime: ${layer.regime}.`, { layer });
+  renderProfessionalDataLayer();
+  renderContextLab();
+  trackEvent("save_professional_data_layer", { benchmark: layer.benchmark, costPreset: layer.costPreset, regime: layer.regime });
+}
+
 function persistClientProfile() {
   const profile = {
     name: $("#clientName")?.value.trim() || "Default research profile",
@@ -1020,6 +1105,7 @@ function renderContextLab() {
   const reports = getSavedReports();
   renderLearningLog(reports);
   renderBottleneckAnalysis(reports);
+  renderProfessionalDataLayer();
 }
 
 function renderWorkspace() {
@@ -1164,11 +1250,23 @@ function exportPaidAuditPack() {
     `- Goal: ${context.clientProfile?.goal || "No goal recorded"}`,
     `- Risk boundary: ${context.clientProfile?.risk || "No risk boundary recorded"}`,
     "",
-    "## 7. What To Save In The Learning Log",
+    "## 7. Professional Data Layer",
+    `- Primary evidence: ${context.professionalDataLayer?.evidence || "Default evidence standard"}`,
+    `- Benchmark case: ${context.professionalDataLayer?.benchmark || "No benchmark case saved"}`,
+    `- Benchmark audit prior: ${benchmarkPriors[context.professionalDataLayer?.benchmark] || "Compare against a simple baseline and require OOS, cost, and regime evidence."}`,
+    `- Cost preset: ${context.professionalDataLayer?.costPreset || "No cost preset saved"}`,
+    `- Regime coverage: ${context.professionalDataLayer?.regime || "Regime not recorded"}`,
+    "",
+    "## 8. Retrieved Benchmark Cases",
+    ...(context.benchmarkMatches?.length
+      ? context.benchmarkMatches.map((item) => `- ${item.id}: ${item.title} | ${item.verdict} ${item.score}/100 | risks: ${item.risks.join(", ")} | next: ${item.nextTest}`)
+      : ["- No benchmark cases loaded. Regenerate `benchmark-cases.js` from the training corpus."]),
+    "",
+    "## 9. What To Save In The Learning Log",
     context.taskRecord?.note ? `- Existing note: ${context.taskRecord.note}` : "- After retest, record what evidence changed the decision.",
     `- Research Loop progress: ${context.researchLoop.completedLoops}/${context.researchLoop.strategyCount} complete (${context.researchLoop.completionRate}%).`,
     "",
-    "## 8. AI Research Judge Memo",
+    "## 10. AI Research Judge Memo",
     "```text",
     memo,
     "```",
@@ -1191,13 +1289,13 @@ function renderMarket() {
 function joinWaitlist() {
   const email = $("#waitlistEmail")?.value.trim();
   if (email) trackEvent("join_waitlist", { emailDomain: email.split("@")[1] || "" });
-  $("#waitlistMessage").textContent = "Submitting to Netlify Forms. Check the submissions dashboard after deployment.";
+  $("#waitlistMessage").textContent = "Request received. The paid workflow includes hosted review, so customers do not configure models or tools.";
 }
 
 function recordPaidIntent() {
   trackEvent("paid_intent", { plan: "Pro" });
   syncLeadCaptureContext();
-  $("#waitlistMessage").textContent = "Paid intent form is ready. Submission now validates demand beyond this browser.";
+  $("#waitlistMessage").textContent = "Paid intent recorded. Pro is positioned as a hosted review workflow, not a configuration project.";
 }
 
 function recordPaymentRequest() {
@@ -1285,6 +1383,7 @@ function exportWeeklyIcs() {
 
 loadRulebook();
 loadClientProfile();
+loadProfessionalDataLayer();
 renderMarket();
 renderPlatformGuide();
 updateWizardStatus();
@@ -1318,10 +1417,12 @@ $("#saveReport").addEventListener("click", saveReport);
 $("#exportReport").addEventListener("click", exportMarkdown);
 $("#exportPaidAuditPack")?.addEventListener("click", exportPaidAuditPack);
 $("#copySummary").addEventListener("click", () => { trackEvent("copy_summary"); copySummary(); });
-$("#generateMemo").addEventListener("click", () => { trackEvent("generate_ai_memo", { hasApiKey: Boolean($("#apiKeyInput")?.value.trim()) }); generateCopilotMemo(); });
+$("#generateMemo").addEventListener("click", () => { trackEvent("generate_ai_memo", { hosted: true }); generateCopilotMemo(); });
 $("#saveRulebook").addEventListener("click", saveRulebook);
 $("#resetRulebook").addEventListener("click", () => { localStorage.setItem("backtest-auditor-rulebook", JSON.stringify(defaultRulebook)); loadRulebook(); if (state.latestReport) runAudit(); });
 $("#saveClientProfile")?.addEventListener("click", persistClientProfile);
+$("#saveProfessionalData")?.addEventListener("click", persistProfessionalDataLayer);
+["#dataEvidence", "#dataBenchmark", "#dataCostPreset", "#dataRegime"].forEach((selector) => $(selector)?.addEventListener("change", renderProfessionalDataLayer));
 $("#joinWaitlist")?.addEventListener("click", joinWaitlist);
 $("#paidIntent")?.addEventListener("click", recordPaidIntent);
 $("#paidIntentForm")?.addEventListener("submit", () => recordPaidIntent());

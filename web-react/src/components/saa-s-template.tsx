@@ -2,13 +2,14 @@ import React from "react";
 
 // Inline Button Component
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  href?: string;
   variant?: "default" | "secondary" | "ghost" | "gradient";
   size?: "default" | "sm" | "lg";
   children: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "default", size = "default", className = "", children, ...props }, ref) => {
+  ({ href, variant = "default", size = "default", className = "", children, ...props }, ref) => {
     const baseStyles = "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
     
     const variants = {
@@ -24,12 +25,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "h-12 px-8 text-base"
     };
     
+    const shared = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+
+    if (href) {
+      return (
+        <a
+          ref={ref as never}
+          href={href}
+          className={shared}
+          {...(props as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <button
-        ref={ref}
-        className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
-        {...props}
-      >
+      <button ref={ref} className={shared} {...props}>
         {children}
       </button>
     );
@@ -105,22 +117,22 @@ const Navigation = React.memo(() => {
           <div className="text-xl font-semibold text-white">Backtest Auditor</div>
           
           <div className="hidden md:flex items-center justify-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a href="#methodology" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href="../methodology.html" className="text-sm text-white/60 hover:text-white transition-colors">
               Methodology
             </a>
-            <a href="#cases" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href="../cases.html" className="text-sm text-white/60 hover:text-white transition-colors">
               Cases
             </a>
-            <a href="#workspace" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href="../app.html" className="text-sm text-white/60 hover:text-white transition-colors">
               Workspace
             </a>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button type="button" variant="ghost" size="sm">
+            <Button href="../demo.html" variant="ghost" size="sm">
               Watch demo
             </Button>
-            <Button type="button" variant="default" size="sm">
+            <Button href="../audit.html" variant="default" size="sm">
               Request audit
             </Button>
           </div>
@@ -140,31 +152,31 @@ const Navigation = React.memo(() => {
         <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 animate-[slideDown_0.3s_ease-out]">
           <div className="px-6 py-4 flex flex-col gap-4">
             <a
-              href="#methodology"
+              href="../methodology.html"
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Methodology
             </a>
             <a
-              href="#cases"
+              href="../cases.html"
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Cases
             </a>
             <a
-              href="#workspace"
+              href="../app.html"
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Workspace
             </a>
             <div className="flex flex-col gap-2 pt-4 border-t border-gray-800/50">
-              <Button type="button" variant="ghost" size="sm">
+              <Button href="../demo.html" variant="ghost" size="sm">
                 Watch demo
               </Button>
-              <Button type="button" variant="default" size="sm">
+              <Button href="../audit.html" variant="default" size="sm">
                 Request audit
               </Button>
             </div>
@@ -221,7 +233,7 @@ const Hero = React.memo(() => {
           Backtest Auditor v2 preview is live
         </span>
         <a
-          href="#cases"
+          href="../cases.html"
           className="flex items-center gap-1 text-xs hover:text-white transition-all active:scale-95 whitespace-nowrap"
           style={{ color: '#9ca3af' }}
           aria-label="Read more about the new version"
@@ -249,8 +261,8 @@ const Hero = React.memo(() => {
       </p>
 
       <div className="flex items-center gap-4 relative z-10 mb-16">
-        <Button
-          type="button"
+          <Button
+          href="../app.html"
           variant="gradient"
           size="lg"
           className="rounded-lg flex items-center justify-center"

@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Backtest Auditor | Fake Backtest Filter</title>
     <meta name="description" content="Paste a TradingView, Python, Excel, QuantConnect, or CSV backtest and decide Continue, Retest, or Kill in 10 minutes." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -20,6 +18,7 @@
         <a href="./index.html">Overview</a>
         <a href="./demo.html">Demo</a>
         <a href="./methodology.html">Methodology</a>
+        <a href="./cases.html">Cases</a>
         <a href="./audit.html">$9 Audit</a>
         <a href="./payment.html">Pay</a>
         <a href="#auditor">Auditor</a>
@@ -40,6 +39,11 @@
             <div class="hero-cta-row">
               <a class="primary hero-link" href="#pasteCsv">Paste backtest data</a>
               <a class="secondary hero-link" href="./demo.html">Watch demo first</a>
+            </div>
+            <div class="hero-stats" aria-label="Workspace stats">
+              <article><span>AI</span><strong>Hosted</strong></article>
+              <article><span>Memory</span><strong>Client profile</strong></article>
+              <article><span>Loop</span><strong>Weekly retest</strong></article>
             </div>
           </div>
 
@@ -224,14 +228,14 @@
             <div>
               <p class="kicker">AI Research Judge</p>
               <h3>Turn workspace memory into the next research move</h3>
-              <p>Memo context now includes the latest audit, client profile, learning log, bottleneck analysis, version history, and kill reasons. Not investment advice.</p>
+              <p>Hosted review is included in paid audits and Pro. Customers only send the strategy evidence; the public demo shows the same review structure as an included preview. Not investment advice.</p>
             </div>
             <div class="copilot-controls">
-              <input id="apiKeyInput" type="password" placeholder="Optional DeepSeek API key for local demo" autocomplete="off" />
-              <button class="secondary" id="generateMemo" type="button">Generate AI memo</button>
+              <div class="included-ai-note"><strong>No technical setup</strong><span>Run an audit, then generate the included review preview.</span></div>
+              <button class="secondary" id="generateMemo" type="button">Generate included review</button>
             </div>
             <div class="copilot-output" id="copilotOutput">
-              <p>Run an audit, then generate a memo. Without an API key, the app shows a rule-based preview.</p>
+              <p>Run an audit, then generate the included review preview. Paid audits and Pro use our hosted workflow, so customers do not configure models or tools.</p>
             </div>
           </section>
 
@@ -244,7 +248,7 @@
           </div>
 
           <div class="audit-cards" id="auditCards">
-            <article class="empty-state"><h3>Import a backtest first</h3><p>The MVP generates visual diagnostics, structured risk cards, next validation steps, and a strategy workspace.</p></article>
+            <article class="empty-state"><h3>Import a backtest first</h3><p>The workspace generates visual diagnostics, structured risk cards, next validation steps, and a strategy memory trail.</p></article>
           </div>
 
           <div class="report-actions">
@@ -283,8 +287,8 @@
       <section class="market case-library" id="cases">
         <div class="section-head compact">
           <p class="kicker">Fake-Strong Strategy Library</p>
-          <h2>Five backtests that look good until you audit them</h2>
-          <p>Use these cases to explain the pain before asking users to upload their own CSV.</p>
+          <h2>Eight strategy archetypes that look good until you audit them</h2>
+          <p>Use these cases to explain the pain before asking users to upload their own CSV. They are audit archetypes, not trading recommendations.</p>
         </div>
         <div class="market-grid">
           <article><h3>Outlier winner trap</h3><p>Equity curve looks strong, but top 5 winners explain most positive return.</p></article>
@@ -293,6 +297,9 @@
           <article><h3>Small sample confidence</h3><p>High Sharpe appears on too few trades or return samples to trust.</p></article>
           <article><h3>Drawdown mismatch</h3><p>Total return exists, but drawdown is too large relative to reward.</p></article>
           <article><h3>No timestamp audit gap</h3><p>Without dates, regime and decay analysis cannot be trusted.</p></article>
+          <article><h3>Factor clone illusion</h3><p>The strategy may just be momentum, value, carry, defensive, or market beta under a new label.</p></article>
+          <article><h3>Regime one-hit wonder</h3><p>A rule works in one volatility or liquidity regime, then collapses when the market state changes.</p></article>
+          <article><h3>Parameter mining trap</h3><p>Many nearby parameter choices fail, so the winning setting may be accidental.</p></article>
         </div>
       </section>
 
@@ -320,7 +327,7 @@
               <label><span>Review cadence</span><select id="clientCadence"><option>Weekly</option><option>Twice per week</option><option>Monthly</option><option>Before every strategy change</option></select></label>
               <label><span>Decision style</span><select id="clientDecisionStyle"><option>Skeptical and fast to kill</option><option>Balanced retest-first</option><option>Patient long-cycle research</option></select></label>
             </div>
-            <p class="mini-note" id="clientProfileMessage">Saved locally for this workspace. Cloud profiles come after demand validation.</p>
+            <p class="mini-note" id="clientProfileMessage">Use this profile to keep future reviews consistent. Account sync belongs in the paid workspace.</p>
           </article>
 
           <article class="learning-panel">
@@ -338,6 +345,24 @@
             <p class="kicker">Bottleneck Analysis</p>
             <h3>Why research gets stuck and how to move faster next time</h3>
             <div class="bottleneck-grid" id="bottleneckGrid"></div>
+          </article>
+
+          <article class="data-lab-panel">
+            <div class="workspace-subhead">
+              <div>
+                <p class="kicker">Professional Data Layer</p>
+                <h3>Calibrate the built-in review skill</h3>
+              </div>
+              <button class="secondary compact-action" id="saveProfessionalData" type="button">Save data layer</button>
+            </div>
+            <p>Use this to record what kind of professional evidence should guide the hosted review. This makes the skill more specific without asking customers to configure models.</p>
+            <div class="data-lab-form">
+              <label><span>Primary evidence</span><select id="dataEvidence"><option>Equity curve + trade list</option><option>Daily returns only</option><option>Closed trades export</option><option>Notebook result table</option><option>Incomplete screenshot / note</option></select></label>
+              <label><span>Benchmark case</span><select id="dataBenchmark"><option>Outlier winner trap</option><option>Cost fantasy trap</option><option>OOS decay trap</option><option>Thin sample trap</option><option>Drawdown mismatch trap</option><option>No timestamp audit gap</option><option>Academic momentum factor</option><option>Value factor decay</option><option>Cross-asset carry stress</option><option>Trend-following whipsaw</option><option>Mean-reversion cost trap</option><option>Pairs/stat-arb data-mining trap</option><option>Regime one-hit wonder</option></select></label>
+              <label><span>Cost preset</span><select id="dataCostPreset"><option>Conservative 3x stress</option><option>Crypto retail fees</option><option>US equity liquid names</option><option>Futures / FX estimate</option><option>Unknown costs flagged</option></select></label>
+              <label><span>Regime coverage</span><select id="dataRegime"><option>Multiple regimes included</option><option>One bull period only</option><option>One bear period only</option><option>Sideways period only</option><option>Regime unknown</option></select></label>
+            </div>
+            <div class="data-quality-summary" id="dataQualitySummary"></div>
           </article>
         </section>
 
@@ -372,9 +397,9 @@
 
         <section class="analytics-panel">
           <div>
-            <p class="kicker">MVP Funnel</p>
-            <h3>Local validation metrics</h3>
-            <p>Local event counts still help us see drop-off, but lead capture now submits to Netlify Forms for real validation.</p>
+            <p class="kicker">Usage Signals</p>
+            <h3>Where research momentum appears</h3>
+            <p>These browser-side signals show which actions users try first: examples, imports, saved versions, retests, payment requests, and paid intent.</p>
           </div>
           <div class="analytics-grid" id="analyticsGrid"></div>
         </section>
@@ -406,13 +431,13 @@
       </section>
 
       <section class="pricing" id="pricing">
-        <div class="section-head compact"><p class="kicker">Monetization</p><h2>Start monetization from single paid audits, then sell Pro workflow</h2></div>
+        <div class="section-head compact"><p class="kicker">Paid Workflow</p><h2>Start with one paid audit, then keep users through the weekly Pro workflow</h2></div>
         <div class="price-grid" id="priceGrid"></div>
         <div class="conversion-panel">
           <div>
-            <p class="kicker">Validation Gate</p>
+            <p class="kicker">Low-Friction Next Step</p>
             <h3>Would you pay to avoid wasting a week on a fake-strong strategy?</h3>
-            <p>Use real submission forms before building checkout. This is the cleanest way to validate whether users want early access, import help, or a weekly review workflow.</p>
+            <p>Customers should only send an export or strategy note. The AI-assisted review, evidence summary, and next-test recommendation are part of the paid workflow.</p>
           </div>
           <div class="lead-grid app-lead-grid">
             <article class="lead-card">
@@ -458,7 +483,7 @@
               </form>
             </article>
           </div>
-          <p class="mini-note" id="waitlistMessage">No payment is collected in this MVP.</p>
+          <p class="mini-note" id="waitlistMessage">Paid audits include the review workflow. Customers do not configure models or tools.</p>
         </div>
 
         <div class="manual-audit-offer app-payment-offer">
@@ -516,6 +541,7 @@
       </section>
     </main>
 
+    <script src="./benchmark-cases.js"></script>
     <script src="./script.js"></script>
     <script src="./lead-capture.js"></script>
   </body>

@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Backtest Auditor | Fake Backtest Filter</title>
     <meta name="description" content="An independent fake-backtest filter and research workspace for quant traders." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -19,6 +17,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="./demo.html">Demo</a>
         <a href="./methodology.html">Methodology</a>
+        <a href="./cases.html">Cases</a>
         <a href="./app.html">Workspace</a>
         <a href="./audit.html">$9 Audit</a>
         <a href="./payment.html">Pay</a>
@@ -36,11 +35,16 @@
         <div>
           <p class="kicker">Independent fake-backtest filter</p>
           <h1>Your backtest looks profitable. We tell you why it may be fake.</h1>
-          <p>Use TradingView, QuantConnect, Python, Excel, or any CSV export to produce results. Use Backtest Auditor as the second-opinion layer before you waste another week tuning a fake-strong strategy.</p>
+          <p>Use TradingView, QuantConnect, Python, Excel, or any CSV export to produce results. Backtest Auditor is the second-opinion layer before you waste another week tuning a fake-strong strategy.</p>
           <div class="hero-cta-row">
             <a class="primary hero-link" href="./demo.html">Watch 90-second demo</a>
             <a class="secondary hero-link" href="./app.html">Try the workspace</a>
             <a class="secondary hero-link" href="./audit.html">Request $9 audit</a>
+          </div>
+          <div class="hero-stats" aria-label="Product stats">
+            <article><span>Benchmark cases</span><strong>100</strong></article>
+            <article><span>Decision path</span><strong>Continue / Retest / Kill</strong></article>
+            <article><span>Built-in AI</span><strong>Hosted in workflow</strong></article>
           </div>
         </div>
         <aside class="hero-console">
@@ -68,7 +72,7 @@
         <div class="sales-grid">
           <article><span>01</span><h3>Auto CSV Mapper</h3><p>Paste messy exports from research tools without rebuilding a template first.</p></article>
           <article><span>02</span><h3>Fake Backtest Filters</h3><p>Catch outlier winners, cost fantasy, OOS decay, sample weakness, and drawdown mismatch.</p></article>
-          <article><span>03</span><h3>AI Research Judge</h3><p>Generate a skeptical memo from evidence, not a generic trading chatbot answer.</p></article>
+          <article><span>03</span><h3>Included AI Research Judge</h3><p>Generate a skeptical memo from evidence as part of the paid workflow, without extra setup for customers.</p></article>
           <article><span>04</span><h3>Strategy Workspace</h3><p>Save versions, change notes, verdicts, score trends, and next-test queues.</p></article>
           <article><span>05</span><h3>Retest Calendar</h3><p>Turn every weak signal into a dated research task and export weekly retests.</p></article>
           <article><span>Moat</span><h3>Failure Pattern Library</h3><p>Each Kill reason becomes private user data that gives traders a reason to return.</p></article>
@@ -82,7 +86,7 @@
         </div>
         <div class="market-grid">
           <article><h3>TradingView / QuantConnect</h3><p>They help users produce backtests. We challenge whether the result deserves trust.</p></article>
-          <article><h3>ChatGPT / DeepSeek</h3><p>They can explain. We provide structured evidence, fixed filters, history, and a research queue.</p></article>
+          <article><h3>Generic AI chats</h3><p>They can explain. We provide structured evidence, fixed filters, history, and a research queue inside one guided workflow.</p></article>
           <article><h3>Trade journals</h3><p>They help review executed trades. We help kill weak research before it reaches live testing.</p></article>
         </div>
       </section>
@@ -95,7 +99,21 @@
         <div class="market-grid">
           <article><h3>Methodology</h3><p>Top-5 concentration, cost stress, OOS decay, sample confidence, drawdown mismatch, and timestamp gaps.</p><a class="text-link" href="./methodology.html">See the filters</a></article>
           <article><h3>Supported exports</h3><p>TradingView, Python pandas, Excel, QuantConnect, and generic CSV exports can all feed the same audit workflow.</p><a class="text-link" href="./methodology.html">See import paths</a></article>
-          <article><h3>Trust boundary</h3><p>We do not predict returns or provide investment advice. We audit research credibility and missing evidence.</p><a class="text-link" href="./methodology.html">Read the boundary</a></article>
+          <article><h3>Benchmark cases</h3><p>100 labeled strategy archetypes calibrate the audit workflow across momentum, value, mean reversion, trend, breakout, carry, pairs, and grid cases.</p><a class="text-link" href="./cases.html">Open case library</a></article>
+        </div>
+      </section>
+
+      <section class="market evidence-engine">
+        <div class="section-head compact">
+          <p class="kicker">Professional Data Layer</p>
+          <h2>The skill gets sharper from structured evidence, not from vague prompts.</h2>
+          <p>Each review is calibrated against export quality, cost assumptions, market regime notes, benchmark cases, and the customer's own failure-pattern history.</p>
+        </div>
+        <div class="evidence-grid">
+          <article><span>01</span><h3>Export evidence</h3><p>TradingView, Python, Excel, QuantConnect, and CSV outputs are normalized into the same audit schema.</p></article>
+          <article><span>02</span><h3>Cost realism</h3><p>Fee, spread, and slippage presets make the review skeptical before any strategy looks impressive.</p></article>
+          <article><span>03</span><h3>Benchmark corpus</h3><p>Factor, style-premia, platform-report, and fake-strong cases train the workflow to look past headline return.</p></article>
+          <article><span>04</span><h3>Client memory</h3><p>Profile, rulebook, prior decisions, retest notes, and kill reasons make later reviews more specific.</p></article>
         </div>
       </section>
 
