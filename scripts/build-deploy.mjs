@@ -1,9 +1,11 @@
 import {
   copyFileSync,
+  cpSync,
   existsSync,
   mkdirSync,
   readFileSync,
   readdirSync,
+  rmSync,
   writeFileSync,
 } from "node:fs";
 import { spawnSync } from "node:child_process";
@@ -59,9 +61,24 @@ if (build.status !== 0) {
   process.exit(build.status ?? 1);
 }
 
+copyFileSync(join(deployDir, "v2", "index.html"), join(deployDir, "index.html"));
+rmSync(join(deployDir, "assets"), { recursive: true, force: true });
+cpSync(join(deployDir, "v2", "assets"), join(deployDir, "assets"), {
+  recursive: true,
+  force: true,
+});
+copyFileSync(join(deployDir, "v2", "audit-workspace.png"), join(deployDir, "audit-workspace.png"));
+
 for (const entry of readdirSync(join(deployDir, "v2", "assets"))) {
   if (!entry.endsWith(".js") && !entry.endsWith(".css")) continue;
   const file = join(deployDir, "v2", "assets", entry);
+  const normalized = readFileSync(file, "utf8").replace(/[ \t]+$/gm, "");
+  writeFileSync(file, normalized);
+}
+
+for (const entry of readdirSync(join(deployDir, "assets"))) {
+  if (!entry.endsWith(".js") && !entry.endsWith(".css")) continue;
+  const file = join(deployDir, "assets", entry);
   const normalized = readFileSync(file, "utf8").replace(/[ \t]+$/gm, "");
   writeFileSync(file, normalized);
 }

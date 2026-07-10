@@ -1,5 +1,9 @@
 import React from "react";
 
+const sitePath = (page: string) => (
+  window.location.pathname.includes("/v2/") ? `../${page}` : `./${page}`
+);
+
 // Inline Button Component
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
@@ -117,22 +121,22 @@ const Navigation = React.memo(() => {
           <div className="text-xl font-semibold text-white">Backtest Auditor</div>
           
           <div className="hidden md:flex items-center justify-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <a href="../methodology.html" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href={sitePath("methodology.html")} className="text-sm text-white/60 hover:text-white transition-colors">
               Methodology
             </a>
-            <a href="../cases.html" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href={sitePath("cases.html")} className="text-sm text-white/60 hover:text-white transition-colors">
               Cases
             </a>
-            <a href="../app.html" className="text-sm text-white/60 hover:text-white transition-colors">
+            <a href={sitePath("app.html")} className="text-sm text-white/60 hover:text-white transition-colors">
               Workspace
             </a>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button href="../demo.html" variant="ghost" size="sm">
+            <Button href={sitePath("demo.html")} variant="ghost" size="sm">
               Watch demo
             </Button>
-            <Button href="../audit.html" variant="default" size="sm">
+            <Button href={sitePath("audit.html")} variant="default" size="sm">
               Request audit
             </Button>
           </div>
@@ -152,31 +156,31 @@ const Navigation = React.memo(() => {
         <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800/50 animate-[slideDown_0.3s_ease-out]">
           <div className="px-6 py-4 flex flex-col gap-4">
             <a
-              href="../methodology.html"
+              href={sitePath("methodology.html")}
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Methodology
             </a>
             <a
-              href="../cases.html"
+              href={sitePath("cases.html")}
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Cases
             </a>
             <a
-              href="../app.html"
+              href={sitePath("app.html")}
               className="text-sm text-white/60 hover:text-white transition-colors py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               Workspace
             </a>
             <div className="flex flex-col gap-2 pt-4 border-t border-gray-800/50">
-              <Button href="../demo.html" variant="ghost" size="sm">
+              <Button href={sitePath("demo.html")} variant="ghost" size="sm">
                 Watch demo
               </Button>
-              <Button href="../audit.html" variant="default" size="sm">
+              <Button href={sitePath("audit.html")} variant="default" size="sm">
                 Request audit
               </Button>
             </div>
@@ -230,15 +234,15 @@ const Hero = React.memo(() => {
 
       <aside className="mb-8 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm max-w-full">
         <span className="text-xs text-center whitespace-nowrap" style={{ color: '#9ca3af' }}>
-          Backtest Auditor v2 preview is live
+          Independent backtest audit workspace
         </span>
         <a
-          href="../cases.html"
+          href={sitePath("cases.html")}
           className="flex items-center gap-1 text-xs hover:text-white transition-all active:scale-95 whitespace-nowrap"
           style={{ color: '#9ca3af' }}
           aria-label="Read more about the new version"
         >
-          See 100 benchmark cases
+          Browse 100 benchmark cases
           <ArrowRight size={12} />
         </a>
       </aside>
@@ -253,22 +257,22 @@ const Hero = React.memo(() => {
           letterSpacing: "-0.05em"
         }}
       >
-        Your backtest looks profitable. <br />We tell you why it may be fake.
+          Do not spend another week tuning a backtest you should kill.
       </h1>
 
       <p className="text-sm md:text-base text-center max-w-2xl px-6 mb-10" style={{ color: '#9ca3af' }}>
-        A React and shadcn preview of the independent fake-backtest filter for Continue, Retest, or Kill research decisions.
+        Import one result. Get a clear Continue, Retest, or Kill decision with the next test already written.
       </p>
 
       <div className="flex items-center gap-4 relative z-10 mb-16">
           <Button
-          href="../app.html"
+          href={sitePath("app.html?example=kill")}
           variant="gradient"
           size="lg"
           className="rounded-lg flex items-center justify-center"
           aria-label="Open Backtest Auditor workspace"
         >
-          Open v2 workspace
+          Run a sample audit
         </Button>
       </div>
 
@@ -291,8 +295,8 @@ const Hero = React.memo(() => {
         
         <div className="relative z-10">
           <img
-            src="https://i.postimg.cc/SKcdVTr1/Dashboard2.png"
-            alt="Dashboard preview showing analytics and metrics interface"
+            src="./audit-workspace.png"
+            alt="Backtest Auditor workspace showing a KILL audit verdict and risk checks"
             className="w-full h-auto rounded-lg shadow-2xl"
             loading="eager"
           />

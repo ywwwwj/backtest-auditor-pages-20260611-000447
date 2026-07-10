@@ -8,43 +8,36 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="landing-page">
     <header class="topbar">
       <a class="brand" href="./index.html" aria-label="Backtest Auditor">
         <span class="brand-mark">BA</span>
         <span>Backtest Auditor</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="./demo.html">Demo</a>
-        <a href="./methodology.html">Methodology</a>
-        <a href="./cases.html">Cases</a>
         <a href="./app.html">Workspace</a>
         <a href="./audit.html">$9 Audit</a>
-        <a href="./payment.html">Pay</a>
-        <a href="#bundle">5-in-1</a>
-        <a href="#pricing">Pricing</a>
       </nav>
       <div class="toolbar">
-        <a class="secondary" href="./demo.html">Watch demo</a>
-        <a class="primary" href="./app.html">Open app</a>
+        <a class="secondary" href="./app.html?example=kill">See an example</a>
+        <a class="primary" href="./app.html">Audit a backtest</a>
       </div>
     </header>
 
     <main>
       <section class="landing-hero">
         <div>
-          <p class="kicker">Independent fake-backtest filter</p>
-          <h1>Your backtest looks profitable. We tell you why it may be fake.</h1>
-          <p>Use TradingView, QuantConnect, Python, Excel, or any CSV export to produce results. Backtest Auditor is the second-opinion layer before you waste another week tuning a fake-strong strategy.</p>
+          <p class="kicker">Before you tune it again</p>
+          <h1>Find out whether your backtest deserves another week.</h1>
+          <p class="hero-lede">Drop in a CSV. Get one clear decision: Continue, Retest, or Kill.</p>
           <div class="hero-cta-row">
-            <a class="primary hero-link" href="./demo.html">Watch 90-second demo</a>
-            <a class="secondary hero-link" href="./app.html">Try the workspace</a>
-            <a class="secondary hero-link" href="./audit.html">Request $9 audit</a>
+            <a class="primary hero-link" href="./app.html">Audit my backtest</a>
+            <a class="secondary hero-link" href="./app.html?example=kill">See a real example</a>
           </div>
-          <div class="hero-stats" aria-label="Product stats">
-            <article><span>Benchmark cases</span><strong>100</strong></article>
-            <article><span>Decision path</span><strong>Continue / Retest / Kill</strong></article>
-            <article><span>Built-in AI</span><strong>Hosted in workflow</strong></article>
+          <div class="hero-proof" aria-label="Product proof points">
+            <span>100 benchmark cases</span>
+            <span>No API key required</span>
+            <span>Not investment advice</span>
           </div>
         </div>
         <aside class="hero-console dashboard-preview">
@@ -55,7 +48,7 @@
           <div class="console-verdict">
             <p class="kicker">Decision</p>
             <strong>KILL</strong>
-            <p>One outlier winner explains the curve. Second-half performance decays. Retest before more tuning.</p>
+            <p>One outlier winner drives the curve. Second-half performance decays.</p>
           </div>
           <div class="dashboard-chart" aria-hidden="true">
             <svg viewBox="0 0 520 200" role="img" aria-label="Equity curve preview">
@@ -70,29 +63,26 @@
             </svg>
           </div>
           <div class="console-grid">
-            <article><span>Trust</span><strong>41</strong></article>
-            <article><span>Top-5 concentration</span><strong>68%</strong></article>
-            <article><span>Next task</span><strong>Remove top winners</strong></article>
+            <article><span>Trust score</span><strong>41 / 100</strong></article>
+            <article><span>Main risk</span><strong>Top winners</strong></article>
+            <article><span>Next move</span><strong>Stress test</strong></article>
           </div>
         </aside>
       </section>
 
-      <section class="sales-board" id="bundle">
+      <section class="sales-board research-loop" id="bundle">
         <div class="section-head compact">
-          <p class="kicker">Why this is not another generic AI wrapper</p>
-          <h2>A 5-in-1 research workflow around one painful moment: deciding Continue / Retest / Kill.</h2>
+          <p class="kicker">One focused research loop</p>
+          <h2>From result to next move in three steps.</h2>
         </div>
         <div class="sales-grid">
-          <article><span>01</span><h3>Auto CSV Mapper</h3><p>Paste messy exports from research tools without rebuilding a template first.</p></article>
-          <article><span>02</span><h3>Fake Backtest Filters</h3><p>Catch outlier winners, cost fantasy, OOS decay, sample weakness, and drawdown mismatch.</p></article>
-          <article><span>03</span><h3>Included AI Research Judge</h3><p>Generate a skeptical memo from evidence as part of the paid workflow, without extra setup for customers.</p></article>
-          <article><span>04</span><h3>Strategy Workspace</h3><p>Save versions, change notes, verdicts, score trends, and next-test queues.</p></article>
-          <article><span>05</span><h3>Retest Calendar</h3><p>Turn every weak signal into a dated research task and export weekly retests.</p></article>
-          <article><span>Moat</span><h3>Failure Pattern Library</h3><p>Each Kill reason becomes private user data that gives traders a reason to return.</p></article>
+          <article><span>01</span><h3>Import</h3><p>Paste or upload a result from TradingView, Python, Excel, QuantConnect, or any CSV.</p></article>
+          <article><span>02</span><h3>Audit</h3><p>Check concentration, costs, sample strength, drawdown, and out-of-sample decay.</p></article>
+          <article><span>03</span><h3>Decide</h3><p>Save one concrete Continue, Retest, or Kill decision and the next test to run.</p></article>
         </div>
       </section>
 
-      <section class="market">
+      <section class="market deferred-content">
         <div class="section-head compact">
           <p class="kicker">Positioning</p>
           <h2>We do not replace big platforms. We audit what comes out of them.</h2>
@@ -104,7 +94,7 @@
         </div>
       </section>
 
-      <section class="market">
+      <section class="market deferred-content">
         <div class="section-head compact">
           <p class="kicker">Credibility layer</p>
           <h2>Our promise is narrow on purpose: find fragile backtests faster.</h2>
@@ -116,7 +106,7 @@
         </div>
       </section>
 
-      <section class="market evidence-engine">
+      <section class="market evidence-engine deferred-content">
         <div class="section-head compact">
           <p class="kicker">Professional Data Layer</p>
           <h2>The skill gets sharper from structured evidence, not from vague prompts.</h2>
@@ -142,7 +132,7 @@
         </div>
       </section>
 
-      <section class="pricing" id="pricing">
+      <section class="pricing deferred-content" id="pricing">
         <div class="section-head compact">
           <p class="kicker">Monetization</p>
           <h2>Sell the weekly research workflow, not more charts.</h2>
@@ -154,29 +144,23 @@
         </div>
       </section>
 
-      <section class="pricing" id="manual-audit">
+      <section class="pricing manual-audit-short" id="manual-audit">
         <div class="manual-audit-offer">
           <div>
-            <p class="kicker">Payment Validation</p>
-            <h2>Get one backtest manually audited for $9.</h2>
-            <p>Send one exported strategy result. You get a credibility review with Continue / Retest / Kill, top failure pattern, and the next test to run. This is research process feedback, not investment advice.</p>
-            <div class="deliverable-list">
-              <article><span>01</span><strong>Verdict</strong><p>Continue / Retest / Kill with score and top reason.</p></article>
-              <article><span>02</span><strong>Fake-strong risk</strong><p>Outliers, costs, OOS decay, samples, or drawdown.</p></article>
-              <article><span>03</span><strong>Next test</strong><p>The one retest that should happen before more tuning.</p></article>
-              <article><span>04</span><strong>Research note</strong><p>What to save in your future decision log.</p></article>
-            </div>
+            <p class="kicker">Need a second pair of eyes?</p>
+            <h2>Get a human credibility review for $9.</h2>
+            <p>One export in. One skeptical verdict, the main failure pattern, and the next retest out.</p>
           </div>
           <form class="lead-form payment-form" name="manual-audit-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-payment-offer="manual-audit" data-payment-url="./payment.html">
             <input type="hidden" name="form-name" value="manual-audit-request" />
             <input type="hidden" name="entry_point" value="index-manual-audit" />
             <input type="hidden" name="offer" value="manual-backtest-audit" />
             <p class="hidden-field"><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
-            <div class="manual-form-grid">
+            <div class="manual-form-grid compact-form">
               <label><span>Email</span><input type="email" name="email" placeholder="email@example.com" required /></label>
               <label><span>Price option</span><select name="price_option" required><option>$9 single audit</option><option>$29 weekly review waitlist</option></select></label>
               <label><span>Main tool</span><select name="main_tool" required><option>TradingView</option><option>Python / pandas</option><option>Excel / Google Sheets</option><option>QuantConnect</option><option>Other CSV</option></select></label>
-              <label><span>Strategy export link or note</span><textarea name="strategy_note" rows="4" placeholder="Paste a shared CSV link, describe the export, or say which example matched your situation." required></textarea></label>
+              <label><span>Strategy export link or note</span><textarea name="strategy_note" rows="3" placeholder="Paste a link or describe what needs review." required></textarea></label>
             </div>
             <button class="primary" type="submit">Request paid manual audit</button>
             <p class="mini-note" data-payment-note>After request submission, continue to the payment/proof page to close the first-order loop.</p>
@@ -184,7 +168,7 @@
         </div>
       </section>
 
-      <section class="pricing">
+      <section class="pricing deferred-content">
         <div class="section-head compact">
           <p class="kicker">Validation Capture</p>
           <h2>Turn curiosity into real demand signals before building more backend.</h2>

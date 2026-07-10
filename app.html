@@ -8,7 +8,7 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="app-page">
     <header class="topbar">
       <a class="brand" href="./index.html" aria-label="Backtest Auditor">
         <span class="brand-mark">BA</span>
@@ -16,11 +16,6 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="./index.html">Overview</a>
-        <a href="./demo.html">Demo</a>
-        <a href="./methodology.html">Methodology</a>
-        <a href="./cases.html">Cases</a>
-        <a href="./audit.html">$9 Audit</a>
-        <a href="./payment.html">Pay</a>
         <a href="#auditor">Auditor</a>
         <a href="#workspace">Workspace</a>
       </nav>
@@ -33,58 +28,41 @@
       <section class="workspace" id="auditor" aria-labelledby="auditor-title">
         <aside class="input-panel">
           <div class="panel-heading">
-            <p class="kicker">Independent fake-backtest filter</p>
-            <h1 id="auditor-title">Your platform runs the backtest. We judge whether it is worth trusting.</h1>
-            <p>Paste results from TradingView, Python, Excel, QuantConnect, or any CSV export. Backtest Auditor gives a Continue / Retest / Kill verdict before you waste another week tuning a fake-strong strategy.</p>
+            <p class="kicker">Your next research decision</p>
+            <h1 id="auditor-title">Audit a backtest in three minutes.</h1>
+            <p>Start with the example on the right, or import your own CSV when you are ready.</p>
             <div class="hero-cta-row">
-              <a class="primary hero-link" href="#pasteCsv">Paste backtest data</a>
-              <a class="secondary hero-link" href="./demo.html">Watch demo first</a>
+              <a class="primary hero-link" href="#pasteCsv">Import my CSV</a>
+              <button class="secondary hero-link" id="tryExample" type="button">Try the example</button>
             </div>
-            <div class="hero-stats" aria-label="Workspace stats">
-              <article><span>AI</span><strong>Hosted</strong></article>
-              <article><span>Memory</span><strong>Client profile</strong></article>
-              <article><span>Loop</span><strong>Weekly retest</strong></article>
-            </div>
-          </div>
-
-          <div class="mode-card">
-            <span>Launch version</span>
-            <strong id="marketName">Global validation version</strong>
-            <p id="marketCopy">Start with Reddit algo trading threads, QuantConnect users, and TradingView strategy authors.</p>
+            <p class="first-run-note"><span></span>No API key. No setup. Upload, inspect, decide.</p>
           </div>
 
           <section class="wizard-panel">
-            <p class="kicker">Import Wizard</p>
-            <h2>Get from export to verdict in 3 steps</h2>
+            <p class="kicker">Three-minute audit</p>
+            <h2>What happens next</h2>
             <div class="wizard-steps" id="wizardSteps">
               <article class="active"><span>1</span><strong>Choose source</strong><p>Pick where the backtest came from.</p></article>
               <article><span>2</span><strong>Paste or upload</strong><p>Add CSV, equity, pnl, or returns.</p></article>
               <article><span>3</span><strong>Confirm fields</strong><p>Check mapping, then run the audit.</p></article>
             </div>
-            <div class="wizard-status" id="wizardStatus">Start by choosing the source platform below.</div>
-          </section>
-
-          <section class="example-gallery">
-            <p class="kicker">Example Report Gallery</p>
-            <h2>Try a verdict without preparing a CSV</h2>
-            <div class="example-buttons">
-              <button class="example-button kill" type="button" data-example="kill"><span>KILL</span><strong>Outlier Breakout</strong><small>Looks profitable, but one winner carries it.</small></button>
-              <button class="example-button retest" type="button" data-example="retest"><span>RETEST</span><strong>Thin Mean Reversion</strong><small>Potential signal, weak evidence.</small></button>
-              <button class="example-button continue" type="button" data-example="continue"><span>CONTINUE</span><strong>Stable Momentum</strong><small>Passes first credibility layer.</small></button>
-            </div>
+            <div class="wizard-status" id="wizardStatus">Choose a source, then paste or upload your export.</div>
           </section>
 
           <form class="audit-form" id="auditForm">
+            <details class="input-options">
+              <summary>Add strategy assumptions (optional)</summary>
+              <div class="input-options-body">
             <label>
               <span>Strategy name</span>
               <input id="strategyName" type="text" value="BTC Momentum V3" />
             </label>
-            <label>
+            <label class="advanced-input">
               <span>Strategy description</span>
               <textarea id="strategyDesc" rows="4">Cross-sectional momentum with volatility filter. No explicit slippage model. Parameters were tuned on 2021-2024 data.</textarea>
             </label>
 
-            <div class="grid-two">
+            <div class="grid-two advanced-input">
               <label>
                 <span>Source platform</span>
                 <select id="sourcePlatform">
@@ -116,7 +94,7 @@
               </label>
             </div>
 
-            <div class="grid-two">
+            <div class="grid-two advanced-input">
               <label>
                 <span>Fee bps</span>
                 <input id="feeBps" type="number" min="0" step="0.1" value="4" />
@@ -126,6 +104,8 @@
                 <input id="slippageBps" type="number" min="0" step="0.1" value="8" />
               </label>
             </div>
+              </div>
+            </details>
 
             <label class="file-drop" for="csvFile">
               <span>Import backtest CSV</span>
@@ -134,9 +114,9 @@
             </label>
 
             <section class="paste-panel">
-              <p class="kicker">Low-friction input</p>
-              <h2>Paste CSV or table data</h2>
-              <p id="platformGuide">Export equity, PnL, or returns from your research tool, then paste the table here. We map common columns automatically.</p>
+              <p class="kicker">Paste or upload</p>
+              <h2>Bring your own result</h2>
+              <p id="platformGuide">Paste CSV with date and equity, PnL, or return columns. We map common fields automatically.</p>
               <textarea id="pasteCsv" rows="6" placeholder="date,equity,pnl,return,trades&#10;2024-01-01,100000,0,0,0&#10;2024-01-02,101200,1200,0.012,4"></textarea>
               <div class="actions">
                 <button class="secondary" id="usePastedCsv" type="button">Use pasted data</button>
@@ -144,23 +124,22 @@
               </div>
             </section>
 
-            <section class="mapper-panel">
+            <section class="mapper-panel advanced-input">
               <p class="kicker">Auto CSV Mapper</p>
               <h2>Detected schema</h2>
               <p>Automatically identifies date, equity, pnl, return, and trades.</p>
               <div class="schema-grid" id="schemaMapper"></div>
             </section>
 
-            <div class="actions">
-              <button class="primary" type="submit">Run audit</button>
-              <button class="secondary" id="loadSample" type="button">Load sample</button>
+            <div class="actions primary-audit-action">
+              <button class="primary" type="submit">Run my audit</button>
+              <button class="secondary" id="loadSample" type="button">Load example data</button>
             </div>
           </form>
 
-          <section class="rulebook-panel">
-            <p class="kicker">Pro Rulebook</p>
-            <h2>Personal audit rules</h2>
-            <p>Tune the audit to your own risk tolerance and research style.</p>
+          <details class="rulebook-panel advanced-panel">
+            <summary>Advanced audit settings</summary>
+            <p>Tune sample, drawdown, Sharpe, and concentration thresholds for your own research process.</p>
             <div class="rule-grid">
               <label><span>Minimum samples</span><input id="minSamples" type="number" min="10" step="5" value="60" /></label>
               <label><span>Max drawdown %</span><input id="maxDrawdownRule" type="number" min="1" step="1" value="20" /></label>
@@ -171,13 +150,13 @@
               <button class="secondary" id="saveRulebook" type="button">Save rulebook</button>
               <button class="secondary" id="resetRulebook" type="button">Reset</button>
             </div>
-          </section>
+          </details>
         </aside>
 
         <section class="report-panel" aria-live="polite">
           <div class="report-top">
             <div>
-              <p class="kicker">Audit Report</p>
+              <p class="kicker" id="reportMode">Example audit report</p>
               <h2 id="reportTitle">BTC Momentum V3</h2>
             </div>
             <div class="score-ring" id="scoreRing" style="--score: 0deg">
@@ -197,7 +176,7 @@
             <div>
               <p class="kicker">Executive Summary</p>
               <h3 id="verdictTitle">Run an audit to get a decision-ready summary</h3>
-              <p id="verdictCopy">The paid version should sell this page as a clean report users can send to a teammate, mentor, or future self.</p>
+              <p id="verdictCopy">Load an example or import your CSV to see the decision and the one next test worth running.</p>
             </div>
             <div class="verdict-stats">
               <article><span>Issues found</span><strong id="issueCount">--</strong></article>

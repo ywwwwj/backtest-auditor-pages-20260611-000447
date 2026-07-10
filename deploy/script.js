@@ -1,7 +1,7 @@
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
-const state = { rows: [], latestReport: null, rulebook: null, market: "global" };
+const state = { rows: [], latestReport: null, rulebook: null, market: "global", reportMode: "example" };
 const defaultRulebook = { minSamples: 60, maxDrawdownRule: 20, minSharpeRule: 1.2, maxConcentrationRule: 40 };
 
 const sampleCsv = `date,equity,pnl,return,trades
@@ -741,6 +741,7 @@ function updateWizardStatus(stage = "source") {
 
 function applyExample(type, options = {}) {
   const example = exampleReports[type] || exampleReports.kill;
+  state.reportMode = "example";
   $("#strategyName").value = example.name;
   $("#strategyDesc").value = example.desc;
   $("#sourcePlatform").value = example.source;
@@ -778,6 +779,9 @@ function buildVerdict(report) {
 }
 function renderReport(report) {
   syncLeadCaptureContext();
+  document.body.classList.toggle("has-user-data", state.reportMode === "your");
+  const reportMode = $("#reportMode");
+  if (reportMode) reportMode.textContent = state.reportMode === "example" ? "Example audit report" : "Your audit report";
   $("#reportTitle").textContent = report.form.strategyName;
   $("#scoreRing").style.setProperty("--score", `${report.audit.score * 3.6}deg`);
   $("#scoreValue").textContent = report.audit.score;
@@ -1281,9 +1285,12 @@ function exportPaidAuditPack() {
 }
 function renderMarket() {
   const data = market[state.market];
-  $("#marketName").textContent = data.name;
-  $("#marketCopy").textContent = data.text;
-  $("#priceGrid").innerHTML = data.prices.map(([name, price, features], index) => `<article class="price-card ${index === 1 ? "featured" : ""}"><h3>${escapeHtml(name)}</h3><span class="price">${escapeHtml(price)}</span><p>${index === 1 ? "Main offer: the recurring workspace that keeps users coming back each week." : "Designed to test willingness to pay before building heavy features."}</p><ul>${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul></article>`).join("");
+  const marketName = $("#marketName");
+  const marketCopy = $("#marketCopy");
+  const priceGrid = $("#priceGrid");
+  if (marketName) marketName.textContent = data.name;
+  if (marketCopy) marketCopy.textContent = data.text;
+  if (priceGrid) priceGrid.innerHTML = data.prices.map(([name, price, features], index) => `<article class="price-card ${index === 1 ? "featured" : ""}"><h3>${escapeHtml(name)}</h3><span class="price">${escapeHtml(price)}</span><p>${index === 1 ? "Main offer: the recurring workspace that keeps users coming back each week." : "Designed to test willingness to pay before building heavy features."}</p><ul>${features.map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul></article>`).join("");
 }
 
 function joinWaitlist() {
@@ -1389,10 +1396,11 @@ renderPlatformGuide();
 updateWizardStatus();
 renderWorkspace();
 renderAnalytics();
-$("#auditForm").addEventListener("submit", (event) => { event.preventDefault(); runAudit(); });
+$("#auditForm").addEventListener("submit", (event) => { event.preventDefault(); state.reportMode = "your"; runAudit(); });
+$("#tryExample")?.addEventListener("click", () => applyExample("kill"));
 $("#runLiveDemo")?.addEventListener("click", runLiveDemo);
-$("#loadSample").addEventListener("click", () => { trackEvent("load_sample"); state.rows = parseCsv(sampleCsv); $("#pasteCsv").value = sampleCsv; updateWizardStatus("data"); runAudit(); });
-$("#csvFile").addEventListener("change", async (event) => { const file = event.target.files?.[0]; if (!file) return; trackEvent("upload_csv", { name: file.name, size: file.size }); const text = await file.text(); state.rows = parseCsv(text); $("#pasteCsv").value = text; updateWizardStatus("data"); runAudit(); });
+$("#loadSample").addEventListener("click", () => { trackEvent("load_sample"); state.reportMode = "example"; state.rows = parseCsv(sampleCsv); $("#pasteCsv").value = sampleCsv; updateWizardStatus("data"); runAudit(); });
+$("#csvFile").addEventListener("change", async (event) => { const file = event.target.files?.[0]; if (!file) return; trackEvent("upload_csv", { name: file.name, size: file.size }); state.reportMode = "your"; const text = await file.text(); state.rows = parseCsv(text); $("#pasteCsv").value = text; updateWizardStatus("data"); runAudit(); });
 $("#sourcePlatform").addEventListener("change", () => { trackEvent("source_platform", { platform: $("#sourcePlatform").value }); renderPlatformGuide(); updateWizardStatus("source"); });
 $("#pasteCsv").addEventListener("input", () => updateWizardStatus("data"));
 $$("[data-example]").forEach((button) => button.addEventListener("click", () => applyExample(button.dataset.example)));
@@ -1400,6 +1408,7 @@ $("#usePastedCsv").addEventListener("click", () => {
   const text = $("#pasteCsv").value.trim();
   if (!text) return;
   trackEvent("paste_csv", { length: text.length });
+  state.reportMode = "your";
   state.rows = parseCsv(text);
   updateWizardStatus("data");
   runAudit();
@@ -1511,4 +1520,4 @@ $("#workspaceList").addEventListener("change", (event) => {
 $$("[data-market]").forEach((button) => button.addEventListener("click", () => { state.market = button.dataset.market; $$("[data-market]").forEach((item) => item.classList.toggle("active", item === button)); renderMarket(); }));
 
 const initialExample = new URLSearchParams(window.location.search).get("example");
-if (initialExample && exampleReports[initialExample]) applyExample(initialExample, { scroll: false });
+applyExample(initialExample && exampleReports[initialExample] ? initialExample : "kill", { scroll: false });
