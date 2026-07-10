@@ -234,7 +234,7 @@ const Hero = React.memo(() => {
 
       <aside className="mb-8 inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-full border border-gray-700 bg-gray-800/50 backdrop-blur-sm max-w-full">
         <span className="text-xs text-center whitespace-nowrap" style={{ color: '#9ca3af' }}>
-          Independent backtest audit workspace
+          Built for Strategy Tester, LEAN, Python, and CSV exports
         </span>
         <a
           href={sitePath("cases.html")}
@@ -242,7 +242,7 @@ const Hero = React.memo(() => {
           style={{ color: '#9ca3af' }}
           aria-label="Read more about the new version"
         >
-          Browse 100 benchmark cases
+          See the audit standard
           <ArrowRight size={12} />
         </a>
       </aside>
@@ -257,14 +257,14 @@ const Hero = React.memo(() => {
           letterSpacing: "-0.05em"
         }}
       >
-          Do not spend another week tuning a backtest you should kill.
+          Your backtest passed. <br />Does it survive reality?
       </h1>
 
       <p className="text-sm md:text-base text-center max-w-2xl px-6 mb-10" style={{ color: '#9ca3af' }}>
-        Import one result. Get a clear Continue, Retest, or Kill decision with the next test already written.
+        Stress costs, slippage, lookahead risk, and OOS decay before you spend another week tuning parameters.
       </p>
 
-      <div className="flex items-center gap-4 relative z-10 mb-16">
+      <div className="flex flex-col sm:flex-row items-center gap-3 relative z-10 mb-14">
           <Button
           href={sitePath("app.html?example=kill")}
           variant="gradient"
@@ -272,7 +272,10 @@ const Hero = React.memo(() => {
           className="rounded-lg flex items-center justify-center"
           aria-label="Open Backtest Auditor workspace"
         >
-          Run a sample audit
+          Stress-test a sample result
+        </Button>
+        <Button href={sitePath("app.html")} variant="ghost" size="lg" className="border border-gray-700">
+          Open the workspace
         </Button>
       </div>
 
@@ -301,6 +304,24 @@ const Hero = React.memo(() => {
             loading="eager"
           />
         </div>
+      </div>
+
+      <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-3 pb-8">
+        <article className="border border-gray-800 bg-gray-950 px-5 py-5 text-left">
+          <span className="text-xs text-emerald-300">01 / Reality costs</span>
+          <h2 className="mt-3 text-lg font-medium text-white">Would fees and slippage erase it?</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-400">Check the assumptions that polished equity curves usually hide.</p>
+        </article>
+        <article className="border border-gray-800 bg-gray-950 px-5 py-5 text-left">
+          <span className="text-xs text-amber-300">02 / False evidence</span>
+          <h2 className="mt-3 text-lg font-medium text-white">Did it learn from the future?</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-400">Flag lookahead gaps, thin samples, and second-half decay before live testing.</p>
+        </article>
+        <article className="border border-gray-800 bg-gray-950 px-5 py-5 text-left">
+          <span className="text-xs text-red-300">03 / Next decision</span>
+          <h2 className="mt-3 text-lg font-medium text-white">What is the one test to run next?</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-400">Leave with a Continue, Retest, or Kill decision instead of another loose report.</p>
+        </article>
       </div>
     </section>
   );
