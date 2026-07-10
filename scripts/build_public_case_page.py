@@ -47,7 +47,7 @@ def main():
             <h4>Next retest</h4>
             <p>{audit['next_test']}</p>
           </article>
-        """)
+        """.strip())
     rows = []
     for case in cases:
         metrics = case["metrics"]
@@ -63,7 +63,9 @@ def main():
             <td>{pct(metrics['max_drawdown'])}</td>
             <td>{', '.join(audit['risks'][:2])}</td>
           </tr>
-        """)
+        """.strip())
+    cards_html = "\n          ".join(cards)
+    rows_html = "\n          ".join(rows)
     html = f"""<!doctype html>
 <html lang="en">
   <head>
@@ -94,7 +96,7 @@ def main():
     <main>
       <section class="method-hero">
         <p class="kicker">Benchmark Case Library</p>
-        <h1>50 strategy cases used to calibrate fake-backtest detection.</h1>
+        <h1>{len(cases)} strategy cases used to calibrate fake-backtest detection.</h1>
         <p>These cases train the audit workflow to recognize evidence gaps, overfit risk, cost fragility, regime weakness, and factor-clone behavior. They are not investment recommendations or profit predictions.</p>
       </section>
       <section class="market">
@@ -127,13 +129,13 @@ def main():
           <h2>Representative cases across mainstream strategy families</h2>
         </div>
         <div class="case-study-grid">
-          {''.join(cards)}
+          {cards_html}
         </div>
       </section>
       <section class="market">
         <div class="section-head compact">
           <p class="kicker">Full Case Index</p>
-          <h2>All 50 benchmark labels</h2>
+          <h2>All {len(cases)} benchmark labels</h2>
           <p>Source labels reflect the data used in the local benchmark pipeline. FRED cases use cached public market series; bootstrap cases are synthetic regime seeds used for crypto-like stress patterns.</p>
         </div>
         <div class="case-table-wrap">
@@ -141,7 +143,7 @@ def main():
             <thead>
               <tr><th>ID</th><th>Family</th><th>Asset</th><th>Verdict</th><th>Score</th><th>Return</th><th>Drawdown</th><th>Main risks</th></tr>
             </thead>
-            <tbody>{''.join(rows)}</tbody>
+            <tbody>{rows_html}</tbody>
           </table>
         </div>
       </section>

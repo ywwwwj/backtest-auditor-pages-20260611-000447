@@ -1,11 +1,11 @@
-﻿# Ready-To-Send Market Messages
+# Ready-To-Send Market Messages
 
 Date: 2026-06-10
 
 Final site URL:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447
 ```
 
 Use the `audit.html` links exactly as written. Each link carries `campaign`, `channel`, `src`, and `prospect_id` so requests can be traced back to the outreach source.
@@ -21,7 +21,7 @@ https://www.reddit.com/r/algotrading/comments/1t70xws/problem_with_overfitting/
 Tracking link:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overfit_1&prospect_id=prospect_01
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overfit_1&prospect_id=prospect_01
 ```
 
 Message:
@@ -36,7 +36,7 @@ For overfitting, I would check:
 - can you write the exact next retest before changing parameters again?
 
 I am market-testing a $9 Backtest Auditor review for exactly this use case: one anonymized result in, then a short Continue / Retest / Kill credibility memo out. No investment advice or signals. If useful, here is the request page:
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overfit_1&prospect_id=prospect_01
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overfit_1&prospect_id=prospect_01
 ```
 
 ## 2. Reddit - Overbacktesting Is Bad
@@ -50,7 +50,7 @@ https://www.reddit.com/r/algotrading/comments/1tgjtco/overbacktesting_is_bad/
 Tracking link:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overbacktesting_1&prospect_id=prospect_05
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overbacktesting_1&prospect_id=prospect_05
 ```
 
 Message:
@@ -65,7 +65,7 @@ I am testing a small $9 manual Backtest Auditor review:
 - learning-log note for the next weekly review
 
 No investment advice, no prediction, no signals. Just research credibility feedback. If anyone wants to sanity-check one anonymized result, use this:
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overbacktesting_1&prospect_id=prospect_05
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=reddit&src=reddit_overbacktesting_1&prospect_id=prospect_05
 ```
 
 ## 3. QuantConnect - Fees / Slippage
@@ -79,7 +79,7 @@ https://www.quantconnect.com/forum/discussion/7756/intraday-equity-trading-fees-
 Tracking link:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_slippage_fees_1&prospect_id=prospect_07
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_slippage_fees_1&prospect_id=prospect_07
 ```
 
 Message:
@@ -95,7 +95,7 @@ I would review:
 5. the next single retest before changing strategy logic
 
 I am market-testing a $9 manual Backtest Auditor review. If you share one anonymized QuantConnect result/export, I can return a concise Continue / Retest / Kill credibility memo. No trading advice or buy/sell signals:
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_slippage_fees_1&prospect_id=prospect_07
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_slippage_fees_1&prospect_id=prospect_07
 ```
 
 ## 4. QuantConnect - Likely Overfitting
@@ -109,7 +109,7 @@ https://www.quantconnect.com/forum/discussion/6446/likely-overfitting-vs-not-ove
 Tracking link:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_overfit_1&prospect_id=prospect_08
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_overfit_1&prospect_id=prospect_08
 ```
 
 Message:
@@ -126,7 +126,7 @@ The review checklist I am testing:
 - the one next retest
 
 I am testing this as a $9 manual Backtest Auditor review. Send one anonymized result and I return a short Continue / Retest / Kill credibility memo. No investment advice:
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_overfit_1&prospect_id=prospect_08
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=quantconnect&src=qc_overfit_1&prospect_id=prospect_08
 ```
 
 ## 5. TradingView - CoinOperator
@@ -140,7 +140,7 @@ https://www.tradingview.com/script/51FVkzCB-Backtest-Pro-The-TradingView-Backtes
 Tracking link:
 
 ```text
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=tradingview&src=tv_coinoperator_1&prospect_id=prospect_17
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=tradingview&src=tv_coinoperator_1&prospect_id=prospect_17
 ```
 
 Message:
@@ -155,7 +155,7 @@ The next pain I see for many Strategy Tester users is post-backtest interpretati
 - what is the next retest before changing parameters again?
 
 I am market-testing a $9 Backtest Auditor review that turns one anonymized Strategy Tester result into a short Continue / Retest / Kill credibility memo. No investment advice or signals. If useful, I would be happy to review one example result from your users and share the format:
-https://ywwwwj.github.io/backtest-auditor-pages-20260610/audit.html?campaign=day1_market_survey&channel=tradingview&src=tv_coinoperator_1&prospect_id=prospect_17
+https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/audit.html?campaign=day1_market_survey&channel=tradingview&src=tv_coinoperator_1&prospect_id=prospect_17
 ```
 
 ## After Sending

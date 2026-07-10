@@ -16,6 +16,8 @@ Pages:
 - `methodology.html`: methodology, supported exports, example reports, and trust boundary.
 - `app.html`: actual audit workspace with Import Wizard, CSV paste/upload, Auto CSV Mapper, Professional Audit Pack, AI memo, Strategy Workspace, Client Profile, Learning Log, Bottleneck Analysis, Weekly Queue, Retest Calendar, and example reports.
 - `payment.html`: manual payment/proof page for the $9 / RMB 19 audit validation flow.
+- `cases.html`: public library generated from the 100-case benchmark corpus.
+- `web-react/`: source for the React/shadcn preview published at `/v2/`.
 
 Key examples:
 
@@ -23,10 +25,25 @@ Key examples:
 - `app.html?example=retest`
 - `app.html?example=continue`
 
-Deploy:
+Project structure:
 
-- Netlify publish directory: `deploy`
-- Required config: `netlify.toml`
+- Root HTML/CSS/JS files are the editable static-site source.
+- `web-react/` is the editable React v2 source.
+- `training/` and `scripts/` contain the benchmark, RAG, fine-tune, and generation pipeline.
+- `handoff/` contains project memory, decisions, and market-validation material.
+- `deploy/` is the only publish directory. It is rebuilt from the two source layers above.
+
+Build and deploy:
+
+```powershell
+npm --prefix web-react ci
+node .\scripts\build-deploy.mjs
+```
+
+- GitHub Pages: `.github/workflows/pages.yml` runs the same build and publishes `deploy/`.
+- Cloudflare Pages: build command `npm --prefix web-react ci && node scripts/build-deploy.mjs`; output directory `deploy`.
+- Netlify: `netlify.toml` runs the same build and publishes `deploy/`.
+- Public GitHub Pages URL: `https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447/`
 
 Validation:
 
@@ -35,6 +52,7 @@ node --check .\script.js
 node --check .\demo.js
 node --check .\deploy\script.js
 node --check .\deploy\demo.js
+npm --prefix web-react run build
 ```
 
 Current deploy folder has been cleaned to contain only Backtest Auditor files.

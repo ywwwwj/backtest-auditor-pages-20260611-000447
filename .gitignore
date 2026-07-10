@@ -1,5 +1,9 @@
 .npm-cache-netlify/
 node_modules/
+web-react/dist/
+__pycache__/
+*.pyc
+handoff/live-pages-smoke-output/
 .DS_Store
 Thumbs.db
 *.log

@@ -801,6 +801,56 @@ Decision:
 - The most professional posture is now a calibrated audit skill with both narrative and structured outputs.
 - The next real step toward model-provider fine-tuning is upload and evaluation, not more speculative feature growth.
 
+## Phase 28: Weekly Validation URL Cleanup
+
+Problem:
+
+- The ready-to-send outreach file still pointed to the older GitHub Pages repo.
+- The current validated public site is the isolated `backtest-auditor-pages-20260611-000447` Pages repo.
+- With no paid order evidence yet, the highest-leverage change is removing outreach friction rather than adding product scope.
+
+Implemented:
+
+- Updated `handoff/20_READY_TO_SEND_MARKET_MESSAGES_FINAL.md` so the final site URL and all tracked audit links point to:
+  - `https://ywwwwj.github.io/backtest-auditor-pages-20260611-000447`
+
+Validation:
+
+- Live HTTP checks returned 200 for home, audit, payment, app example, case library, stylesheet, and lead capture script.
+- Local deploy files remain in sync with their root public-file counterparts.
+
+Decision:
+
+- Keep the next validation step focused on sending the first tracked outreach batch and recording actual replies/payments.
+- Do not add new SaaS features until at least one paid manual audit loop or clear import blocker is observed.
+
+## Phase 29: Repository and Deployment Consolidation
+
+Problem:
+
+- The project had duplicate v2 build output in both `v2/` and `deploy/v2/`.
+- GitHub Pages was still serving the legacy `gh-pages` branch while newer source lived on `codex/v2-pages`.
+- Local dependency caches, tracked smoke screenshots, and Python bytecode added about 1 GB of reproducible files.
+
+Implemented:
+
+- Added `scripts/build-deploy.mjs` as the single publish build command.
+- Kept root static files and `web-react/` as source; kept `deploy/` as the only publish directory.
+- Updated GitHub Actions, Netlify, and Cloudflare instructions to use the same build pipeline.
+- Removed the duplicate root `v2/`, old smoke-test output, tracked `__pycache__`, and local dependency caches.
+- Rebuilt the public case library from all 100 benchmark cases and removed stale 50-case copy.
+
+Validation:
+
+- A clean `npm ci` completed with zero vulnerabilities.
+- React build, ESLint, Python compilation, and JavaScript syntax checks passed.
+- Browser smoke tests passed for 18 main-site desktop/mobile views and 2 v2 views with no internal 404, console error, or horizontal overflow.
+
+Decision:
+
+- Do not recreate a root-level `v2/` directory. The React preview is published only from `deploy/v2/`.
+- Future hosting providers must build with `node scripts/build-deploy.mjs` and publish `deploy/`.
+
 ## Major Non-Negotiable Decisions
 
 - Do not promise profit.

@@ -1,6 +1,6 @@
 [build]
   publish = "deploy"
-  command = ""
+  command = "npm --prefix web-react ci && node scripts/build-deploy.mjs"
 
 [[headers]]
   for = "/*"

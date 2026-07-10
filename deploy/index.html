@@ -47,14 +47,27 @@
             <article><span>Built-in AI</span><strong>Hosted in workflow</strong></article>
           </div>
         </div>
-        <aside class="hero-console">
+        <aside class="hero-console dashboard-preview">
           <div class="console-top">
             <span></span><span></span><span></span>
+            <em>Live audit preview</em>
           </div>
           <div class="console-verdict">
             <p class="kicker">Decision</p>
             <strong>KILL</strong>
             <p>One outlier winner explains the curve. Second-half performance decays. Retest before more tuning.</p>
+          </div>
+          <div class="dashboard-chart" aria-hidden="true">
+            <svg viewBox="0 0 520 200" role="img" aria-label="Equity curve preview">
+              <defs>
+                <linearGradient id="previewGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#7cf0b0" stop-opacity="1" />
+                  <stop offset="100%" stop-color="#ffcb6e" stop-opacity="1" />
+                </linearGradient>
+              </defs>
+              <path d="M0 168 C46 160, 62 142, 92 148 C126 155, 149 120, 186 110 C224 100, 246 80, 278 84 C310 88, 340 60, 374 66 C404 72, 436 36, 468 40 C490 44, 506 28, 520 20" fill="none" stroke="url(#previewGlow)" stroke-width="4" stroke-linecap="round" />
+              <path d="M0 168 C46 160, 62 142, 92 148 C126 155, 149 120, 186 110 C224 100, 246 80, 278 84 C310 88, 340 60, 374 66 C404 72, 436 36, 468 40 C490 44, 506 28, 520 20 L520 200 L0 200 Z" fill="url(#previewGlow)" opacity="0.12" />
+            </svg>
           </div>
           <div class="console-grid">
             <article><span>Trust</span><strong>41</strong></article>
